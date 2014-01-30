@@ -8,7 +8,174 @@
 package com.arpith.dmucs;
 
 public final class R {
+    public static final class array {
+        /**  Call Activity ring targets
+         - Answer (drag right)
+         - Reject (drag left)
+     
+         */
+        public static final int incoming_call_widget_2way_targets=0x7f060000;
+    }
     public static final class attr {
+        /**  Determine whether the glow pad is allowed to scale to fit the bounds indicated
+            by its parent. If this is set to false, no scaling will occur. If this is set to true
+            scaling will occur to fit for any axis in which gravity is set to center. 
+         <p>Must be a boolean value, either "<code>true</code>" or "<code>false</code>".
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+         */
+        public static final int allowScaling=0x7f01000f;
+        /**  Used when the handle shouldn't wait to be hit before following the finger 
+         <p>Must be a boolean value, either "<code>true</code>" or "<code>false</code>".
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+         */
+        public static final int alwaysTrackFinger=0x7f01000c;
+        /**  Reference to an array resource that be used to announce the directions with targets around the circle. 
+         <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
+or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
+         */
+        public static final int directionDescriptions=0x7f010002;
+        /**  Number of waves/chevrons to show in animation. 
+         <p>Must be an integer value, such as "<code>100</code>".
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+         */
+        public static final int feedbackCount=0x7f01000b;
+        /**  Location along the circle of the first item, in degrees.
+         <p>Must be a floating point value, such as "<code>1.2</code>".
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+         */
+        public static final int firstItemOffset=0x7f01000d;
+        /**  Radius of glow under finger. 
+         <p>Must be a dimension value, which is a floating point number appended with a unit such as "<code>14.5sp</code>".
+Available units are: px (pixels), dp (density-independent pixels), sp (scaled pixels based on preferred font size),
+in (inches), mm (millimeters).
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+         */
+        public static final int glowRadius=0x7f010008;
+        /**  Specifies how to place the content of an object, both
+         on the x and y axis, within the object itself. 
+         <p>Must be one or more (separated by '|') of the following constant values.</p>
+<table>
+<colgroup align="left" />
+<colgroup align="left" />
+<colgroup align="left" />
+<tr><th>Constant</th><th>Value</th><th>Description</th></tr>
+<tr><td><code>top</code></td><td>0x30</td><td> Push object to the top of its container, not changing its size. </td></tr>
+<tr><td><code>bottom</code></td><td>0x50</td><td> Push object to the bottom of its container, not changing its size. </td></tr>
+<tr><td><code>left</code></td><td>0x03</td><td> Push object to the left of its container, not changing its size. </td></tr>
+<tr><td><code>right</code></td><td>0x05</td><td> Push object to the right of its container, not changing its size. </td></tr>
+<tr><td><code>center_vertical</code></td><td>0x10</td><td> Place object in the vertical center of its container, not changing its size. </td></tr>
+<tr><td><code>fill_vertical</code></td><td>0x70</td><td> Grow the vertical size of the object if needed so it completely fills its container. </td></tr>
+<tr><td><code>center_horizontal</code></td><td>0x01</td><td> Place object in the horizontal center of its container, not changing its size. </td></tr>
+<tr><td><code>fill_horizontal</code></td><td>0x07</td><td> Grow the horizontal size of the object if needed so it completely fills its container. </td></tr>
+<tr><td><code>center</code></td><td>0x11</td><td> Place the object in the center of its container in both the vertical and horizontal axis, not changing its size. </td></tr>
+<tr><td><code>fill</code></td><td>0x77</td><td> Grow the horizontal and vertical size of the object if needed so it completely fills its container. </td></tr>
+<tr><td><code>clip_vertical</code></td><td>0x80</td><td> Additional option that can be set to have the top and/or bottom edges of
+             the child clipped to its container's bounds.
+             The clip will be based on the vertical gravity: a top gravity will clip the bottom
+             edge, a bottom gravity will clip the top edge, and neither will clip both edges. </td></tr>
+<tr><td><code>clip_horizontal</code></td><td>0x08</td><td> Additional option that can be set to have the left and/or right edges of
+             the child clipped to its container's bounds.
+             The clip will be based on the horizontal gravity: a left gravity will clip the right
+             edge, a right gravity will clip the left edge, and neither will clip both edges. </td></tr>
+</table>
+         */
+        public static final int gravity=0x7f010010;
+        /**  Sets a drawable as the center. 
+         <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
+or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
+         */
+        public static final int handleDrawable=0x7f010003;
+        /**  Inner radius of glow area. 
+         <p>Must be a dimension value, which is a floating point number appended with a unit such as "<code>14.5sp</code>".
+Available units are: px (pixels), dp (density-independent pixels), sp (scaled pixels based on preferred font size),
+in (inches), mm (millimeters).
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+         */
+        public static final int innerRadius=0x7f010006;
+        /**  Causes targets to snap to the finger location on activation. 
+         <p>Must be a boolean value, either "<code>true</code>" or "<code>false</code>".
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+         */
+        public static final int magneticTargets=0x7f01000e;
+        /**  Outer radius of glow area. Target icons will be drawn on this circle. 
+         <p>Must be a dimension value, which is a floating point number appended with a unit such as "<code>14.5sp</code>".
+Available units are: px (pixels), dp (density-independent pixels), sp (scaled pixels based on preferred font size),
+in (inches), mm (millimeters).
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+         */
+        public static final int outerRadius=0x7f010007;
+        /**  Drawable to use for wave ripple animation. 
+         <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
+or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
+         */
+        public static final int outerRingDrawable=0x7f010004;
+        /**  Drawble used for drawing points 
+         <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
+or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
+         */
+        public static final int pointDrawable=0x7f010005;
+        /**  How close we need to be before snapping to a target. 
+         <p>Must be a dimension value, which is a floating point number appended with a unit such as "<code>14.5sp</code>".
+Available units are: px (pixels), dp (density-independent pixels), sp (scaled pixels based on preferred font size),
+in (inches), mm (millimeters).
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+         */
+        public static final int snapMargin=0x7f01000a;
+        /**  Reference to an array resource that be used as description for the targets around the circle. 
+         <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
+or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
+         */
+        public static final int targetDescriptions=0x7f010001;
+        /**  Reference to an array resource that be shown as targets around a circle. 
+         <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
+or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
+         */
+        public static final int targetDrawables=0x7f010000;
+        /**  Tactile feedback duration for actions. Set to '0' for no vibration. 
+         <p>Must be an integer value, such as "<code>100</code>".
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+         */
+        public static final int vibrationDuration=0x7f010009;
     }
     public static final class dimen {
         /**  Default screen margins, per the Android Design guidelines. 
@@ -17,30 +184,96 @@ public final class R {
          screen margins) for sw720dp devices (e.g. 10" tablets) in landscape here.
     
          */
-        public static final int activity_horizontal_margin=0x7f050000;
-        public static final int activity_vertical_margin=0x7f050001;
+        public static final int activity_horizontal_margin=0x7f070000;
+        public static final int activity_vertical_margin=0x7f070001;
+        /**  Default glow radius for GlowPadView 
+         */
+        public static final int glowpadview_glow_radius=0x7f070003;
+        /**  Default distance from each snap target that GlowPadView considers a "hit" 
+         */
+        public static final int glowpadview_inner_radius=0x7f070005;
+        /**  Default distance beyond which GlowPadView snaps to the matching target 
+         */
+        public static final int glowpadview_snap_margin=0x7f070004;
+        /**  Default target placement radius for GlowPadView. Should be 1/2 of outerring diameter. 
+         */
+        public static final int glowpadview_target_placement_radius=0x7f070002;
+        /**  Margin used for incoming call widget's icon for each item.
+         This should be same as "(incoming_call_widget_circle_size - icon_size)/2".
+         Right now answer/decline/reject icons have 38dp width/height.
+         So, (94 - 38)/2 ==> 28dp 
+         */
+        public static final int incoming_call_widget_asset_margin=0x7f070008;
+        /**  Circle size for incoming call widget's each item. 
+         */
+        public static final int incoming_call_widget_circle_size=0x7f070007;
+        /**  Size of lockscreen outerring on unsecure unlock LockScreen 
+         */
+        public static final int keyguard_lockscreen_outerring_diameter=0x7f070006;
     }
     public static final class drawable {
-        public static final int ic_launcher=0x7f020000;
+        public static final int ic_in_call_touch_handle=0x7f020000;
+        public static final int ic_in_call_touch_handle_normal=0x7f020001;
+        public static final int ic_launcher=0x7f020002;
+        public static final int ic_lockscreen_answer=0x7f020003;
+        public static final int ic_lockscreen_answer_activated=0x7f020004;
+        public static final int ic_lockscreen_answer_activated_layer=0x7f020005;
+        public static final int ic_lockscreen_answer_normal=0x7f020006;
+        public static final int ic_lockscreen_answer_normal_layer=0x7f020007;
+        public static final int ic_lockscreen_decline=0x7f020008;
+        public static final int ic_lockscreen_decline_activated=0x7f020009;
+        public static final int ic_lockscreen_decline_activated_layer=0x7f02000a;
+        public static final int ic_lockscreen_decline_normal=0x7f02000b;
+        public static final int ic_lockscreen_decline_normal_layer=0x7f02000c;
+        public static final int ic_lockscreen_glowdot=0x7f02000d;
+        public static final int ic_lockscreen_handle_pressed=0x7f02000e;
+        public static final int ic_lockscreen_outerring=0x7f02000f;
     }
     public static final class id {
-        public static final int action_settings=0x7f090001;
-        public static final int advance_action_settings=0x7f090002;
-        public static final int appversion=0x7f090000;
+        public static final int action_settings=0x7f050015;
+        public static final int advance_action_settings=0x7f050016;
+        public static final int appversion=0x7f050014;
+        public static final int bottom=0x7f050001;
+        public static final int btnLogin=0x7f050010;
+        public static final int center=0x7f050008;
+        public static final int center_horizontal=0x7f050006;
+        public static final int center_vertical=0x7f050004;
+        public static final int clip_horizontal=0x7f05000b;
+        public static final int clip_vertical=0x7f05000a;
+        public static final int fill=0x7f050009;
+        public static final int fill_horizontal=0x7f050007;
+        public static final int fill_vertical=0x7f050005;
+        public static final int footer=0x7f05000d;
+        public static final int header=0x7f05000c;
+        public static final int incomingCallWidget=0x7f050013;
+        public static final int left=0x7f050002;
+        public static final int link_to_register=0x7f050011;
+        public static final int pass=0x7f05000f;
+        public static final int right=0x7f050003;
+        public static final int textView1=0x7f050012;
+        public static final int top=0x7f050000;
+        public static final int uid=0x7f05000e;
     }
     public static final class layout {
         public static final int activity_login=0x7f030000;
-        public static final int activity_splash=0x7f030001;
+        public static final int activity_main=0x7f030001;
+        public static final int activity_splash=0x7f030002;
+        public static final int background_gradient=0x7f030003;
+        public static final int footer_repeat=0x7f030004;
+        public static final int header_gradient=0x7f030005;
     }
     public static final class menu {
-        public static final int login=0x7f080000;
-        public static final int splash=0x7f080001;
+        public static final int login=0x7f0a0000;
+        public static final int main=0x7f0a0001;
+        public static final int splash=0x7f0a0002;
     }
     public static final class string {
-        public static final int action_settings=0x7f060001;
-        public static final int app_name=0x7f060000;
-        public static final int hello_world=0x7f060002;
-        public static final int title_activity_splash=0x7f060003;
+        public static final int action_settings=0x7f080001;
+        public static final int app_name=0x7f080000;
+        public static final int btn_toggle_multiplier=0x7f080005;
+        public static final int hello_world=0x7f080002;
+        public static final int title_activity_main=0x7f080004;
+        public static final int title_activity_splash=0x7f080003;
     }
     public static final class style {
         /** 
@@ -64,14 +297,395 @@ public final class R {
     
  API 14 theme customizations can go here. 
          */
-        public static final int AppBaseTheme=0x7f070000;
+        public static final int AppBaseTheme=0x7f090000;
         /**  Application theme. 
  All customizations that are NOT specific to a particular API-level can go here. 
          */
-        public static final int AppTheme=0x7f070001;
+        public static final int AppTheme=0x7f090001;
     }
     public static final class xml {
         public static final int advancepreference=0x7f040000;
         public static final int mypreference=0x7f040001;
     }
+    public static final class styleable {
+        /** Attributes that can be used with a GlowPadView.
+           <p>Includes the following attributes:</p>
+           <table>
+           <colgroup align="left" />
+           <colgroup align="left" />
+           <tr><th>Attribute</th><th>Description</th></tr>
+           <tr><td><code>{@link #GlowPadView_allowScaling com.arpith.dmucs:allowScaling}</code></td><td> Determine whether the glow pad is allowed to scale to fit the bounds indicated
+            by its parent.</td></tr>
+           <tr><td><code>{@link #GlowPadView_alwaysTrackFinger com.arpith.dmucs:alwaysTrackFinger}</code></td><td> Used when the handle shouldn't wait to be hit before following the finger </td></tr>
+           <tr><td><code>{@link #GlowPadView_directionDescriptions com.arpith.dmucs:directionDescriptions}</code></td><td> Reference to an array resource that be used to announce the directions with targets around the circle.</td></tr>
+           <tr><td><code>{@link #GlowPadView_feedbackCount com.arpith.dmucs:feedbackCount}</code></td><td> Number of waves/chevrons to show in animation.</td></tr>
+           <tr><td><code>{@link #GlowPadView_firstItemOffset com.arpith.dmucs:firstItemOffset}</code></td><td> Location along the circle of the first item, in degrees.</td></tr>
+           <tr><td><code>{@link #GlowPadView_glowRadius com.arpith.dmucs:glowRadius}</code></td><td> Radius of glow under finger.</td></tr>
+           <tr><td><code>{@link #GlowPadView_gravity com.arpith.dmucs:gravity}</code></td><td> Specifies how to place the content of an object, both
+         on the x and y axis, within the object itself.</td></tr>
+           <tr><td><code>{@link #GlowPadView_handleDrawable com.arpith.dmucs:handleDrawable}</code></td><td> Sets a drawable as the center.</td></tr>
+           <tr><td><code>{@link #GlowPadView_innerRadius com.arpith.dmucs:innerRadius}</code></td><td> Inner radius of glow area.</td></tr>
+           <tr><td><code>{@link #GlowPadView_magneticTargets com.arpith.dmucs:magneticTargets}</code></td><td> Causes targets to snap to the finger location on activation.</td></tr>
+           <tr><td><code>{@link #GlowPadView_outerRadius com.arpith.dmucs:outerRadius}</code></td><td> Outer radius of glow area.</td></tr>
+           <tr><td><code>{@link #GlowPadView_outerRingDrawable com.arpith.dmucs:outerRingDrawable}</code></td><td> Drawable to use for wave ripple animation.</td></tr>
+           <tr><td><code>{@link #GlowPadView_pointDrawable com.arpith.dmucs:pointDrawable}</code></td><td> Drawble used for drawing points </td></tr>
+           <tr><td><code>{@link #GlowPadView_snapMargin com.arpith.dmucs:snapMargin}</code></td><td> How close we need to be before snapping to a target.</td></tr>
+           <tr><td><code>{@link #GlowPadView_targetDescriptions com.arpith.dmucs:targetDescriptions}</code></td><td> Reference to an array resource that be used as description for the targets around the circle.</td></tr>
+           <tr><td><code>{@link #GlowPadView_targetDrawables com.arpith.dmucs:targetDrawables}</code></td><td> Reference to an array resource that be shown as targets around a circle.</td></tr>
+           <tr><td><code>{@link #GlowPadView_vibrationDuration com.arpith.dmucs:vibrationDuration}</code></td><td> Tactile feedback duration for actions.</td></tr>
+           </table>
+           @see #GlowPadView_allowScaling
+           @see #GlowPadView_alwaysTrackFinger
+           @see #GlowPadView_directionDescriptions
+           @see #GlowPadView_feedbackCount
+           @see #GlowPadView_firstItemOffset
+           @see #GlowPadView_glowRadius
+           @see #GlowPadView_gravity
+           @see #GlowPadView_handleDrawable
+           @see #GlowPadView_innerRadius
+           @see #GlowPadView_magneticTargets
+           @see #GlowPadView_outerRadius
+           @see #GlowPadView_outerRingDrawable
+           @see #GlowPadView_pointDrawable
+           @see #GlowPadView_snapMargin
+           @see #GlowPadView_targetDescriptions
+           @see #GlowPadView_targetDrawables
+           @see #GlowPadView_vibrationDuration
+         */
+        public static final int[] GlowPadView = {
+            0x7f010000, 0x7f010001, 0x7f010002, 0x7f010003,
+            0x7f010004, 0x7f010005, 0x7f010006, 0x7f010007,
+            0x7f010008, 0x7f010009, 0x7f01000a, 0x7f01000b,
+            0x7f01000c, 0x7f01000d, 0x7f01000e, 0x7f01000f,
+            0x7f010010
+        };
+        /**
+          <p>
+          @attr description
+           Determine whether the glow pad is allowed to scale to fit the bounds indicated
+            by its parent. If this is set to false, no scaling will occur. If this is set to true
+            scaling will occur to fit for any axis in which gravity is set to center. 
+
+
+          <p>Must be a boolean value, either "<code>true</code>" or "<code>false</code>".
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+          <p>This is a private symbol.
+          @attr name com.arpith.dmucs:allowScaling
+        */
+        public static final int GlowPadView_allowScaling = 15;
+        /**
+          <p>
+          @attr description
+           Used when the handle shouldn't wait to be hit before following the finger 
+
+
+          <p>Must be a boolean value, either "<code>true</code>" or "<code>false</code>".
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+          <p>This is a private symbol.
+          @attr name com.arpith.dmucs:alwaysTrackFinger
+        */
+        public static final int GlowPadView_alwaysTrackFinger = 12;
+        /**
+          <p>
+          @attr description
+           Reference to an array resource that be used to announce the directions with targets around the circle. 
+
+
+          <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
+or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
+          <p>This is a private symbol.
+          @attr name com.arpith.dmucs:directionDescriptions
+        */
+        public static final int GlowPadView_directionDescriptions = 2;
+        /**
+          <p>
+          @attr description
+           Number of waves/chevrons to show in animation. 
+
+
+          <p>Must be an integer value, such as "<code>100</code>".
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+          <p>This is a private symbol.
+          @attr name com.arpith.dmucs:feedbackCount
+        */
+        public static final int GlowPadView_feedbackCount = 11;
+        /**
+          <p>
+          @attr description
+           Location along the circle of the first item, in degrees.
+
+
+          <p>Must be a floating point value, such as "<code>1.2</code>".
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+          <p>This is a private symbol.
+          @attr name com.arpith.dmucs:firstItemOffset
+        */
+        public static final int GlowPadView_firstItemOffset = 13;
+        /**
+          <p>
+          @attr description
+           Radius of glow under finger. 
+
+
+          <p>Must be a dimension value, which is a floating point number appended with a unit such as "<code>14.5sp</code>".
+Available units are: px (pixels), dp (density-independent pixels), sp (scaled pixels based on preferred font size),
+in (inches), mm (millimeters).
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+          <p>This is a private symbol.
+          @attr name com.arpith.dmucs:glowRadius
+        */
+        public static final int GlowPadView_glowRadius = 8;
+        /**
+          <p>
+          @attr description
+           Specifies how to place the content of an object, both
+         on the x and y axis, within the object itself. 
+
+
+          <p>Must be one or more (separated by '|') of the following constant values.</p>
+<table>
+<colgroup align="left" />
+<colgroup align="left" />
+<colgroup align="left" />
+<tr><th>Constant</th><th>Value</th><th>Description</th></tr>
+<tr><td><code>top</code></td><td>0x30</td><td> Push object to the top of its container, not changing its size. </td></tr>
+<tr><td><code>bottom</code></td><td>0x50</td><td> Push object to the bottom of its container, not changing its size. </td></tr>
+<tr><td><code>left</code></td><td>0x03</td><td> Push object to the left of its container, not changing its size. </td></tr>
+<tr><td><code>right</code></td><td>0x05</td><td> Push object to the right of its container, not changing its size. </td></tr>
+<tr><td><code>center_vertical</code></td><td>0x10</td><td> Place object in the vertical center of its container, not changing its size. </td></tr>
+<tr><td><code>fill_vertical</code></td><td>0x70</td><td> Grow the vertical size of the object if needed so it completely fills its container. </td></tr>
+<tr><td><code>center_horizontal</code></td><td>0x01</td><td> Place object in the horizontal center of its container, not changing its size. </td></tr>
+<tr><td><code>fill_horizontal</code></td><td>0x07</td><td> Grow the horizontal size of the object if needed so it completely fills its container. </td></tr>
+<tr><td><code>center</code></td><td>0x11</td><td> Place the object in the center of its container in both the vertical and horizontal axis, not changing its size. </td></tr>
+<tr><td><code>fill</code></td><td>0x77</td><td> Grow the horizontal and vertical size of the object if needed so it completely fills its container. </td></tr>
+<tr><td><code>clip_vertical</code></td><td>0x80</td><td> Additional option that can be set to have the top and/or bottom edges of
+             the child clipped to its container's bounds.
+             The clip will be based on the vertical gravity: a top gravity will clip the bottom
+             edge, a bottom gravity will clip the top edge, and neither will clip both edges. </td></tr>
+<tr><td><code>clip_horizontal</code></td><td>0x08</td><td> Additional option that can be set to have the left and/or right edges of
+             the child clipped to its container's bounds.
+             The clip will be based on the horizontal gravity: a left gravity will clip the right
+             edge, a right gravity will clip the left edge, and neither will clip both edges. </td></tr>
+</table>
+          <p>This is a private symbol.
+          @attr name com.arpith.dmucs:gravity
+        */
+        public static final int GlowPadView_gravity = 16;
+        /**
+          <p>
+          @attr description
+           Sets a drawable as the center. 
+
+
+          <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
+or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
+          <p>This is a private symbol.
+          @attr name com.arpith.dmucs:handleDrawable
+        */
+        public static final int GlowPadView_handleDrawable = 3;
+        /**
+          <p>
+          @attr description
+           Inner radius of glow area. 
+
+
+          <p>Must be a dimension value, which is a floating point number appended with a unit such as "<code>14.5sp</code>".
+Available units are: px (pixels), dp (density-independent pixels), sp (scaled pixels based on preferred font size),
+in (inches), mm (millimeters).
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+          <p>This is a private symbol.
+          @attr name com.arpith.dmucs:innerRadius
+        */
+        public static final int GlowPadView_innerRadius = 6;
+        /**
+          <p>
+          @attr description
+           Causes targets to snap to the finger location on activation. 
+
+
+          <p>Must be a boolean value, either "<code>true</code>" or "<code>false</code>".
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+          <p>This is a private symbol.
+          @attr name com.arpith.dmucs:magneticTargets
+        */
+        public static final int GlowPadView_magneticTargets = 14;
+        /**
+          <p>
+          @attr description
+           Outer radius of glow area. Target icons will be drawn on this circle. 
+
+
+          <p>Must be a dimension value, which is a floating point number appended with a unit such as "<code>14.5sp</code>".
+Available units are: px (pixels), dp (density-independent pixels), sp (scaled pixels based on preferred font size),
+in (inches), mm (millimeters).
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+          <p>This is a private symbol.
+          @attr name com.arpith.dmucs:outerRadius
+        */
+        public static final int GlowPadView_outerRadius = 7;
+        /**
+          <p>
+          @attr description
+           Drawable to use for wave ripple animation. 
+
+
+          <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
+or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
+          <p>This is a private symbol.
+          @attr name com.arpith.dmucs:outerRingDrawable
+        */
+        public static final int GlowPadView_outerRingDrawable = 4;
+        /**
+          <p>
+          @attr description
+           Drawble used for drawing points 
+
+
+          <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
+or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
+          <p>This is a private symbol.
+          @attr name com.arpith.dmucs:pointDrawable
+        */
+        public static final int GlowPadView_pointDrawable = 5;
+        /**
+          <p>
+          @attr description
+           How close we need to be before snapping to a target. 
+
+
+          <p>Must be a dimension value, which is a floating point number appended with a unit such as "<code>14.5sp</code>".
+Available units are: px (pixels), dp (density-independent pixels), sp (scaled pixels based on preferred font size),
+in (inches), mm (millimeters).
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+          <p>This is a private symbol.
+          @attr name com.arpith.dmucs:snapMargin
+        */
+        public static final int GlowPadView_snapMargin = 10;
+        /**
+          <p>
+          @attr description
+           Reference to an array resource that be used as description for the targets around the circle. 
+
+
+          <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
+or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
+          <p>This is a private symbol.
+          @attr name com.arpith.dmucs:targetDescriptions
+        */
+        public static final int GlowPadView_targetDescriptions = 1;
+        /**
+          <p>
+          @attr description
+           Reference to an array resource that be shown as targets around a circle. 
+
+
+          <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
+or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
+          <p>This is a private symbol.
+          @attr name com.arpith.dmucs:targetDrawables
+        */
+        public static final int GlowPadView_targetDrawables = 0;
+        /**
+          <p>
+          @attr description
+           Tactile feedback duration for actions. Set to '0' for no vibration. 
+
+
+          <p>Must be an integer value, such as "<code>100</code>".
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+          <p>This is a private symbol.
+          @attr name com.arpith.dmucs:vibrationDuration
+        */
+        public static final int GlowPadView_vibrationDuration = 9;
+        /** Attributes that can be used with a LinearLayout.
+           <p>Includes the following attributes:</p>
+           <table>
+           <colgroup align="left" />
+           <colgroup align="left" />
+           <tr><th>Attribute</th><th>Description</th></tr>
+           <tr><td><code>{@link #LinearLayout_gravity com.arpith.dmucs:gravity}</code></td><td> Specifies how to place the content of an object, both
+         on the x and y axis, within the object itself.</td></tr>
+           </table>
+           @see #LinearLayout_gravity
+         */
+        public static final int[] LinearLayout = {
+            0x7f010010
+        };
+        /**
+          <p>
+          @attr description
+           Specifies how to place the content of an object, both
+         on the x and y axis, within the object itself. 
+
+
+          <p>Must be one or more (separated by '|') of the following constant values.</p>
+<table>
+<colgroup align="left" />
+<colgroup align="left" />
+<colgroup align="left" />
+<tr><th>Constant</th><th>Value</th><th>Description</th></tr>
+<tr><td><code>top</code></td><td>0x30</td><td> Push object to the top of its container, not changing its size. </td></tr>
+<tr><td><code>bottom</code></td><td>0x50</td><td> Push object to the bottom of its container, not changing its size. </td></tr>
+<tr><td><code>left</code></td><td>0x03</td><td> Push object to the left of its container, not changing its size. </td></tr>
+<tr><td><code>right</code></td><td>0x05</td><td> Push object to the right of its container, not changing its size. </td></tr>
+<tr><td><code>center_vertical</code></td><td>0x10</td><td> Place object in the vertical center of its container, not changing its size. </td></tr>
+<tr><td><code>fill_vertical</code></td><td>0x70</td><td> Grow the vertical size of the object if needed so it completely fills its container. </td></tr>
+<tr><td><code>center_horizontal</code></td><td>0x01</td><td> Place object in the horizontal center of its container, not changing its size. </td></tr>
+<tr><td><code>fill_horizontal</code></td><td>0x07</td><td> Grow the horizontal size of the object if needed so it completely fills its container. </td></tr>
+<tr><td><code>center</code></td><td>0x11</td><td> Place the object in the center of its container in both the vertical and horizontal axis, not changing its size. </td></tr>
+<tr><td><code>fill</code></td><td>0x77</td><td> Grow the horizontal and vertical size of the object if needed so it completely fills its container. </td></tr>
+<tr><td><code>clip_vertical</code></td><td>0x80</td><td> Additional option that can be set to have the top and/or bottom edges of
+             the child clipped to its container's bounds.
+             The clip will be based on the vertical gravity: a top gravity will clip the bottom
+             edge, a bottom gravity will clip the top edge, and neither will clip both edges. </td></tr>
+<tr><td><code>clip_horizontal</code></td><td>0x08</td><td> Additional option that can be set to have the left and/or right edges of
+             the child clipped to its container's bounds.
+             The clip will be based on the horizontal gravity: a left gravity will clip the right
+             edge, a right gravity will clip the left edge, and neither will clip both edges. </td></tr>
+</table>
+          <p>This is a private symbol.
+          @attr name com.arpith.dmucs:gravity
+        */
+        public static final int LinearLayout_gravity = 0;
+    };
 }
