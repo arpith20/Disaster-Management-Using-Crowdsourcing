@@ -54,8 +54,32 @@
         </activity>
         <activity
             android:name="com.arpith.dmucs.MainActivity"
-            android:theme="@android:style/Theme.Holo.Light.NoActionBar"
-            android:label="@string/title_activity_main" >
+            android:label="@string/title_activity_main"
+            android:theme="@android:style/Theme.Holo.Light.NoActionBar" >
+        </activity>
+        <activity
+            android:name="com.arpith.dmucs.ReportDisaster1"
+            android:label="@string/title_activity_report_disaster1" >
+        </activity>
+        <activity
+            android:name="com.arpith.dmucs.ReportDisaster2"
+            android:label="@string/title_activity_report_disaster2" >
+        </activity>
+        <activity
+            android:name="com.arpith.dmucs.Account"
+            android:label="@string/title_activity_account" >
+        </activity>
+        <activity
+            android:name="com.arpith.dmucs.Alerts"
+            android:label="@string/title_activity_alerts" >
+        </activity>
+        <activity
+            android:name="com.arpith.dmucs.Information"
+            android:label="@string/title_activity_information" >
+        </activity>
+        <activity
+            android:name="com.arpith.dmucs.About"
+            android:label="@string/title_activity_about" >
         </activity>
     </application>
 

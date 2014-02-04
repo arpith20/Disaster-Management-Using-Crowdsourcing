@@ -14,7 +14,7 @@ public final class R {
          - Reject (drag left)
      
          */
-        public static final int incoming_call_widget_2way_targets=0x7f060000;
+        public static final int incoming_call_widget_2way_targets=0x7f080000;
     }
     public static final class attr {
         /**  Determine whether the glow pad is allowed to scale to fit the bounds indicated
@@ -125,6 +125,101 @@ theme attribute (in the form
 containing a value of this type.
          */
         public static final int magneticTargets=0x7f01000e;
+        /**  Drawable used as indicator for the active view. 
+         <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
+or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
+         */
+        public static final int mdActiveIndicator=0x7f010015;
+        /**  Whether the indicator should be animated between active views. 
+         <p>Must be a boolean value, either "<code>true</code>" or "<code>false</code>".
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+         */
+        public static final int mdAllowIndicatorAnimation=0x7f01001b;
+        /**  Drawable to use for the background of the content. 
+         <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
+or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
+         */
+        public static final int mdContentBackground=0x7f010012;
+        /**  Drawable used for the drop shadow. 
+         <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
+or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
+         */
+        public static final int mdDropShadow=0x7f010019;
+        /**  The color of the drop shadow. Default is #FF000000. 
+         <p>Must be a color value, in the form of "<code>#<i>rgb</i></code>", "<code>#<i>argb</i></code>",
+"<code>#<i>rrggbb</i></code>", or "<code>#<i>aarrggbb</i></code>".
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+         */
+        public static final int mdDropShadowColor=0x7f010018;
+        /**  Defines whether the content will have a dropshadow onto the menu. Default is true. 
+         <p>Must be a boolean value, either "<code>true</code>" or "<code>false</code>".
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+         */
+        public static final int mdDropShadowEnabled=0x7f010016;
+        /**  The size of the drop shadow. Default is 6dp 
+         <p>Must be a dimension value, which is a floating point number appended with a unit such as "<code>14.5sp</code>".
+Available units are: px (pixels), dp (density-independent pixels), sp (scaled pixels based on preferred font size),
+in (inches), mm (millimeters).
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+         */
+        public static final int mdDropShadowSize=0x7f010017;
+        /**  The maximum animation duration 
+         <p>Must be an integer value, such as "<code>100</code>".
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+         */
+        public static final int mdMaxAnimationDuration=0x7f01001c;
+        /**  Drawable to use for the background of the menu. 
+         <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
+or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
+         */
+        public static final int mdMenuBackground=0x7f010013;
+        /**  The size of the menu. 
+         <p>Must be a dimension value, which is a floating point number appended with a unit such as "<code>14.5sp</code>".
+Available units are: px (pixels), dp (density-independent pixels), sp (scaled pixels based on preferred font size),
+in (inches), mm (millimeters).
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+         */
+        public static final int mdMenuSize=0x7f010014;
+        /**  The touch bezel size. 
+         <p>Must be a dimension value, which is a floating point number appended with a unit such as "<code>14.5sp</code>".
+Available units are: px (pixels), dp (density-independent pixels), sp (scaled pixels based on preferred font size),
+in (inches), mm (millimeters).
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+         */
+        public static final int mdTouchBezelSize=0x7f01001a;
+        /**  Reference to a style for the menu drawer. 
+         <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
+or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
+         */
+        public static final int menuDrawerStyle=0x7f010011;
         /**  Outer radius of glow area. Target icons will be drawn on this circle. 
          <p>Must be a dimension value, which is a floating point number appended with a unit such as "<code>14.5sp</code>".
 Available units are: px (pixels), dp (density-independent pixels), sp (scaled pixels based on preferred font size),
@@ -177,6 +272,12 @@ containing a value of this type.
          */
         public static final int vibrationDuration=0x7f010009;
     }
+    public static final class color {
+        /**  The default background of the menu. 
+         */
+        public static final int md__defaultBackground=0x7f060000;
+        public static final int md__transparent=0x7f060001;
+    }
     public static final class dimen {
         /**  Default screen margins, per the Android Design guidelines. 
 
@@ -184,57 +285,77 @@ containing a value of this type.
          screen margins) for sw720dp devices (e.g. 10" tablets) in landscape here.
     
          */
-        public static final int activity_horizontal_margin=0x7f070000;
-        public static final int activity_vertical_margin=0x7f070001;
+        public static final int activity_horizontal_margin=0x7f090000;
+        public static final int activity_vertical_margin=0x7f090001;
         /**  Default glow radius for GlowPadView 
          */
-        public static final int glowpadview_glow_radius=0x7f070003;
+        public static final int glowpadview_glow_radius=0x7f090003;
         /**  Default distance from each snap target that GlowPadView considers a "hit" 
          */
-        public static final int glowpadview_inner_radius=0x7f070005;
+        public static final int glowpadview_inner_radius=0x7f090005;
         /**  Default distance beyond which GlowPadView snaps to the matching target 
          */
-        public static final int glowpadview_snap_margin=0x7f070004;
+        public static final int glowpadview_snap_margin=0x7f090004;
         /**  Default target placement radius for GlowPadView. Should be 1/2 of outerring diameter. 
          */
-        public static final int glowpadview_target_placement_radius=0x7f070002;
+        public static final int glowpadview_target_placement_radius=0x7f090002;
         /**  Margin used for incoming call widget's icon for each item.
          This should be same as "(incoming_call_widget_circle_size - icon_size)/2".
          Right now answer/decline/reject icons have 38dp width/height.
          So, (94 - 38)/2 ==> 28dp 
          */
-        public static final int incoming_call_widget_asset_margin=0x7f070008;
+        public static final int incoming_call_widget_asset_margin=0x7f090008;
         /**  Circle size for incoming call widget's each item. 
          */
-        public static final int incoming_call_widget_circle_size=0x7f070007;
+        public static final int incoming_call_widget_circle_size=0x7f090007;
         /**  Size of lockscreen outerring on unsecure unlock LockScreen 
          */
-        public static final int keyguard_lockscreen_outerring_diameter=0x7f070006;
+        public static final int keyguard_lockscreen_outerring_diameter=0x7f090006;
     }
     public static final class drawable {
-        public static final int ic_in_call_touch_handle=0x7f020000;
-        public static final int ic_in_call_touch_handle_normal=0x7f020001;
-        public static final int ic_launcher=0x7f020002;
-        public static final int ic_lockscreen_answer=0x7f020003;
-        public static final int ic_lockscreen_answer_activated=0x7f020004;
-        public static final int ic_lockscreen_answer_activated_layer=0x7f020005;
-        public static final int ic_lockscreen_answer_normal=0x7f020006;
-        public static final int ic_lockscreen_answer_normal_layer=0x7f020007;
-        public static final int ic_lockscreen_decline=0x7f020008;
-        public static final int ic_lockscreen_decline_activated=0x7f020009;
-        public static final int ic_lockscreen_decline_activated_layer=0x7f02000a;
-        public static final int ic_lockscreen_decline_normal=0x7f02000b;
-        public static final int ic_lockscreen_decline_normal_layer=0x7f02000c;
-        public static final int ic_lockscreen_glowdot=0x7f02000d;
-        public static final int ic_lockscreen_handle_pressed=0x7f02000e;
-        public static final int ic_lockscreen_outerring=0x7f02000f;
+        public static final int card_background_white=0x7f020000;
+        public static final int ic_action_refresh_dark=0x7f020001;
+        public static final int ic_action_select_all_dark=0x7f020002;
+        public static final int ic_in_call_touch_handle=0x7f020003;
+        public static final int ic_in_call_touch_handle_normal=0x7f020004;
+        public static final int ic_launcher=0x7f020005;
+        public static final int ic_lockscreen_answer=0x7f020006;
+        public static final int ic_lockscreen_answer_activated=0x7f020007;
+        public static final int ic_lockscreen_answer_activated_layer=0x7f020008;
+        public static final int ic_lockscreen_answer_normal=0x7f020009;
+        public static final int ic_lockscreen_answer_normal_layer=0x7f02000a;
+        public static final int ic_lockscreen_decline=0x7f02000b;
+        public static final int ic_lockscreen_decline_activated=0x7f02000c;
+        public static final int ic_lockscreen_decline_activated_layer=0x7f02000d;
+        public static final int ic_lockscreen_decline_normal=0x7f02000e;
+        public static final int ic_lockscreen_decline_normal_layer=0x7f02000f;
+        public static final int ic_lockscreen_glowdot=0x7f020010;
+        public static final int ic_lockscreen_handle_pressed=0x7f020011;
+        public static final int ic_lockscreen_outerring=0x7f020012;
+        public static final int ic_menu_moreoverflow_normal_holo_light=0x7f020013;
+        public static final int md__category_background=0x7f020014;
+        public static final int md__list_focused_holo=0x7f020015;
+        public static final int md__list_longpressed_holo=0x7f020016;
+        public static final int md__list_pressed_holo_dark=0x7f020017;
+        public static final int md__list_selector_background_transition_holo_dark=0x7f020018;
+        public static final int md__list_selector_disabled_holo_dark=0x7f020019;
+        public static final int md__list_selector_holo_dark=0x7f02001a;
+        public static final int menu_arrow=0x7f02001b;
+        public static final int menu_arrow_bottom=0x7f02001c;
+        public static final int menu_arrow_right=0x7f02001d;
+        public static final int menu_arrow_top=0x7f02001e;
     }
     public static final class id {
-        public static final int action_settings=0x7f050015;
-        public static final int advance_action_settings=0x7f050016;
-        public static final int appversion=0x7f050014;
+        public static final int action_settings=0x7f050020;
+        public static final int activity_googlecards_card_github=0x7f050015;
+        public static final int activity_googlecards_card_imageview=0x7f050016;
+        public static final int activity_googlecards_card_mail=0x7f050014;
+        public static final int activity_googlecards_card_textview=0x7f050013;
+        public static final int activity_googlecards_listview=0x7f050012;
+        public static final int advance_action_settings=0x7f050021;
+        public static final int appversion=0x7f05001f;
         public static final int bottom=0x7f050001;
-        public static final int btnLogin=0x7f050010;
+        public static final int btnLogin=0x7f05001b;
         public static final int center=0x7f050008;
         public static final int center_horizontal=0x7f050006;
         public static final int center_vertical=0x7f050004;
@@ -243,37 +364,79 @@ containing a value of this type.
         public static final int fill=0x7f050009;
         public static final int fill_horizontal=0x7f050007;
         public static final int fill_vertical=0x7f050005;
-        public static final int footer=0x7f05000d;
-        public static final int header=0x7f05000c;
-        public static final int incomingCallWidget=0x7f050013;
+        public static final int footer=0x7f050018;
+        public static final int header=0x7f050017;
+        public static final int incomingCallWidget=0x7f05001e;
         public static final int left=0x7f050002;
-        public static final int link_to_register=0x7f050011;
-        public static final int pass=0x7f05000f;
+        public static final int link_to_register=0x7f05001c;
+        /**  Used with View#setTag(int) to specify a position for the active view. 
+         */
+        public static final int mdActiveViewPosition=0x7f050011;
+        /**  ID used when defining the content layout in XML. 
+         */
+        public static final int mdContent=0x7f05000c;
+        /**  ID used when defining the menu layout in XML. 
+         */
+        public static final int mdMenu=0x7f05000d;
+        /**  The ID of the content container. 
+         */
+        public static final int md__content=0x7f05000e;
+        /**  The ID of the drawer. 
+         */
+        public static final int md__drawer=0x7f050010;
+        /**  The ID of the menu container. 
+         */
+        public static final int md__menu=0x7f05000f;
+        public static final int pass=0x7f05001a;
         public static final int right=0x7f050003;
-        public static final int textView1=0x7f050012;
+        public static final int textView1=0x7f05001d;
         public static final int top=0x7f050000;
-        public static final int uid=0x7f05000e;
+        public static final int uid=0x7f050019;
     }
     public static final class layout {
-        public static final int activity_login=0x7f030000;
-        public static final int activity_main=0x7f030001;
-        public static final int activity_splash=0x7f030002;
-        public static final int background_gradient=0x7f030003;
-        public static final int footer_repeat=0x7f030004;
-        public static final int header_gradient=0x7f030005;
+        public static final int activity_about=0x7f030000;
+        public static final int activity_account=0x7f030001;
+        public static final int activity_alerts=0x7f030002;
+        public static final int activity_googlecards=0x7f030003;
+        public static final int activity_googlecards_card=0x7f030004;
+        public static final int activity_information=0x7f030005;
+        public static final int activity_login=0x7f030006;
+        public static final int activity_main=0x7f030007;
+        public static final int activity_report_disaster1=0x7f030008;
+        public static final int activity_report_disaster2=0x7f030009;
+        public static final int activity_splash=0x7f03000a;
+        public static final int background_gradient=0x7f03000b;
+        public static final int footer_repeat=0x7f03000c;
+        public static final int header_gradient=0x7f03000d;
+        public static final int menu_row_category=0x7f03000e;
+        public static final int menu_row_item=0x7f03000f;
     }
     public static final class menu {
-        public static final int login=0x7f0a0000;
-        public static final int main=0x7f0a0001;
-        public static final int splash=0x7f0a0002;
+        public static final int about=0x7f0b0000;
+        public static final int about_us=0x7f0b0001;
+        public static final int account=0x7f0b0002;
+        public static final int alerts=0x7f0b0003;
+        public static final int information=0x7f0b0004;
+        public static final int login=0x7f0b0005;
+        public static final int main=0x7f0b0006;
+        public static final int report_disaster1=0x7f0b0007;
+        public static final int report_disaster2=0x7f0b0008;
+        public static final int splash=0x7f0b0009;
     }
     public static final class string {
-        public static final int action_settings=0x7f080001;
-        public static final int app_name=0x7f080000;
-        public static final int btn_toggle_multiplier=0x7f080005;
-        public static final int hello_world=0x7f080002;
-        public static final int title_activity_main=0x7f080004;
-        public static final int title_activity_splash=0x7f080003;
+        public static final int action_settings=0x7f0a0001;
+        public static final int app_name=0x7f0a0000;
+        public static final int btn_toggle_multiplier=0x7f0a0005;
+        public static final int hello_world=0x7f0a0002;
+        public static final int title_activity_about=0x7f0a000c;
+        public static final int title_activity_about_us=0x7f0a0008;
+        public static final int title_activity_account=0x7f0a0009;
+        public static final int title_activity_alerts=0x7f0a000a;
+        public static final int title_activity_information=0x7f0a000b;
+        public static final int title_activity_main=0x7f0a0004;
+        public static final int title_activity_report_disaster1=0x7f0a0006;
+        public static final int title_activity_report_disaster2=0x7f0a0007;
+        public static final int title_activity_splash=0x7f0a0003;
     }
     public static final class style {
         /** 
@@ -297,11 +460,23 @@ containing a value of this type.
     
  API 14 theme customizations can go here. 
          */
-        public static final int AppBaseTheme=0x7f090000;
+        public static final int AppBaseTheme=0x7f070002;
         /**  Application theme. 
  All customizations that are NOT specific to a particular API-level can go here. 
          */
-        public static final int AppTheme=0x7f090001;
+        public static final int AppTheme=0x7f070003;
+        public static final int MenuDrawer=0x7f070004;
+        public static final int MenuDrawer_Widget=0x7f070005;
+        public static final int MenuDrawer_Widget_Category=0x7f070006;
+        public static final int MenuDrawer_Widget_Title=0x7f070007;
+        public static final int MenuDrawerStyle=0x7f070008;
+        public static final int MenuDrawerStyle_Bottom=0x7f07000b;
+        public static final int MenuDrawerStyle_Right=0x7f070009;
+        public static final int MenuDrawerStyle_Top=0x7f07000a;
+        public static final int Widget=0x7f070000;
+        /**  Base theme for the menu drawer. 
+         */
+        public static final int Widget_MenuDrawer=0x7f070001;
     }
     public static final class xml {
         public static final int advancepreference=0x7f040000;
@@ -687,5 +862,207 @@ containing a value of this type.
           @attr name com.arpith.dmucs:gravity
         */
         public static final int LinearLayout_gravity = 0;
+        /**  Styleables used for styling the menu drawer. 
+           <p>Includes the following attributes:</p>
+           <table>
+           <colgroup align="left" />
+           <colgroup align="left" />
+           <tr><th>Attribute</th><th>Description</th></tr>
+           <tr><td><code>{@link #MenuDrawer_mdActiveIndicator com.arpith.dmucs:mdActiveIndicator}</code></td><td> Drawable used as indicator for the active view.</td></tr>
+           <tr><td><code>{@link #MenuDrawer_mdAllowIndicatorAnimation com.arpith.dmucs:mdAllowIndicatorAnimation}</code></td><td> Whether the indicator should be animated between active views.</td></tr>
+           <tr><td><code>{@link #MenuDrawer_mdContentBackground com.arpith.dmucs:mdContentBackground}</code></td><td> Drawable to use for the background of the content.</td></tr>
+           <tr><td><code>{@link #MenuDrawer_mdDropShadow com.arpith.dmucs:mdDropShadow}</code></td><td> Drawable used for the drop shadow.</td></tr>
+           <tr><td><code>{@link #MenuDrawer_mdDropShadowColor com.arpith.dmucs:mdDropShadowColor}</code></td><td> The color of the drop shadow.</td></tr>
+           <tr><td><code>{@link #MenuDrawer_mdDropShadowEnabled com.arpith.dmucs:mdDropShadowEnabled}</code></td><td> Defines whether the content will have a dropshadow onto the menu.</td></tr>
+           <tr><td><code>{@link #MenuDrawer_mdDropShadowSize com.arpith.dmucs:mdDropShadowSize}</code></td><td> The size of the drop shadow.</td></tr>
+           <tr><td><code>{@link #MenuDrawer_mdMaxAnimationDuration com.arpith.dmucs:mdMaxAnimationDuration}</code></td><td> The maximum animation duration </td></tr>
+           <tr><td><code>{@link #MenuDrawer_mdMenuBackground com.arpith.dmucs:mdMenuBackground}</code></td><td> Drawable to use for the background of the menu.</td></tr>
+           <tr><td><code>{@link #MenuDrawer_mdMenuSize com.arpith.dmucs:mdMenuSize}</code></td><td> The size of the menu.</td></tr>
+           <tr><td><code>{@link #MenuDrawer_mdTouchBezelSize com.arpith.dmucs:mdTouchBezelSize}</code></td><td> The touch bezel size.</td></tr>
+           </table>
+           @see #MenuDrawer_mdActiveIndicator
+           @see #MenuDrawer_mdAllowIndicatorAnimation
+           @see #MenuDrawer_mdContentBackground
+           @see #MenuDrawer_mdDropShadow
+           @see #MenuDrawer_mdDropShadowColor
+           @see #MenuDrawer_mdDropShadowEnabled
+           @see #MenuDrawer_mdDropShadowSize
+           @see #MenuDrawer_mdMaxAnimationDuration
+           @see #MenuDrawer_mdMenuBackground
+           @see #MenuDrawer_mdMenuSize
+           @see #MenuDrawer_mdTouchBezelSize
+         */
+        public static final int[] MenuDrawer = {
+            0x7f010012, 0x7f010013, 0x7f010014, 0x7f010015,
+            0x7f010016, 0x7f010017, 0x7f010018, 0x7f010019,
+            0x7f01001a, 0x7f01001b, 0x7f01001c
+        };
+        /**
+          <p>
+          @attr description
+           Drawable used as indicator for the active view. 
+
+
+          <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
+or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
+          <p>This is a private symbol.
+          @attr name com.arpith.dmucs:mdActiveIndicator
+        */
+        public static final int MenuDrawer_mdActiveIndicator = 3;
+        /**
+          <p>
+          @attr description
+           Whether the indicator should be animated between active views. 
+
+
+          <p>Must be a boolean value, either "<code>true</code>" or "<code>false</code>".
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+          <p>This is a private symbol.
+          @attr name com.arpith.dmucs:mdAllowIndicatorAnimation
+        */
+        public static final int MenuDrawer_mdAllowIndicatorAnimation = 9;
+        /**
+          <p>
+          @attr description
+           Drawable to use for the background of the content. 
+
+
+          <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
+or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
+          <p>This is a private symbol.
+          @attr name com.arpith.dmucs:mdContentBackground
+        */
+        public static final int MenuDrawer_mdContentBackground = 0;
+        /**
+          <p>
+          @attr description
+           Drawable used for the drop shadow. 
+
+
+          <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
+or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
+          <p>This is a private symbol.
+          @attr name com.arpith.dmucs:mdDropShadow
+        */
+        public static final int MenuDrawer_mdDropShadow = 7;
+        /**
+          <p>
+          @attr description
+           The color of the drop shadow. Default is #FF000000. 
+
+
+          <p>Must be a color value, in the form of "<code>#<i>rgb</i></code>", "<code>#<i>argb</i></code>",
+"<code>#<i>rrggbb</i></code>", or "<code>#<i>aarrggbb</i></code>".
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+          <p>This is a private symbol.
+          @attr name com.arpith.dmucs:mdDropShadowColor
+        */
+        public static final int MenuDrawer_mdDropShadowColor = 6;
+        /**
+          <p>
+          @attr description
+           Defines whether the content will have a dropshadow onto the menu. Default is true. 
+
+
+          <p>Must be a boolean value, either "<code>true</code>" or "<code>false</code>".
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+          <p>This is a private symbol.
+          @attr name com.arpith.dmucs:mdDropShadowEnabled
+        */
+        public static final int MenuDrawer_mdDropShadowEnabled = 4;
+        /**
+          <p>
+          @attr description
+           The size of the drop shadow. Default is 6dp 
+
+
+          <p>Must be a dimension value, which is a floating point number appended with a unit such as "<code>14.5sp</code>".
+Available units are: px (pixels), dp (density-independent pixels), sp (scaled pixels based on preferred font size),
+in (inches), mm (millimeters).
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+          <p>This is a private symbol.
+          @attr name com.arpith.dmucs:mdDropShadowSize
+        */
+        public static final int MenuDrawer_mdDropShadowSize = 5;
+        /**
+          <p>
+          @attr description
+           The maximum animation duration 
+
+
+          <p>Must be an integer value, such as "<code>100</code>".
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+          <p>This is a private symbol.
+          @attr name com.arpith.dmucs:mdMaxAnimationDuration
+        */
+        public static final int MenuDrawer_mdMaxAnimationDuration = 10;
+        /**
+          <p>
+          @attr description
+           Drawable to use for the background of the menu. 
+
+
+          <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
+or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
+          <p>This is a private symbol.
+          @attr name com.arpith.dmucs:mdMenuBackground
+        */
+        public static final int MenuDrawer_mdMenuBackground = 1;
+        /**
+          <p>
+          @attr description
+           The size of the menu. 
+
+
+          <p>Must be a dimension value, which is a floating point number appended with a unit such as "<code>14.5sp</code>".
+Available units are: px (pixels), dp (density-independent pixels), sp (scaled pixels based on preferred font size),
+in (inches), mm (millimeters).
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+          <p>This is a private symbol.
+          @attr name com.arpith.dmucs:mdMenuSize
+        */
+        public static final int MenuDrawer_mdMenuSize = 2;
+        /**
+          <p>
+          @attr description
+           The touch bezel size. 
+
+
+          <p>Must be a dimension value, which is a floating point number appended with a unit such as "<code>14.5sp</code>".
+Available units are: px (pixels), dp (density-independent pixels), sp (scaled pixels based on preferred font size),
+in (inches), mm (millimeters).
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+          <p>This is a private symbol.
+          @attr name com.arpith.dmucs:mdTouchBezelSize
+        */
+        public static final int MenuDrawer_mdTouchBezelSize = 8;
     };
 }

@@ -7,5 +7,12 @@
     <string name="title_activity_splash">Splash</string>
     <string name="title_activity_main">MainActivity</string>
     <string name="btn_toggle_multiplier">Toggle GlowPad mult</string>
+    <string name="title_activity_report_disaster1">ReportDisaster1</string>
+    <string name="title_activity_report_disaster2">ReportDisaster2</string>
+    <string name="title_activity_about_us">AboutUs</string>
+    <string name="title_activity_account">Account</string>
+    <string name="title_activity_alerts">Alerts</string>
+    <string name="title_activity_information">Information</string>
+    <string name="title_activity_about">About</string>
 
 </resources>

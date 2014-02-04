@@ -7,5 +7,11 @@
 <fullyQualifiedTypeName name="android.widget.Toast"/>
 <fullyQualifiedTypeName name="android.content.Intent"/>
 <fullyQualifiedTypeName name="com.arpith.dmucs.Login"/>
+<fullyQualifiedTypeName name="com.arpith.dmucs.Alerts"/>
+<fullyQualifiedTypeName name="com.arpith.dmucs.AboutUs"/>
 <fullyQualifiedTypeName name="com.arpith.dmucs.MainActivity"/>
+<fullyQualifiedTypeName name="com.arpith.dmucs.Information"/>
+<fullyQualifiedTypeName name="com.arpith.dmucs.ReportDisaster1"/>
+<fullyQualifiedTypeName name="com.arpith.dmucs.Account"/>
+<fullyQualifiedTypeName name="com.arpith.dmucs.About"/>
 </qualifiedTypeNameHistroy>

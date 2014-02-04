@@ -1,0 +1,103 @@
+package com.arpith.dmucs;
+import java.util.ArrayList;
+import java.util.List;
+
+import net.sebastianopoggi.ui.GlowPadBackport.GlowPadView;
+import net.simonvt.menudrawer.MenuDrawer;
+import net.simonvt.menudrawer.Position;
+import net.simonvt.menudrawer.samples.RightMenuSample.MenuAdapter;
+import android.app.Activity;
+import android.content.Intent;
+import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuItem;
+import android.view.View;
+import android.widget.ListView;
+import android.widget.TextView;
+import android.widget.Toast;
+
+public class MainActivity extends Activity {
+	
+	//Drawer-------------
+	private static final String STATE_ACTIVE_POSITION = "net.simonvt.menudrawer.samples.RightMenuSample.activePosition";
+    private static final String STATE_CONTENT_TEXT = "net.simonvt.menudrawer.samples.RightMenuSample.contentText";
+
+    private static final int MENU_OVERFLOW = 1;
+
+    private MenuDrawer mMenuDrawer;
+
+    private MenuAdapter mAdapter;
+    private ListView mList;
+
+    private int mActivePosition = -1;
+    private String mContentText;
+    private TextView mContentTextView;
+    //EndDrawer-------------
+
+	@Override
+	protected void onCreate(Bundle savedInstanceState) {
+		super.onCreate(savedInstanceState);
+		setContentView(R.layout.activity_main);
+	
+		final GlowPadView glowPad = (GlowPadView) findViewById(R.id.incomingCallWidget);
+
+		glowPad.setPointsMultiplier(8);
+
+		glowPad.ping();
+
+		glowPad.setOnTriggerListener(new GlowPadView.OnTriggerListener() {
+			@Override
+			public void onGrabbed(View v, int handle) {
+				// Do nothing
+			}
+
+			@Override
+			public void onReleased(View v, int handle) {
+				// Do nothing
+			}
+
+			@Override
+			public void onTrigger(View v, int target) {
+				Toast.makeText(MainActivity.this,
+						"Target triggered! ID=" + target, Toast.LENGTH_SHORT)
+						.show();
+				glowPad.reset(true);
+			}
+
+			@Override
+			public void onGrabbedStateChange(View v, int handle) {
+				// Do nothing
+			}
+
+			@Override
+			public void onFinishFinalAnimation() {
+				// Do nothing
+			}
+		});
+
+	}
+
+	@Override
+	public boolean onCreateOptionsMenu(Menu menu) {
+		// Inflate the menu; this adds items to the action bar if it is present.
+		getMenuInflater().inflate(R.menu.main, menu);
+		return true;
+	}
+
+	// This method is called once the menu is selected
+
+	@Override
+	public boolean onOptionsItemSelected(MenuItem item) {
+		switch (item.getItemId()) {
+		case R.id.action_settings: // Launch settings activity
+			Intent i = new Intent(this, Preference.class);
+			startActivity(i);
+			break;
+		case R.id.advance_action_settings:
+			Intent i2 = new Intent(this, APreference.class);
+			startActivity(i2);
+			break;
+		}
+		return true;
+	}
+}
