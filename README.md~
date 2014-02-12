@@ -1,6 +1,17 @@
 Disaster Management Using Crowdsourcing
 =======================================
 
+Developed By
+--------------------
+* Arpith K
+* Manigandan
+* Kumar Vishal
+* Vinutha
+
+Project Guide
+-------------
+* Mrs Bidisha Goswami
+
 Project Description
 -----------
 Crowdsourcing is a method of information collection which utilizes data received from volunteers.
@@ -28,16 +39,6 @@ emergency management professionals can also receive most of the information they
 for preparing themselves to perform a timely and accurate treatment of their patients 
 even before dispatching a response team to the event.  
 
-Developed By
---------------------
-* Arpith K
-* Manigandan
-* Kumar Vishal
-* Vinutha
-
-Project Guide
--------------
-* Mrs Bidisha
 
 License
 -----------

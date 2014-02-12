@@ -81,6 +81,10 @@
             android:name="com.arpith.dmucs.About"
             android:label="@string/title_activity_about" >
         </activity>
+        <activity
+            android:name="com.arpith.dmucs.QuickReport"
+            android:label="@string/title_activity_quick_report" >
+        </activity>
     </application>
 
 </manifest>

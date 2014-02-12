@@ -93,7 +93,7 @@ public class MainActivity extends Activity {
 				switch(target)
 				{
 				case 0:
-					i=new Intent(MainActivity.this,ReportDisaster1.class);
+					i=new Intent(MainActivity.this,QuickReport.class);
 					startActivity(i);
 					break;
 				case 2:

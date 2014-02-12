@@ -14,4 +14,8 @@
 <fullyQualifiedTypeName name="com.arpith.dmucs.ReportDisaster1"/>
 <fullyQualifiedTypeName name="com.arpith.dmucs.Account"/>
 <fullyQualifiedTypeName name="com.arpith.dmucs.About"/>
+<fullyQualifiedTypeName name="co.juliansuarez.libwizardpager.wizard.model.MultipleFixedChoicePage"/>
+<fullyQualifiedTypeName name="co.juliansuarez.libwizardpager.wizard.model.NumberPage"/>
+<fullyQualifiedTypeName name="com.arpith.dmucs.QuickReport"/>
+<fullyQualifiedTypeName name="android.widget.ArrayAdapter"/>
 </qualifiedTypeNameHistroy>
