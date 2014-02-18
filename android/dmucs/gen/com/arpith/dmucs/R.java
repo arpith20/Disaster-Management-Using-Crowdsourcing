@@ -1427,18 +1427,19 @@ containing a value of this type.
         public static final int activity_quick_report=0x7f03001d;
         public static final int activity_report_disaster1=0x7f03001e;
         public static final int activity_report_disaster2=0x7f03001f;
-        public static final int activity_splash=0x7f030020;
-        public static final int background_gradient=0x7f030021;
-        public static final int footer_repeat=0x7f030022;
-        public static final int fragment_page=0x7f030023;
-        public static final int fragment_page_customer_info=0x7f030024;
-        public static final int fragment_page_text=0x7f030025;
-        public static final int header_gradient=0x7f030026;
-        public static final int list_item_review=0x7f030027;
-        public static final int menu_row_category=0x7f030028;
-        public static final int menu_row_item=0x7f030029;
-        public static final int sherlock_spinner_dropdown_item=0x7f03002a;
-        public static final int sherlock_spinner_item=0x7f03002b;
+        public static final int activity_report_server=0x7f030020;
+        public static final int activity_splash=0x7f030021;
+        public static final int background_gradient=0x7f030022;
+        public static final int footer_repeat=0x7f030023;
+        public static final int fragment_page=0x7f030024;
+        public static final int fragment_page_customer_info=0x7f030025;
+        public static final int fragment_page_text=0x7f030026;
+        public static final int header_gradient=0x7f030027;
+        public static final int list_item_review=0x7f030028;
+        public static final int menu_row_category=0x7f030029;
+        public static final int menu_row_item=0x7f03002a;
+        public static final int sherlock_spinner_dropdown_item=0x7f03002b;
+        public static final int sherlock_spinner_item=0x7f03002c;
     }
     public static final class menu {
         public static final int about=0x7f0d0000;

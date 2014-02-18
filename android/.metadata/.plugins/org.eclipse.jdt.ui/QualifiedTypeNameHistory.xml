@@ -4,7 +4,6 @@
 <fullyQualifiedTypeName name="android.widget.Button"/>
 <fullyQualifiedTypeName name="com.arpith.dmucs.R.id"/>
 <fullyQualifiedTypeName name="android.view.View.OnClickListener"/>
-<fullyQualifiedTypeName name="android.widget.Toast"/>
 <fullyQualifiedTypeName name="android.content.Intent"/>
 <fullyQualifiedTypeName name="com.arpith.dmucs.Login"/>
 <fullyQualifiedTypeName name="com.arpith.dmucs.Alerts"/>
@@ -16,6 +15,8 @@
 <fullyQualifiedTypeName name="com.arpith.dmucs.About"/>
 <fullyQualifiedTypeName name="co.juliansuarez.libwizardpager.wizard.model.MultipleFixedChoicePage"/>
 <fullyQualifiedTypeName name="co.juliansuarez.libwizardpager.wizard.model.NumberPage"/>
-<fullyQualifiedTypeName name="com.arpith.dmucs.QuickReport"/>
 <fullyQualifiedTypeName name="android.widget.ArrayAdapter"/>
+<fullyQualifiedTypeName name="com.arpith.dmucs.QuickReport"/>
+<fullyQualifiedTypeName name="android.widget.Toast"/>
+<fullyQualifiedTypeName name="com.arpith.dmucs.ReportServer"/>
 </qualifiedTypeNameHistroy>

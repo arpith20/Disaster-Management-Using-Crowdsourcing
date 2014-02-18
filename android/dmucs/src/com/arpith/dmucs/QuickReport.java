@@ -1,7 +1,8 @@
 package com.arpith.dmucs;
 
-import android.os.Bundle;
 import android.app.Activity;
+import android.content.Intent;
+import android.os.Bundle;
 import android.view.Menu;
 
 public class QuickReport extends Activity {
@@ -11,6 +12,8 @@ public class QuickReport extends Activity {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_quick_report);
 		
+		Intent i = new Intent (QuickReport.this, ReportServer.class);
+		startActivity(i);
 		
 	}
 

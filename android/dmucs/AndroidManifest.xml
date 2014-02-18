@@ -6,7 +6,9 @@
 
     <uses-sdk
         android:minSdkVersion="15"
-        android:targetSdkVersion="18" />
+        android:targetSdkVersion="19" />
+    
+    <uses-permission android:name="android.permission.INTERNET" />
 
     <application
         android:allowBackup="true"
@@ -84,6 +86,10 @@
         <activity
             android:name="com.arpith.dmucs.QuickReport"
             android:label="@string/title_activity_quick_report" >
+        </activity>
+        <activity
+            android:name="com.arpith.dmucs.ReportServer"
+            android:label="@string/title_activity_main" >
         </activity>
     </application>
 
