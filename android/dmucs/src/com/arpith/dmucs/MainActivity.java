@@ -86,13 +86,13 @@ public class MainActivity extends Activity {
 			}
 			@Override
 			public void onTrigger(View v, int target) {
-				Toast.makeText(MainActivity.this,
-						"Target triggered! ID=" + target, Toast.LENGTH_SHORT)
-						.show();
 				Intent i;
 				switch(target)
 				{
 				case 0:
+					Toast.makeText(MainActivity.this,
+							"Report Disaster", Toast.LENGTH_SHORT)
+							.show();
 					i=new Intent(MainActivity.this,QuickReport.class);
 					startActivity(i);
 					break;

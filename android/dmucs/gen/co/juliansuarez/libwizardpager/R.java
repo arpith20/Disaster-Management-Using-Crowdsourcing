@@ -311,7 +311,7 @@ public final class R {
 		public static final int abs__title = 0x7f05002d;
 		public static final int abs__up = 0x7f05000b;
 		public static final int disableHome = 0x7f050009;
-		public static final int editTextInput = 0x7f050062;
+		public static final int editTextInput = 0x7f050063;
 		public static final int edit_query = 0x7f050038;
 		public static final int homeAsUp = 0x7f050006;
 		public static final int listMode = 0x7f050002;
@@ -322,8 +322,8 @@ public final class R {
 		public static final int tabMode = 0x7f050003;
 		public static final int useLogo = 0x7f050004;
 		public static final int wrap_content = 0x7f050000;
-		public static final int your_email = 0x7f050061;
-		public static final int your_name = 0x7f050060;
+		public static final int your_email = 0x7f050062;
+		public static final int your_name = 0x7f050061;
 	}
 	public static final class integer {
 		public static final int abs__max_action_buttons = 0x7f090000;

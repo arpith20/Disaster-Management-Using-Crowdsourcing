@@ -12,8 +12,8 @@ public class QuickReport extends Activity {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_quick_report);
 		
-		Intent i = new Intent (QuickReport.this, ReportServer.class);
-		startActivity(i);
+		//Intent i = new Intent (QuickReport.this, ReportServer.class);
+		//startActivity(i);
 		
 	}
 

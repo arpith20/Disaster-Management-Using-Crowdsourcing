@@ -1,0 +1,204 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@layout/background_gradient"
+    android:orientation="vertical" >
+
+    <TextView
+        android:id="@+id/textView1"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:fontFamily="sans-serif-light"
+        android:gravity="center_horizontal"
+        android:padding="10sp"
+        android:text="Give Summary of the incident"
+        android:textColor="@android:color/white"
+        android:textSize="20sp" />
+
+    <TextView
+        android:id="@+id/textView1"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:fontFamily="sans-serif-light"
+        android:gravity="left"
+        android:paddingTop="10sp"
+        android:text="Type of incident"
+        android:textColor="@android:color/white"
+        android:textSize="15sp" />
+
+    <Spinner
+        android:id="@+id/category_spinner"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:prompt="@string/spinner_title" />
+
+    <TextView
+        android:id="@+id/textView1"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:fontFamily="sans-serif-light"
+        android:gravity="left"
+        android:paddingTop="10sp"
+        android:text="Number of casualities"
+        android:textColor="@android:color/white"
+        android:textSize="15sp" />
+
+    <com.makeramen.segmented.SegmentedRadioGroup
+        android:id="@+id/id_casuality"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dip"
+        android:checkedButton="@+id/b4"
+        android:orientation="horizontal" >
+
+        <RadioButton
+            android:id="@+id/b1"
+            android:button="@null"
+            android:gravity="center"
+            android:minHeight="33dip"
+            android:minWidth="40dip"
+            android:text="1-10"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:textColor="@color/radio_colors" />
+
+        <RadioButton
+            android:id="@+id/b2"
+            android:button="@null"
+            android:gravity="center"
+            android:minHeight="33dip"
+            android:minWidth="40dip"
+            android:text="10-50"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:textColor="@color/radio_colors" />
+
+        <RadioButton
+            android:id="@+id/b3"
+            android:button="@null"
+            android:gravity="center"
+            android:minHeight="33dip"
+            android:minWidth="40dip"
+            android:text="50-200"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:textColor="@color/radio_colors" />
+
+        <RadioButton
+            android:id="@+id/b4"
+            android:button="@null"
+            android:gravity="center"
+            android:minHeight="33dip"
+            android:minWidth="40dip"
+            android:text="NA"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:textColor="@color/radio_colors" />
+    </com.makeramen.segmented.SegmentedRadioGroup>
+
+    <TextView
+        android:id="@+id/textView1"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:fontFamily="sans-serif-light"
+        android:gravity="left"
+        android:paddingTop="10sp"
+        android:text="Were you affected?"
+        android:textColor="@android:color/white"
+        android:textSize="15sp" />
+
+    <com.makeramen.segmented.SegmentedRadioGroup
+        android:id="@+id/id_you"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dip"
+        android:checkedButton="@+id/b1"
+        android:orientation="horizontal" >
+
+        <RadioButton
+            android:id="@+id/b1"
+            android:button="@null"
+            android:gravity="center"
+            android:minHeight="33dip"
+            android:minWidth="40dip"
+            android:text="Yes"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:textColor="@color/radio_colors" />
+
+        <RadioButton
+            android:id="@+id/b2"
+            android:button="@null"
+            android:gravity="center"
+            android:minHeight="33dip"
+            android:minWidth="40dip"
+            android:text="No"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:textColor="@color/radio_colors" />
+    </com.makeramen.segmented.SegmentedRadioGroup>
+
+    <TextView
+        android:id="@+id/textView1"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:fontFamily="sans-serif-light"
+        android:gravity="left"
+        android:paddingTop="10sp"
+        android:text="Any family members missing?"
+        android:textColor="@android:color/white"
+        android:textSize="15sp" />
+
+    <com.makeramen.segmented.SegmentedRadioGroup
+        android:id="@+id/id_missing"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dip"
+        android:checkedButton="@+id/b1"
+        android:orientation="horizontal" >
+
+        <RadioButton
+            android:id="@+id/b2"
+            android:button="@null"
+            android:gravity="center"
+            android:minHeight="33dip"
+            android:minWidth="40dip"
+            android:text="Yes"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:textColor="@color/radio_colors" />
+
+        <RadioButton
+            android:id="@+id/b2"
+            android:button="@null"
+            android:gravity="center"
+            android:minHeight="33dip"
+            android:minWidth="40dip"
+            android:text="No"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:textColor="@color/radio_colors" />
+    </com.makeramen.segmented.SegmentedRadioGroup>
+
+    <TextView
+        android:id="@+id/textView1"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:fontFamily="sans-serif-light"
+        android:gravity="left"
+        android:paddingTop="10sp"
+        android:text="Comments"
+        android:textColor="@android:color/white"
+        android:textSize="15sp" />
+
+    <EditText
+        android:id="@+id/et_comment"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10" >
+
+        <requestFocus />
+    </EditText>
+
+    <Button
+        android:layout_marginTop="20dp"
+        android:id="@+id/button1"
+        android:background="@drawable/button_border"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="20sp"
+        android:text="Submit" />
+
+</LinearLayout>
