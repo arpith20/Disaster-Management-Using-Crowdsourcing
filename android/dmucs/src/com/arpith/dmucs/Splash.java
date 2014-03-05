@@ -28,7 +28,7 @@ public class Splash extends Activity {
 			Intent openMainPage = new Intent("android.intent.action.LOGIN");
 			startActivity(openMainPage);
 		} else {
-			app_version=(TextView)findViewById(R.id.appversion);
+			app_version=(TextView)findViewById(R.id.AppVersion);
 			try {
 				versionName = this.getPackageManager().getPackageInfo(
 						this.getPackageName(), 0).versionName;

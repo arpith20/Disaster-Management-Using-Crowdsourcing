@@ -7,7 +7,7 @@
     <uses-sdk
         android:minSdkVersion="15"
         android:targetSdkVersion="19" />
-    
+
     <uses-permission android:name="android.permission.INTERNET" />
 
     <application
@@ -27,7 +27,8 @@
         </activity>
         <activity
             android:name="com.arpith.dmucs.Splash"
-            android:label="@string/title_activity_splash" >
+            android:label="@string/title_activity_splash"
+            android:theme="@android:style/Theme.Holo.Light.NoActionBar" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
