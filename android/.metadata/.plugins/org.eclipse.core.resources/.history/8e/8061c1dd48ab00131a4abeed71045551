@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg" >
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" >
+
+       
+        <ImageButton
+            android:id="@+id/hprofile_photo"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_margin="10dp"
+            android:adjustViewBounds="true"
+            android:background="#ffffff"
+            android:maxHeight="100dp"
+            android:maxWidth="100dp"
+            android:padding="4dp"
+            android:scaleType="fitXY"
+            android:src="@drawable/loading" />
+
+        <TextView
+            android:id="@+id/hperson_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@id/hprofile_photo"
+            android:text="Karan Rajpal"
+            android:textColor="#ffffff"
+            android:textSize="25dp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/hticket_number"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/hperson_name"
+            android:layout_marginTop="10dp"
+            android:layout_toRightOf="@id/hprofile_photo"
+            android:text="Ticket Id : "
+            android:textColor="#ffffff"
+            android:textSize="16dp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/hticket_num"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/hperson_name"
+            android:layout_marginTop="10dp"
+            android:layout_toRightOf="@id/hticket_number"
+            android:text="qqqqwwww44"
+            android:textColor="#eeeeee"
+            android:textSize="16dp" />
+
+        <TextView
+            android:id="@+id/hteam_of_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/hticket_number"
+            android:layout_marginTop="10dp"
+            android:layout_toRightOf="@id/hprofile_photo"
+            android:text="Team : "
+            android:textColor="#ffffff"
+            android:textSize="16dp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/hteam_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/hticket_number"
+            android:layout_marginTop="10dp"
+            android:layout_toRightOf="@id/hteam_of_text"
+            android:text="Gryffindor"
+            android:textColor="#eeeeee"
+            android:textSize="16dp" />
+
+        <View
+            android:id="@+id/line_break"
+            android:layout_width="fill_parent"
+            android:layout_height="1dp"
+            android:layout_marginTop="6dp"
+            android:layout_below="@id/hprofile_photo"
+            android:background="#eeeeee" />
+
+        <TextView
+            android:id="@+id/huser_description_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/line_break"
+            android:layout_margin="5dp"
+            android:text="Description "
+            android:textColor="#b6b4fe"
+            android:textSize="25dp"
+            android:textStyle="bold" >
+        </TextView>
+
+        <TextView
+            android:id="@+id/huser_description"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/huser_description_text"
+            android:paddingLeft="10dp"
+            android:text="dummy text"
+            android:textColor="#ffffff"
+            android:textSize="20dp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/hclass_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/huser_description"
+            android:layout_margin="5dp"
+            android:text="Class/Section"
+            android:textColor="#b6b4fe"
+            android:textSize="25dp"
+            android:textStyle="bold" >
+        </TextView>
+
+        <TextView
+            android:id="@+id/huser_class_text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/hclass_text"
+            android:paddingLeft="10dp"
+            android:text="dummy text"
+            android:textColor="#ffffff"
+            android:textSize="20dp"
+            android:textStyle="bold" />
+    </RelativeLayout>
+
+</ScrollView>

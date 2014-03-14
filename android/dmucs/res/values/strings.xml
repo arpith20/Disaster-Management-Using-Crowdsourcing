@@ -20,17 +20,9 @@
     <string name="submit_confirm_message">Submit report?</string>
     <string name="submit_confirm_button">Place order</string>
     <string name="title_activity_quick_report">QuickReport</string>
-    
-    <string name="spinner_title">Select Category
-        <item>Mercury</item>
-        <item>Venus</item>
-        <item>Earth</item>
-        <item>Mars</item>
-        <item>Jupiter</item>
-        <item>Saturn</item>
-        <item>Uranus</item>
-        <item>Neptune</item>
-        
-        </string>
+    <string name="spinner_title">Select Category<item>Mercury</item><item>Venus</item><item>Earth</item><item>Mars</item><item>Jupiter</item><item>Saturn</item><item>Uranus</item><item>Neptune</item></string>
+    <string name="title_activity_missing_person_info">Missing Person</string>
+    <string name="title_activity_situation_report">Situation Report</string>
+    <string name="title_activity_missing_person_report">MissingPersonReport</string>
 
 </resources>

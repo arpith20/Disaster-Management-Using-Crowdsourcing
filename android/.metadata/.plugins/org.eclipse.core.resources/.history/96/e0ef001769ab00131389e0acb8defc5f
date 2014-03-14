@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@layout/background_gradient"
+    android:padding="20dp" >
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" >
+
+       
+        <ImageButton
+            android:id="@+id/account_photo"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_margin="10dp"
+            android:adjustViewBounds="true"
+            android:background="#ffffff"
+            android:maxHeight="100dp"
+            android:maxWidth="100dp"
+            android:padding="4dp"
+            android:scaleType="fitXY"
+            android:src="@drawable/loading" />
+
+        <TextView
+            android:id="@+id/account_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@id/account_photo"
+            android:text="Loading"
+            android:textColor="#ffffff"
+            android:textSize="25dp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/account_phone"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/account_name"
+            android:layout_marginTop="10dp"
+            android:layout_toRightOf="@id/account_photo"
+            android:text="Phone Number: "
+            android:textColor="#ffffff"
+            android:textSize="16dp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/account_phoneno"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_below="@id/account_name"
+            android:layout_marginTop="10dp"
+            android:layout_toRightOf="@id/account_phone"
+            android:text="9999999999"
+            android:textColor="#eeeeee"
+            android:textSize="16dp"
+            android:gravity="right" />
+
+        <TextView
+            android:id="@+id/account_dobT"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/account_phone"
+            android:layout_marginTop="10dp"
+            android:layout_toRightOf="@id/account_photo"
+            android:text="Date of Birth: "
+            android:textColor="#ffffff"
+            android:textSize="16dp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/account_dob"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_below="@id/account_phone"
+            android:layout_marginTop="10dp"
+            android:layout_toRightOf="@id/account_dobT"
+            android:text="20/11/1992"
+            android:textColor="#eeeeee"
+            android:textSize="16dp"
+            android:gravity="right" />
+
+        <View
+            android:id="@+id/line_break"
+            android:layout_width="fill_parent"
+            android:layout_height="1dp"
+            android:layout_marginTop="6dp"
+            android:layout_below="@id/account_photo"
+            android:background="#eeeeee" />
+
+        <TextView
+            android:id="@+id/account_homeT"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/line_break"
+            android:layout_margin="5dp"
+            android:text="Home Location "
+            android:textColor="@android:color/white"
+            android:textSize="25dp"
+            android:textStyle="bold" >
+        </TextView>
+
+        <TextView
+            android:id="@+id/account_home"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/account_homeT"
+            android:paddingLeft="10dp"
+            android:text="dummy text"
+            android:textColor="#ffffff"
+            android:textSize="20dp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/account_currentT"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/account_home"
+            android:layout_margin="5dp"
+            android:text="Current Location"
+            android:textColor="@android:color/white"
+            android:textSize="25dp"
+            android:textStyle="bold" >
+        </TextView>
+
+        <TextView
+            android:id="@+id/account_current"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/account_currentT"
+            android:paddingLeft="10dp"
+            android:text="dummy text"
+            android:textColor="#ffffff"
+            android:textSize="20dp"
+            android:textStyle="bold" />
+
+        <Button
+            android:id="@+id/button_home"
+            style="?android:attr/buttonStyleSmall"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@+id/account_home"
+            android:layout_alignParentRight="true"
+            android:text="View" />
+
+        <Button
+            android:id="@+id/button_current"
+            style="?android:attr/buttonStyleSmall"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@+id/account_current"
+            android:layout_alignParentRight="true"
+            android:text="View" />
+
+    </RelativeLayout>
+
+</ScrollView>

@@ -311,7 +311,7 @@ public final class R {
 		public static final int abs__title = 0x7f05002d;
 		public static final int abs__up = 0x7f05000b;
 		public static final int disableHome = 0x7f050009;
-		public static final int editTextInput = 0x7f050063;
+		public static final int editTextInput = 0x7f050076;
 		public static final int edit_query = 0x7f050038;
 		public static final int homeAsUp = 0x7f050006;
 		public static final int listMode = 0x7f050002;
@@ -322,8 +322,8 @@ public final class R {
 		public static final int tabMode = 0x7f050003;
 		public static final int useLogo = 0x7f050004;
 		public static final int wrap_content = 0x7f050000;
-		public static final int your_email = 0x7f050062;
-		public static final int your_name = 0x7f050061;
+		public static final int your_email = 0x7f050075;
+		public static final int your_name = 0x7f050074;
 	}
 	public static final class integer {
 		public static final int abs__max_action_buttons = 0x7f090000;
@@ -350,12 +350,12 @@ public final class R {
 		public static final int abs__search_dropdown_item_icons_2line = 0x7f030012;
 		public static final int abs__search_view = 0x7f030013;
 		public static final int abs__simple_dropdown_hint = 0x7f030014;
-		public static final int fragment_page = 0x7f030024;
-		public static final int fragment_page_customer_info = 0x7f030025;
-		public static final int fragment_page_text = 0x7f030026;
-		public static final int list_item_review = 0x7f030028;
-		public static final int sherlock_spinner_dropdown_item = 0x7f03002b;
-		public static final int sherlock_spinner_item = 0x7f03002c;
+		public static final int fragment_page = 0x7f030027;
+		public static final int fragment_page_customer_info = 0x7f030028;
+		public static final int fragment_page_text = 0x7f030029;
+		public static final int list_item_review = 0x7f03002b;
+		public static final int sherlock_spinner_dropdown_item = 0x7f03002e;
+		public static final int sherlock_spinner_item = 0x7f03002f;
 	}
 	public static final class string {
 		public static final int abs__action_bar_home_description = 0x7f0a0000;

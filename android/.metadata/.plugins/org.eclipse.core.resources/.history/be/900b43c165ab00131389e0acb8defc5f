@@ -1,0 +1,14 @@
+package com.arpith.dmucs;
+
+import android.content.SharedPreferences;
+import android.preference.PreferenceManager;
+
+public class GetIP {
+	public String getIP (String file){
+		String url;
+		SharedPreferences getIP = PreferenceManager
+				.getDefaultSharedPreferences(Account.class);
+		
+		return url;
+	}
+}
