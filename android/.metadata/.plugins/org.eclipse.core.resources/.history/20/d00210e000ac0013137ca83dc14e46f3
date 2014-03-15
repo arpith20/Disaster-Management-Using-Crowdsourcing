@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.arpith.dmucs"
+    android:versionCode="1"
+    android:versionName="1.0" >
+
+    <uses-sdk
+        android:minSdkVersion="15"
+        android:targetSdkVersion="19" />
+
+    <uses-permission android:name="android.permission.INTERNET" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@drawable/ic_launcher"
+        android:label="@string/app_name"
+        android:theme="@style/AppTheme" >
+        <activity
+            android:name="com.arpith.dmucs.Login"
+            android:label="@string/app_name"
+            android:theme="@android:style/Theme.Holo.Light.NoActionBar" >
+            <intent-filter>
+                <action android:name="android.intent.action.LOGIN" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.arpith.dmucs.Splash"
+            android:label="@string/title_activity_splash"
+            android:theme="@android:style/Theme.Holo.Light.NoActionBar" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.arpith.dmucs.Preference"
+            android:label="Preferences"
+            android:screenOrientation="portrait" >
+            <intent-filter>
+                <action android:name="android.intent.action.PREFERENCE" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.arpith.dmucs.APreference"
+            android:label="Preferences"
+            android:screenOrientation="portrait" >
+            <intent-filter>
+                <action android:name="android.intent.action.APREFERENCE" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.arpith.dmucs.MainActivity"
+            android:label="@string/title_activity_main"
+            android:theme="@android:style/Theme.Holo.Light.NoActionBar" >
+        </activity>
+        <activity
+            android:name="com.arpith.dmucs.ReportDisaster1"
+            android:label="@string/title_activity_report_disaster1" >
+        </activity>
+        <activity
+            android:name="com.arpith.dmucs.ReportDisaster2"
+            android:label="@string/title_activity_report_disaster2" >
+        </activity>
+        <activity
+            android:name="com.arpith.dmucs.Account"
+            android:label="@string/title_activity_account" >
+        </activity>
+        <activity
+            android:name="com.arpith.dmucs.Alerts"
+            android:label="@string/title_activity_alerts" >
+        </activity>
+        <activity
+            android:name="com.arpith.dmucs.Information"
+            android:label="@string/title_activity_information" >
+        </activity>
+        <activity
+            android:name="com.arpith.dmucs.About"
+            android:label="@string/title_activity_about" >
+        </activity>
+        <activity
+            android:name="com.arpith.dmucs.QuickReport"
+            android:label="Report a Disaster" >
+        </activity>
+        <activity
+            android:name="com.arpith.dmucs.ReportServer"
+            android:label="Report" >
+        </activity>
+        <activity
+            android:name="com.arpith.dmucs.MissingPersonInfo"
+            android:label="@string/title_activity_missing_person_info" >
+        </activity>
+        <activity
+            android:name="com.arpith.dmucs.SituationReport"
+            android:label="@string/title_activity_situation_report" >
+        </activity>
+        <activity
+            android:name="com.arpith.dmucs.MissingPersonReport"
+            android:label="@string/title_activity_missing_person_report" >
+        </activity>
+        <activity
+            android:name="com.arpith.dmucs.Map"
+            android:label="@string/title_activity_map" >
+        </activity>
+    </application>
+
+</manifest>
