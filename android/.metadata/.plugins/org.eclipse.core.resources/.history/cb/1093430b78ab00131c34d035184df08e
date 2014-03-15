@@ -1,0 +1,152 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@layout/background_gradient"
+    tools:context=".MissingPersonInfo" >
+
+    <com.sothree.slidinguppanel.SlidingUpPanelLayout
+        android:id="@+id/sliding_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" >
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" >
+
+            <WebView
+                android:id="@+id/account_photo"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:layout_margin="10dp"
+                android:adjustViewBounds="true"
+                android:background="#ffffff"
+                android:maxHeight="100dp"
+                android:maxWidth="100dp"
+                android:padding="4dp"
+                android:scaleType="fitXY" />
+
+            <TextView
+                android:id="@+id/account_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@id/account_photo"
+                android:text="Loading"
+                android:textColor="#ffffff"
+                android:textSize="25dp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/account_phone"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/account_name"
+                android:layout_marginTop="10dp"
+                android:layout_toRightOf="@id/account_photo"
+                android:text="Phone Number: "
+                android:textColor="#ffffff"
+                android:textSize="16dp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/account_phoneno"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_below="@id/account_name"
+                android:layout_marginTop="10dp"
+                android:layout_toRightOf="@id/account_phone"
+                android:gravity="right"
+                android:text="9999999999"
+                android:textColor="#eeeeee"
+                android:textSize="16dp" />
+
+            <TextView
+                android:id="@+id/account_dobT"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/account_phone"
+                android:layout_marginTop="10dp"
+                android:layout_toRightOf="@id/account_photo"
+                android:text="Date of Birth: "
+                android:textColor="#ffffff"
+                android:textSize="16dp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/account_dob"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_below="@id/account_phone"
+                android:layout_marginTop="10dp"
+                android:layout_toRightOf="@id/account_dobT"
+                android:gravity="right"
+                android:text="20/11/1992"
+                android:textColor="#eeeeee"
+                android:textSize="16dp" />
+
+            <View
+                android:id="@+id/line_break"
+                android:layout_width="fill_parent"
+                android:layout_height="1dp"
+                android:layout_below="@id/account_photo"
+                android:layout_marginTop="6dp"
+                android:background="#eeeeee" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="#eee"
+                android:orientation="vertical" >
+
+                <TextView
+                    android:id="@+id/tv_q"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center|bottom"
+                    android:text=""
+                    android:textSize="20sp" />
+
+                <TextView
+                    android:id="@+id/brought_by"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:autoLink="web"
+                    android:gravity="center|top"
+                    android:text="Please Wait.."
+                    android:textSize="16sp" />
+            </LinearLayout>
+        </RelativeLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="#eee"
+            android:orientation="vertical" >
+
+            <TextView
+                android:id="@+id/tv_q"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center|bottom"
+                android:text=""
+                android:textSize="20sp" />
+
+            <TextView
+                android:id="@+id/brought_by"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:autoLink="web"
+                android:gravity="center|top"
+                android:text="Please Wait.."
+                android:textSize="16sp" />
+
+            <WebView
+                android:id="@+id/webView"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent" />
+        </LinearLayout>
+    </com.sothree.slidinguppanel.SlidingUpPanelLayout>
+
+</RelativeLayout>

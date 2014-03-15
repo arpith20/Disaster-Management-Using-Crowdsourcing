@@ -19,9 +19,11 @@
 <fullyQualifiedTypeName name="android.view.View.OnClickListener"/>
 <fullyQualifiedTypeName name="android.content.Intent"/>
 <fullyQualifiedTypeName name="com.arpith.dmucs.QuickReport"/>
-<fullyQualifiedTypeName name="android.widget.ImageView"/>
 <fullyQualifiedTypeName name="android.widget.ArrayAdapter"/>
 <fullyQualifiedTypeName name="android.widget.Toast"/>
 <fullyQualifiedTypeName name="android.widget.TextView"/>
+<fullyQualifiedTypeName name="com.arpith.dmucs.MissingPersonInfo"/>
+<fullyQualifiedTypeName name="android.webkit.WebView"/>
 <fullyQualifiedTypeName name="com.arpith.dmucs.R.id"/>
+<fullyQualifiedTypeName name="android.widget.ImageView"/>
 </qualifiedTypeNameHistroy>

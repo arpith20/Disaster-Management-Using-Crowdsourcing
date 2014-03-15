@@ -154,7 +154,7 @@ public class MainActivity extends Activity {
 				finish();
 				break;
 			case 1:
-				i = new Intent(MainActivity.this, Alerts.class);
+				i = new Intent(MainActivity.this, MissingPersonInfo.class);
 				startActivity(i);
 				break;
 			case 2:
