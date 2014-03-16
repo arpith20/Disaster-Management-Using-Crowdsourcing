@@ -1,0 +1,94 @@
+package com.arpith.dmucs;
+
+import android.app.Activity;
+import android.content.Context;
+import android.location.Location;
+import android.location.LocationListener;
+import android.location.LocationManager;
+import android.os.Bundle;
+import android.widget.TextView;
+
+import com.google.android.gms.maps.CameraUpdateFactory;
+import com.google.android.gms.maps.GoogleMap;
+import com.google.android.gms.maps.MapFragment;
+import com.google.android.gms.maps.model.BitmapDescriptorFactory;
+import com.google.android.gms.maps.model.LatLng;
+import com.google.android.gms.maps.model.Marker;
+import com.google.android.gms.maps.model.MarkerOptions;
+
+public class Maps extends Activity implements LocationListener{
+	protected LocationManager locationManager;
+	protected LocationListener locationListener;
+	protected Context context;
+	
+	protected String latitude,longitude; 
+	protected boolean gps_enabled,network_enabled;
+	
+	static final LatLng HAMBURG = new LatLng(53.558, 9.927);
+	static final LatLng KIEL = new LatLng(53.551, 9.993);
+	private GoogleMap map;
+	
+	TextView tv_loc;
+	
+	LatLng currentLocation;
+	
+	@Override
+	protected void onCreate(Bundle savedInstanceState) {
+		super.onCreate(savedInstanceState);
+		setContentView(R.layout.activity_maps);
+		
+		locationManager = (LocationManager) getSystemService(Context.LOCATION_SERVICE);
+		locationManager.requestLocationUpdates(LocationManager.GPS_PROVIDER, 0, 0, this);
+		locationManager.requestLocationUpdates(LocationManager.NETWORK_PROVIDER, 0, 0, this);
+		
+		tv_loc=(TextView)findViewById(R.id.location);
+		
+		//display last known location
+		Location lastKnownLocation = locationManager.getLastKnownLocation(LocationManager.NETWORK_PROVIDER);
+		currentLocation=new LatLng(lastKnownLocation.getLatitude(), lastKnownLocation.getLongitude());
+		tv_loc.setText("Latitude:" + currentLocation.latitude + ", Longitude:" + currentLocation.longitude);
+		
+		map = ((MapFragment) getFragmentManager().findFragmentById(R.id.map))
+				.getMap();
+		
+		Marker hamburg = map.addMarker(new MarkerOptions().position(HAMBURG)
+				.title("Hamburg"));
+		Marker CurrentLocation = map.addMarker(new MarkerOptions()
+				.position(currentLocation)
+				.title("Current Location")
+				.snippet("This is where you are right now!")
+				.icon(BitmapDescriptorFactory
+						.fromResource(R.drawable.ic_launcher)));
+
+		// Move the camera instantly to hamburg with a zoom of 15.
+		map.moveCamera(CameraUpdateFactory.newLatLngZoom(currentLocation, 15));
+
+		// Zoom in, animating the camera.
+		map.animateCamera(CameraUpdateFactory.zoomTo(15), 2000, null);
+	}
+
+	@Override
+	public void onLocationChanged(Location location) {
+		currentLocation=new LatLng(location.getLatitude(), location.getLongitude());
+		tv_loc.setText("Latitude:" + currentLocation.latitude + ", Longitude:" + currentLocation.longitude);
+	}
+
+	@Override
+	public void onProviderDisabled(String arg0) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void onProviderEnabled(String arg0) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void onStatusChanged(String arg0, int arg1, Bundle arg2) {
+		// TODO Auto-generated method stub
+		
+	}
+
+}
