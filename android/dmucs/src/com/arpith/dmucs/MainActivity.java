@@ -98,7 +98,7 @@ public class MainActivity extends Activity {
 					startActivity(i);
 					break;
 				case 2:
-					i=new Intent(MainActivity.this,Information.class);
+					i=new Intent(MainActivity.this,MissingPersonReport.class);
 					startActivity(i);
 					break;
 				}

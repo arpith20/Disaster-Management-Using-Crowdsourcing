@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <qualifiedTypeNameHistroy>
-<fullyQualifiedTypeName name="android.widget.EditText"/>
 <fullyQualifiedTypeName name="com.arpith.dmucs.Login"/>
 <fullyQualifiedTypeName name="com.arpith.dmucs.Alerts"/>
 <fullyQualifiedTypeName name="com.arpith.dmucs.AboutUs"/>
@@ -15,18 +14,21 @@
 <fullyQualifiedTypeName name="com.arpith.dmucs.ReportServer"/>
 <fullyQualifiedTypeName name="android.widget.Button"/>
 <fullyQualifiedTypeName name="android.view.View"/>
-<fullyQualifiedTypeName name="android.view.View.OnClickListener"/>
-<fullyQualifiedTypeName name="android.content.Intent"/>
 <fullyQualifiedTypeName name="com.arpith.dmucs.QuickReport"/>
 <fullyQualifiedTypeName name="android.widget.ArrayAdapter"/>
 <fullyQualifiedTypeName name="com.arpith.dmucs.MissingPersonInfo"/>
 <fullyQualifiedTypeName name="android.webkit.WebView"/>
 <fullyQualifiedTypeName name="android.widget.ImageView"/>
-<fullyQualifiedTypeName name="android.widget.TextView"/>
-<fullyQualifiedTypeName name="com.arpith.dmucs.R.id"/>
 <fullyQualifiedTypeName name="android.location.Location"/>
 <fullyQualifiedTypeName name="com.google.android.gms.maps.model.LatLng"/>
-<fullyQualifiedTypeName name="java.lang.Boolean"/>
 <fullyQualifiedTypeName name="android.widget.Toast"/>
 <fullyQualifiedTypeName name="android.location.LocationListener"/>
+<fullyQualifiedTypeName name="android.widget.TextView"/>
+<fullyQualifiedTypeName name="android.widget.EditText"/>
+<fullyQualifiedTypeName name="com.arpith.dmucs.R.id"/>
+<fullyQualifiedTypeName name="android.view.View.OnClickListener"/>
+<fullyQualifiedTypeName name="java.lang.Boolean"/>
+<fullyQualifiedTypeName name="android.content.Intent"/>
+<fullyQualifiedTypeName name="com.arpith.dmucs.MissingPersonReport"/>
+<fullyQualifiedTypeName name="com.arpith.dmucs.MissingReportServer"/>
 </qualifiedTypeNameHistroy>

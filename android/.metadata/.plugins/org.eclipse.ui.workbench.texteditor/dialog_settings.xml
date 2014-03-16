@@ -3,18 +3,19 @@
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog_dialogBounds">
 		<item value="312" key="DIALOG_WIDTH"/>
 		<item value="132" key="DIALOG_Y_ORIGIN"/>
-		<item value="883" key="DIALOG_X_ORIGIN"/>
 		<item value="437" key="DIALOG_HEIGHT"/>
+		<item value="883" key="DIALOG_X_ORIGIN"/>
 		<item value="1|Ubuntu|11.0|0|GTK|1|" key="DIALOG_FONT_NAME"/>
 	</section>
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
 		<item value="true" key="wrap"/>
-		<item value="true" key="casesensitive"/>
 		<item value="false" key="isRegEx"/>
+		<item value="true" key="casesensitive"/>
 		<item value="false" key="incremental"/>
 		<item value="true" key="wholeword"/>
-		<item value="locationListener" key="selection"/>
+		<item value="toNumberValue" key="selection"/>
 		<list key="findhistory">
+			<item value="toNumberValue"/>
 			<item value="locationListener"/>
 			<item value="mWebView2"/>
 			<item value="huser_class_text"/>
@@ -22,7 +23,6 @@
 			<item value="huser_description"/>
 			<item value="huser_description_text"/>
 			<item value="hteam_name"/>
-			<item value="hteam_of_text"/>
 		</list>
 		<list key="replacehistory">
 			<item value="wv"/>

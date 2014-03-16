@@ -119,7 +119,7 @@ public class ReportServer extends Activity {
 			Random g = new Random();
 			int x = g.nextInt(90000000);
 			phone = "" + x;
-			String n1 = "insert into report (phone,incident,lat,lng,damage,no_casualty,you,comments,done,modified_time) values ('"
+			String n1 = "insert into report (phone,incident,lat,lng,damage,no_casualty,you,comments,done,service_time) values ('"
 					+ phone + "',1,12.859753,77.663641,10,0,0,NULL,0,NULL)";
 
 			// Building Parameters

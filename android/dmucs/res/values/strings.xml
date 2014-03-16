@@ -26,5 +26,6 @@
     <string name="title_activity_missing_person_report">MissingPersonReport</string>
     <string name="title_activity_map">Map</string>
     <string name="title_activity_maps">Maps</string>
+    <string name="title_activity_missing_report_server">MissingReportServer</string>
 
 </resources>

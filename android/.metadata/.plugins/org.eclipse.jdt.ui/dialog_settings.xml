@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <section name="Workbench">
 	<item value="2" key="TypeHierarchyViewPart.hierarchyview"/>
-	<item value="false" key="TypeHierarchyViewPart.qualifiednames"/>
 	<item value="3" key="TypeHierarchyViewPart.orientation"/>
+	<item value="false" key="TypeHierarchyViewPart.qualifiednames"/>
 	<item value="false" key="TypeHierarchyViewPart.linkeditors"/>
 	<section name="DialogBounds_OverrideMethodDialog">
 		<item value="639" key="DIALOG_WIDTH"/>
 		<item value="40" key="DIALOG_Y_ORIGIN"/>
-		<item value="340" key="DIALOG_X_ORIGIN"/>
 		<item value="520" key="DIALOG_HEIGHT"/>
+		<item value="340" key="DIALOG_X_ORIGIN"/>
 		<item value="1|Ubuntu|11.0|0|GTK|1|" key="DIALOG_FONT_NAME"/>
 	</section>
 	<section name="OptionalMessageDialog.hide.">
@@ -30,8 +30,8 @@
 		<item value="0" key="index"/>
 	</section>
 	<section name="SourceActionDialog.methods">
-		<item value="1" key="VisibilityModifier"/>
 		<item value="false" key="Comments"/>
+		<item value="1" key="VisibilityModifier"/>
 		<item value="false" key="SynchronizedModifier"/>
 		<item value="false" key="FinalModifier"/>
 	</section>
@@ -41,8 +41,8 @@
 		<section name="DialogBoundsSettings">
 			<item value="600" key="DIALOG_WIDTH"/>
 			<item value="53" key="DIALOG_Y_ORIGIN"/>
-			<item value="359" key="DIALOG_X_ORIGIN"/>
 			<item value="500" key="DIALOG_HEIGHT"/>
+			<item value="359" key="DIALOG_X_ORIGIN"/>
 			<item value="1|Ubuntu|11.0|0|GTK|1|" key="DIALOG_FONT_NAME"/>
 		</section>
 	</section>
@@ -57,16 +57,16 @@
 	</section>
 	<section name="JavaElementSearchActions">
 	</section>
+	<section name="NewClassWizardPage">
+		<item value="false" key="create_constructor"/>
+		<item value="true" key="create_unimplemented"/>
+		<item value="false" key="create_main"/>
+	</section>
 	<section name="org.eclipse.ltk.ui.refactoring.settings">
-		<item value="false" key="updateQualifiedNames"/>
 		<item value="*" key="patterns"/>
+		<item value="false" key="updateQualifiedNames"/>
 		<item value="1" key="updateSimilarElementsMatchStrategy"/>
 		<item value="false" key="updateTextualMatches"/>
 		<item value="false" key="updateSimilarElements"/>
-	</section>
-	<section name="NewClassWizardPage">
-		<item value="false" key="create_constructor"/>
-		<item value="false" key="create_main"/>
-		<item value="true" key="create_unimplemented"/>
 	</section>
 </section>
