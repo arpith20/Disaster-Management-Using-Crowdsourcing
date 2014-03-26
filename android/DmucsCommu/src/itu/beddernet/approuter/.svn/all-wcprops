@@ -1,0 +1,17 @@
+K 25
+svn:wc:ra_dav:version-url
+V 49
+/svn/!svn/ver/2/trunk/src/itu/beddernet/approuter
+END
+IBeddernetService.aidl
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/!svn/ver/2/trunk/src/itu/beddernet/approuter/IBeddernetService.aidl
+END
+IBeddernetServiceCallback.aidl
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/!svn/ver/2/trunk/src/itu/beddernet/approuter/IBeddernetServiceCallback.aidl
+END

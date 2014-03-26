@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:id="@+id/editProfile"
+          android:title="Edit Profile"/>
+    <item android:id="@+id/quit"
+          android:title="Quit"/>
+    <item android:id="@+id/setDiscoverable"
+          android:title="setDiscoverable"/>
+</menu>

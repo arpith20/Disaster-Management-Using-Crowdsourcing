@@ -1,0 +1,65 @@
+package dk.itu.spvc.scatterfriend;
+
+import dk.itu.spvc.scatterfriend.classes.Constant;
+import android.content.ContentValues;
+import android.database.Cursor;
+import android.os.Bundle;
+import android.os.RemoteException;
+import android.provider.BaseColumns;
+import android.util.Log;
+import android.view.View;
+import android.widget.ListView;
+import android.widget.SimpleCursorAdapter;
+import android.widget.TextView;
+
+public class RequestActivity extends ScatterFriend{
+	public static final String TAG = RequestActivity.class.getSimpleName();
+	private String userId = null;
+
+	@Override
+	public void onCreate(Bundle savedInstanceState) {
+		super.onCreate(savedInstanceState);
+		setContentView(R.layout.request);
+
+		ListView requestList = (ListView)findViewById(R.id.requestList);
+		String[] proj = new String[]{
+				BaseColumns._ID,
+				Constant.USERNAME,
+				Constant.EMAIL,
+				Constant.ISPENDING,
+				Constant.TIMESTAMP
+		};
+
+		Cursor c = managedQuery(Constant.PROFILE_CONTENT_URI, proj, "ISPENDING LIKE 'true'", null,null);
+		SimpleCursorAdapter adapter = new SimpleCursorAdapter(this, R.layout.requestitem, c, 
+				new String[]{Constant.USERNAME,Constant.EMAIL, BaseColumns._ID}, 
+				new int[]{R.id.requester,R.id.requesterEmail, R.id.requestId});
+		requestList.setAdapter(adapter);
+	}
+
+	public void confirmRequest(View v){
+		TextView t = (TextView)((View)v.getParent()).findViewById(R.id.requestId);		
+		userId = t.getText().toString();	 			
+		ContentValues cv = new ContentValues();
+		cv.put(Constant.ISPENDING, "false");		
+		getContentResolver().update(Constant.PROFILE_CONTENT_URI, cv, "_ID like "+userId, null);
+
+		String[] info=t.getText().toString().split(" ");
+		String requestMes=CONFIRMREQUEST+"|"+myProfile.getUserName()+"|"+myProfile.getEmail()+"|"
+		+myProfile.getGender()+"|"+myProfile.getMacAddr()+"|"+myProfile.getPhoneNm();
+		try {
+			beddernetService.sendUnicast(info[1], null, requestMes.getBytes(), applicationIdentifier);
+		} catch (RemoteException e) {
+			// TODO Auto-generated catch block
+			Log.e(TAG,"Sending request to "+info[1]+" fails!");
+		}
+	}
+
+	public void ignoreRequest(View v){
+		TextView t = (TextView)((View)v.getParent()).findViewById(R.id.requestId);
+		userId = t.getText().toString();
+		getContentResolver().delete(Constant.PROFILE_CONTENT_URI, "_ID like "+userId, null);
+		Log.d(TAG,t.getText().toString());		
+	}
+}
+
