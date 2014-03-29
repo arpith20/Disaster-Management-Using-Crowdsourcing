@@ -22,7 +22,6 @@
 <fullyQualifiedTypeName name="android.location.Location"/>
 <fullyQualifiedTypeName name="com.google.android.gms.maps.model.LatLng"/>
 <fullyQualifiedTypeName name="android.widget.Toast"/>
-<fullyQualifiedTypeName name="android.location.LocationListener"/>
 <fullyQualifiedTypeName name="android.widget.TextView"/>
 <fullyQualifiedTypeName name="android.widget.EditText"/>
 <fullyQualifiedTypeName name="com.arpith.dmucs.R.id"/>
@@ -31,4 +30,7 @@
 <fullyQualifiedTypeName name="android.content.Intent"/>
 <fullyQualifiedTypeName name="com.arpith.dmucs.MissingPersonReport"/>
 <fullyQualifiedTypeName name="com.arpith.dmucs.MissingReportServer"/>
+<fullyQualifiedTypeName name="dk.itu.spvc.scatterfriend.R"/>
+<fullyQualifiedTypeName name="com.google.android.gms.maps.GoogleMap.OnMapClickListener"/>
+<fullyQualifiedTypeName name="android.location.LocationListener"/>
 </qualifiedTypeNameHistroy>

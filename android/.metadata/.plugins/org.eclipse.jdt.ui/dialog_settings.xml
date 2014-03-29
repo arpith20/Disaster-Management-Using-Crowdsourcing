@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <section name="Workbench">
 	<item value="2" key="TypeHierarchyViewPart.hierarchyview"/>
+	<item value="/home/arpith/Applications/adt-bundle-linux-x86_64-20140321/sdk/platforms/android-19" key="org.eclipse.jdt.ui.lastextjar"/>
 	<item value="false" key="TypeHierarchyViewPart.qualifiednames"/>
 	<item value="3" key="TypeHierarchyViewPart.orientation"/>
 	<item value="false" key="TypeHierarchyViewPart.linkeditors"/>
@@ -18,7 +19,7 @@
 		<item value="true" key="showtypes"/>
 	</section>
 	<section name="BuildPathsPropertyPage">
-		<item value="3" key="pageIndex"/>
+		<item value="2" key="pageIndex"/>
 	</section>
 	<section name="RefactoringWizard.preview">
 		<item value="400" key="height"/>

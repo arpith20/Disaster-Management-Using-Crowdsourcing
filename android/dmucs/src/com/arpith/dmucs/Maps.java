@@ -43,7 +43,7 @@ public class Maps extends Activity implements OnMapClickListener,
 		locationManager = (LocationManager) getSystemService(Context.LOCATION_SERVICE);
 
 		Criteria criteria = new Criteria();
-		provider = locationManager.getBestProvider(criteria, false);
+		provider = locationManager.getBestProvider(criteria, true);
 		Location lastKnownLocation = locationManager
 				.getLastKnownLocation(provider);
 
