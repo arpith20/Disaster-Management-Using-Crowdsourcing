@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:focusableInTouchMode="true"
+    android:orientation="vertical" >
+
+    <EditText
+        android:id="@+id/writeTweet"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/share"
+        android:layout_alignParentTop="true"
+        android:layout_toLeftOf="@+id/share"
+        android:layout_toRightOf="@+id/numOfMembers"
+        android:textColor="#aaa"
+        android:textSize="15dp" >
+    </EditText>
+
+    <TextView
+        android:id="@+id/numOfMembers"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingLeft="5dip"
+        android:textColor="#555"
+        android:textSize="16dp" >
+    </TextView>
+
+    <ListView
+        android:id="@+id/tweetList"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/share"
+        android:layout_weight="1"
+        android:background="#efefef"
+        android:divider="#aaa"
+        android:dividerHeight="1.1dip" >
+    </ListView>
+
+    <Button
+        android:id="@+id/share"
+        android:layout_width="80dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentTop="true"
+        android:onClick="writeTweet"
+        android:text="share" />
+
+</RelativeLayout>

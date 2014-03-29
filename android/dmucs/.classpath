@@ -5,10 +5,6 @@
 	<classpathentry kind="con" path="com.android.ide.eclipse.adt.ANDROID_FRAMEWORK"/>
 	<classpathentry exported="true" kind="con" path="com.android.ide.eclipse.adt.LIBRARIES"/>
 	<classpathentry exported="true" kind="con" path="com.android.ide.eclipse.adt.DEPENDENCIES"/>
-	<classpathentry kind="lib" path="/home/arpith/applications/adt-bundle-linux-x86_64-20131030/sdk/platforms/android-19/android.jar">
-		<accessrules>
-			<accessrule kind="nonaccessible" pattern="com/android/internal/**"/>
-		</accessrules>
-	</classpathentry>
+	<classpathentry kind="lib" path="/home/arpith/Applications/adt-bundle-linux-x86_64-20140321/sdk/platforms/android-19/android.jar"/>
 	<classpathentry kind="output" path="bin/classes"/>
 </classpath>

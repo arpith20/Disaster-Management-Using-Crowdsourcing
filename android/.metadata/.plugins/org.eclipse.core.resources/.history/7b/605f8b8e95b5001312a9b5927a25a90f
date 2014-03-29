@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:focusable="true"
+    android:focusableInTouchMode="true"
+    android:orientation="vertical" >
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:background="#efefef"
+        android:orientation="horizontal"
+        android:padding="7dp" >
+
+        <EditText
+            android:id="@+id/writeTweet"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.75"
+            android:hint="Write message here"
+            android:textColor="#aaa"
+            android:textSize="15dp" >
+        </EditText>
+
+        <Button
+            android:id="@+id/share"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="writeTweet"
+            android:text="share" >
+        </Button>
+
+        <TextView
+            android:id="@+id/numOfMembers"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingLeft="5dip"
+            android:textColor="#555"
+            android:textSize="16dp" >
+        </TextView>
+    </LinearLayout>
+
+    <ListView
+        android:id="@+id/tweetList"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:background="#efefef"
+        android:divider="#aaa"
+        android:dividerHeight="1.1dip" >
+    </ListView>
+
+</LinearLayout>
