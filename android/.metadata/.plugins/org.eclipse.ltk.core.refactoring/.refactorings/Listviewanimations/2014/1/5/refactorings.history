@@ -1,4 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<session version="1.0">
-<refactoring accessors="true" comment="Delete element from project &apos;Listviewanimations&apos;&#x0A;- Original project: &apos;Listviewanimations&apos;&#x0A;- Original element: &apos;nineoldandroids-2.4.0.jar&apos;" description="Delete element" element1="libs/nineoldandroids-2.4.0.jar" elements="0" flags="589830" id="org.eclipse.jdt.ui.delete" resources="1" stamp="1391151197361" subPackages="false" version="1.0"/>
-</session>
