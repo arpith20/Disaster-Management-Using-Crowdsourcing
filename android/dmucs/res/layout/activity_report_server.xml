@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@layout/background_gradient"
+    android:orientation="vertical"
+    android:padding="30sp" >
+
+    <TextView
+        android:id="@+id/rs_result"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:fontFamily="sans-serif-light"
+        android:gravity="center"
+        android:paddingTop="10sp"
+        android:text="Please Wait..."
+        android:textColor="@android:color/white"
+        android:textSize="20sp" />
+
+    <Button
+        android:id="@+id/rs_main"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentRight="true"
+        android:background="@drawable/button_border"
+        android:text="Main Menu"
+        android:textColor="@android:color/white" />
+
+    <Button
+        android:id="@+id/rs_again"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/rs_main"
+        android:layout_alignLeft="@+id/rs_main"
+        android:layout_alignParentRight="true"
+        android:layout_marginBottom="20dp"
+        android:background="@drawable/button_border"
+        android:text="Report Another Incident"
+        android:textColor="@android:color/white" />
+
+    <ImageView
+        android:id="@+id/rs_tick"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/rs_result"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="77dp"
+        android:adjustViewBounds="true"
+        android:maxHeight="152dp"
+        android:maxWidth="152dp"
+        android:scaleType="fitCenter"
+        android:src="@drawable/tick" />
+
+</RelativeLayout>

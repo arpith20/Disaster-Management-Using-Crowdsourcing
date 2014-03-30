@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	android:id="@+id/widget0" 
+	android:layout_width="fill_parent"
+	android:layout_height="fill_parent"
+	android:background="#efefef"
+	android:orientation="vertical"
+	>
+	<TextView 
+		android:text="ScatterFriend"
+		android:textStyle="bold" 
+		android:textSize="17sp" 
+		android:textColor="@android:color/white" 
+		android:layout_height="wrap_content" 
+		android:layout_width="fill_parent" 
+		android:background="#2175a0" 
+		android:padding="5dip">
+		</TextView>
+	<TextView
+		android:text="Profile"
+		android:textStyle="bold" 
+		android:textSize="17sp" 
+		android:textColor="@android:color/black" 
+		android:layout_height="wrap_content" 
+		android:layout_width="fill_parent" 
+		android:gravity="center_horizontal"
+		android:padding="10dip"
+	></TextView>
+	<LinearLayout 
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:layout_gravity="center_horizontal"
+		android:orientation="vertical">
+		
+    	<TextView android:id="@+id/textName" 
+			android:layout_width="100dp"
+			android:layout_height="wrap_content"
+			android:textColor="@android:color/black" 
+			android:text="Username:(*)">
+		</TextView>
+		<EditText android:id="@+id/editName" 
+			android:layout_width="200dp"
+			android:layout_height="wrap_content"
+			android:textSize="14dp"
+			android:hint="Type your name"
+			android:layout_marginBottom="5dip">
+		</EditText>
+	
+	
+		<TextView android:id="@+id/textEmail" 
+			android:layout_width="100dp"
+			android:layout_height="wrap_content"
+			android:textColor="@android:color/black" 
+			android:text="Email:(*)">
+		</TextView>
+		<EditText android:id="@+id/editEmail" 
+			android:layout_width="200dp"
+			android:layout_height="wrap_content"
+			android:textSize="14dp"
+			android:hint="Type your Email"
+			android:layout_marginBottom="5dip">
+		</EditText>
+	
+		<TextView android:id="@+id/textGender" 
+			android:layout_width="100dp"
+			android:layout_height="wrap_content"
+			android:textColor="@android:color/black" 
+			android:text="Gender:(*)">
+		</TextView>
+		<RadioGroup
+			android:layout_width="150dp"
+			android:layout_height="wrap_content"
+      		android:orientation="vertical"
+      		android:layout_marginBottom="5dip">
+      		
+      	<RadioButton android:id="@+id/radioMale"
+          		android:layout_width="150dp"
+          		android:layout_height="40dp"
+          		android:text="Male" 
+          		android:textColor="@android:color/black" />
+      	<RadioButton android:id="@+id/radioFemale"
+          		android:layout_width="150dp"
+          		android:layout_height="40dp"
+          		android:text="Female" 
+          		android:textColor="@android:color/black" />
+    	</RadioGroup>
+		
+		<Button android:id="@+id/buttonSave" 
+			android:layout_width="100dp"
+			android:layout_height="wrap_content" 
+			android:text="Save"
+			android:onClick="saveProfile"
+			android:gravity="center_horizontal">
+		</Button>
+	</LinearLayout>
+</LinearLayout>
