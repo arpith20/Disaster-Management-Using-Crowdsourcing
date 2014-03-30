@@ -137,6 +137,18 @@
             android:name="com.arpith.dmucs.MissingReportServer"
             android:label="@string/title_activity_missing_report_server" >
         </activity>
+        <activity
+            android:name="com.arpith.dmucs.Donate"
+            android:label="@string/title_activity_donate" >
+        </activity>
+        <activity
+            android:name="com.arpith.dmucs.SubmitDonation"
+            android:label="@string/title_activity_submit_donation" >
+        </activity>
+        <activity
+            android:name="com.arpith.dmucs.WriteQueryDatabase"
+            android:label="@string/title_activity_write_query_database" >
+        </activity>
     </application>
 
 </manifest>

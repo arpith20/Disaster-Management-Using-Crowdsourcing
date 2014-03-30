@@ -3,18 +3,19 @@
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog_dialogBounds">
 		<item value="312" key="DIALOG_WIDTH"/>
 		<item value="132" key="DIALOG_Y_ORIGIN"/>
-		<item value="883" key="DIALOG_X_ORIGIN"/>
 		<item value="437" key="DIALOG_HEIGHT"/>
+		<item value="883" key="DIALOG_X_ORIGIN"/>
 		<item value="1|Ubuntu|11.0|0|GTK|1|" key="DIALOG_FONT_NAME"/>
 	</section>
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
 		<item value="true" key="wrap"/>
-		<item value="true" key="casesensitive"/>
 		<item value="false" key="isRegEx"/>
+		<item value="true" key="casesensitive"/>
 		<item value="false" key="incremental"/>
 		<item value="true" key="wholeword"/>
-		<item value="point" key="selection"/>
+		<item value="url_query" key="selection"/>
 		<list key="findhistory">
+			<item value="url_report_disaster"/>
 			<item value="point"/>
 			<item value="overlay"/>
 			<item value="toNumberValue"/>
@@ -22,9 +23,9 @@
 			<item value="mWebView2"/>
 			<item value="huser_class_text"/>
 			<item value="hclass_text"/>
-			<item value="huser_description"/>
 		</list>
 		<list key="replacehistory">
+			<item value="url_query"/>
 			<item value="wv"/>
 			<item value="account_current"/>
 			<item value="account_currentT"/>
@@ -32,7 +33,6 @@
 			<item value="account_homeT"/>
 			<item value="account_dob"/>
 			<item value="account_dobT"/>
-			<item value="account_phoneno"/>
 		</list>
 	</section>
 </section>

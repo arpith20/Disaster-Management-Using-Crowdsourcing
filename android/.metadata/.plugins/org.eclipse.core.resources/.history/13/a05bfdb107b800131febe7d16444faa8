@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#fa6a6a"
+    android:orientation="vertical" >
+
+    <EditText
+        android:id="@+id/id"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/submit"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginBottom="37dp"
+        android:ems="10"
+        android:hint="or enter a unique id here" >
+
+        <requestFocus />
+    </EditText>
+
+    <Button
+        android:id="@+id/submit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/qr"
+        android:layout_alignParentBottom="true"
+        android:layout_alignRight="@+id/qr"
+        android:layout_marginBottom="109dp"
+        android:background="@drawable/button_border"
+        android:text="Submit"
+        android:textColor="@android:color/white" />
+
+    <Button
+        android:id="@+id/qr"
+        android:layout_width="170dp"
+        android:layout_height="150dp"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="91dp"
+        android:background="@drawable/button_border"
+        android:text="Scan\nQR Code"
+        android:textColor="@android:color/white" />
+
+</RelativeLayout>

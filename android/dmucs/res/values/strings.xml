@@ -27,5 +27,11 @@
     <string name="title_activity_map">Map</string>
     <string name="title_activity_maps">Maps</string>
     <string name="title_activity_missing_report_server">MissingReportServer</string>
+    <string name="title_activity_donate">Donate</string>
+    <string name="title_section1">Section 1</string>
+    <string name="title_section2">Section 2</string>
+    <string name="title_section3">Section 3</string>
+    <string name="title_activity_submit_donation">SubmitDonation</string>
+    <string name="title_activity_write_query_database">WriteQueryDatabase</string>
 
 </resources>

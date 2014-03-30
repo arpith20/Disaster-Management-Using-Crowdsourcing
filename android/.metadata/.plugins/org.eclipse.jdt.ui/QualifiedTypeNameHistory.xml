@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <qualifiedTypeNameHistroy>
 <fullyQualifiedTypeName name="com.arpith.dmucs.Login"/>
-<fullyQualifiedTypeName name="com.arpith.dmucs.Alerts"/>
 <fullyQualifiedTypeName name="com.arpith.dmucs.AboutUs"/>
 <fullyQualifiedTypeName name="com.arpith.dmucs.MainActivity"/>
 <fullyQualifiedTypeName name="com.arpith.dmucs.Information"/>
@@ -12,8 +11,6 @@
 <fullyQualifiedTypeName name="co.juliansuarez.libwizardpager.wizard.model.NumberPage"/>
 <fullyQualifiedTypeName name="android.R.bool"/>
 <fullyQualifiedTypeName name="com.arpith.dmucs.ReportServer"/>
-<fullyQualifiedTypeName name="android.widget.Button"/>
-<fullyQualifiedTypeName name="android.view.View"/>
 <fullyQualifiedTypeName name="com.arpith.dmucs.QuickReport"/>
 <fullyQualifiedTypeName name="android.widget.ArrayAdapter"/>
 <fullyQualifiedTypeName name="com.arpith.dmucs.MissingPersonInfo"/>
@@ -21,16 +18,31 @@
 <fullyQualifiedTypeName name="android.widget.ImageView"/>
 <fullyQualifiedTypeName name="android.location.Location"/>
 <fullyQualifiedTypeName name="com.google.android.gms.maps.model.LatLng"/>
-<fullyQualifiedTypeName name="android.widget.Toast"/>
-<fullyQualifiedTypeName name="android.widget.TextView"/>
-<fullyQualifiedTypeName name="android.widget.EditText"/>
-<fullyQualifiedTypeName name="com.arpith.dmucs.R.id"/>
-<fullyQualifiedTypeName name="android.view.View.OnClickListener"/>
 <fullyQualifiedTypeName name="java.lang.Boolean"/>
-<fullyQualifiedTypeName name="android.content.Intent"/>
 <fullyQualifiedTypeName name="com.arpith.dmucs.MissingPersonReport"/>
 <fullyQualifiedTypeName name="com.arpith.dmucs.MissingReportServer"/>
 <fullyQualifiedTypeName name="dk.itu.spvc.scatterfriend.R"/>
 <fullyQualifiedTypeName name="com.google.android.gms.maps.GoogleMap.OnMapClickListener"/>
 <fullyQualifiedTypeName name="android.location.LocationListener"/>
+<fullyQualifiedTypeName name="com.arpith.dmucs.Donate"/>
+<fullyQualifiedTypeName name="android.support.v4.app.Fragment"/>
+<fullyQualifiedTypeName name="android.webkit.WebView.FindListener"/>
+<fullyQualifiedTypeName name="android.view.View"/>
+<fullyQualifiedTypeName name="android.widget.EditText"/>
+<fullyQualifiedTypeName name="android.app.DialogFragment"/>
+<fullyQualifiedTypeName name="com.arpith.dmucs.Alerts"/>
+<fullyQualifiedTypeName name="android.widget.Button"/>
+<fullyQualifiedTypeName name="android.content.Intent"/>
+<fullyQualifiedTypeName name="android.view.View.OnClickListener"/>
+<fullyQualifiedTypeName name="java.lang.Integer"/>
+<fullyQualifiedTypeName name="com.arpith.dmucs.SubmitDonation"/>
+<fullyQualifiedTypeName name="android.widget.TextView"/>
+<fullyQualifiedTypeName name="com.arpith.dmucs.R.id"/>
+<fullyQualifiedTypeName name="com.arpith.dmucs.DonateFragment"/>
+<fullyQualifiedTypeName name="android.content.SharedPreferences.Editor"/>
+<fullyQualifiedTypeName name="com.arpith.dmucs.WriteQueryDatabase"/>
+<fullyQualifiedTypeName name="android.os.Bundle"/>
+<fullyQualifiedTypeName name="android.preference.PreferenceManager"/>
+<fullyQualifiedTypeName name="android.content.SharedPreferences"/>
+<fullyQualifiedTypeName name="android.widget.Toast"/>
 </qualifiedTypeNameHistroy>

@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.0.9
+-- version 4.1.12
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Feb 06, 2014 at 04:59 PM
--- Server version: 5.5.35-0ubuntu0.12.04.1
--- PHP Version: 5.3.10-1ubuntu3.9
+-- Generation Time: Mar 30, 2014 at 10:34 PM
+-- Server version: 5.5.35-1ubuntu1
+-- PHP Version: 5.5.9-1ubuntu2
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
@@ -19,6 +19,98 @@ SET time_zone = "+00:00";
 --
 -- Database: `dmucs`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `donate`
+--
+
+CREATE TABLE IF NOT EXISTS `donate` (
+  `uniqueid` varchar(15) NOT NULL,
+  `name` varchar(30) NOT NULL,
+  `createdon` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `description` varchar(280) NOT NULL,
+  `amount` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `donate`
+--
+
+INSERT INTO `donate` (`uniqueid`, `name`, `createdon`, `description`, `amount`) VALUES
+('8105581711', 'Arpith', '2014-03-30 15:38:58', 'This is a test', 322);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `donate_item`
+--
+
+CREATE TABLE IF NOT EXISTS `donate_item` (
+  `phone` varchar(15) NOT NULL,
+  `phone_by` varchar(15) NOT NULL,
+  `description` varchar(280) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `donate_location`
+--
+
+CREATE TABLE IF NOT EXISTS `donate_location` (
+  `phone` varchar(15) NOT NULL,
+  `name` varchar(30) NOT NULL,
+  `address` varchar(140) NOT NULL,
+  `lat` double NOT NULL,
+  `lng` double NOT NULL,
+  PRIMARY KEY (`phone`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `donate_money`
+--
+
+CREATE TABLE IF NOT EXISTS `donate_money` (
+  `phone` varchar(15) NOT NULL,
+  `phone_by` varchar(15) NOT NULL,
+  `amount` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `donate_money`
+--
+
+INSERT INTO `donate_money` (`phone`, `phone_by`, `amount`) VALUES
+('8105581711', '9818000236', 20),
+('8105581711', '9818000236', 20),
+('8105581711', '9818000236', 20),
+('8105581711', '9818000236', 20),
+('8105581711', '9818000236', 20),
+('8105581711', '9818000236', 20),
+('8105581712', '9818000236', 20),
+('8105581712', '9818000236', 20),
+('8105581712', '9818000236', 20),
+('8105581713', '9818000236', 20),
+('8105581713', '9818000236', 20),
+('8105581713', '9818000236', 20),
+('8105581713', '9818000236', 20),
+('8105581713', '9818000236', 20),
+('8105581713', '9818000236', 20),
+('8105581713', '9818000236', 20),
+('8105581713', '9818000236', 20),
+('4646464', 'null', 20),
+('', '8105581711', 20),
+('rffg', '8105581711', 20),
+('sgshjs', '8105581711', 6),
+('sgshjs', '8105581711', 6),
+('8105581711', '8105581711', 6),
+('8105581711', '8105581711', 6),
+('8105581711', '8105581711', 6),
+('8105581711', '8105581711', 2);
 
 -- --------------------------------------------------------
 
@@ -39,7 +131,7 @@ CREATE TABLE IF NOT EXISTS `incident_hash` (
 --
 
 CREATE TABLE IF NOT EXISTS `location` (
-  `phone` int(15) NOT NULL,
+  `phone` varchar(15) NOT NULL,
   `h_lat` double NOT NULL,
   `h_lng` double NOT NULL,
   `c_lat` double NOT NULL,
@@ -54,7 +146,7 @@ CREATE TABLE IF NOT EXISTS `location` (
 --
 
 CREATE TABLE IF NOT EXISTS `main_details` (
-  `phone` int(15) NOT NULL,
+  `phone` varchar(15) NOT NULL,
   `password` varchar(30) NOT NULL,
   `name` varchar(30) NOT NULL,
   `dob` date NOT NULL,
@@ -69,7 +161,7 @@ CREATE TABLE IF NOT EXISTS `main_details` (
 --
 
 CREATE TABLE IF NOT EXISTS `report` (
-  `phone` int(15) NOT NULL,
+  `phone` varchar(15) NOT NULL,
   `incident` int(10) NOT NULL,
   `lat` double NOT NULL,
   `lng` double NOT NULL,
@@ -82,22 +174,6 @@ CREATE TABLE IF NOT EXISTS `report` (
   `modified_time` varchar(30) NOT NULL,
   PRIMARY KEY (`phone`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Constraints for dumped tables
---
-
---
--- Constraints for table `location`
---
-ALTER TABLE `location`
-  ADD CONSTRAINT `location_ibfk_1` FOREIGN KEY (`phone`) REFERENCES `main_details` (`phone`) ON DELETE CASCADE ON UPDATE CASCADE;
-
---
--- Constraints for table `report`
---
-ALTER TABLE `report`
-  ADD CONSTRAINT `report_ibfk_1` FOREIGN KEY (`phone`) REFERENCES `main_details` (`phone`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;

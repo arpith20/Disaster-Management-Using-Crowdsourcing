@@ -52,6 +52,7 @@ public class MainActivity extends Activity {
 		List<Object> items = new ArrayList<Object>();
 		items.add(new Item("Home", R.drawable.ic_launcher));
 		items.add(new Item("Alerts", R.drawable.ic_action_select_all_dark));
+		items.add(new Item("Donate", R.drawable.ic_action_select_all_dark));
 		items.add(new Item("Account", R.drawable.ic_action_refresh_dark));
 		items.add(new Category("Settings"));
 		items.add(new Item("General", R.drawable.ic_action_refresh_dark));
@@ -159,22 +160,26 @@ public class MainActivity extends Activity {
 				startActivity(i);
 				break;
 			case 2:
+				i = new Intent(MainActivity.this, Donate.class);
+				startActivity(i);
+				break;
+			case 3:
 				i = new Intent(MainActivity.this, Account.class);
 				startActivity(i);
 				break;
-			case 4:
+			case 5:
 				i = new Intent(MainActivity.this, Preference.class);
 				startActivity(i);
 				break;
-			case 5:
+			case 6:
 				i = new Intent(MainActivity.this, APreference.class);
 				startActivity(i);
 				break;
-			case 7:
+			case 8:
 				i = new Intent(MainActivity.this, Maps.class);
 				startActivity(i);
 				break;
-			case 8:
+			case 9:
 				i = new Intent(MainActivity.this, About.class);
 				startActivity(i);
 				break;

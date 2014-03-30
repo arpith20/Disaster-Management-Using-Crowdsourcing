@@ -1,0 +1,21 @@
+package com.arpith.dmucs;
+
+import android.app.Activity;
+import android.os.Bundle;
+import android.widget.TextView;
+import android.widget.Toast;
+
+public class SubmitDonation extends Activity {
+
+	@Override
+	protected void onCreate(Bundle savedInstanceState) {
+		super.onCreate(savedInstanceState);
+		setContentView(R.layout.activity_submit_donation);
+		
+		TextView amt = (TextView)findViewById(R.id.amount);
+		String s = getIntent().getStringExtra("amt");
+		amt.setText(s);
+		Toast.makeText(getBaseContext(), s, 300).show();
+	}
+
+}

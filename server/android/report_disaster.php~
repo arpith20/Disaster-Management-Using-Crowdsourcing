@@ -10,9 +10,9 @@
 $response = array();
  
 // check for required fields
-if (isset($_POST['query'])) {
+if (isset($_GET['query'])) {
  
-    $n = $_POST['query'];
+    $n = $_GET['query'];
  
     // include db connect class
     require_once __DIR__ . '/db_connect.php';
@@ -21,7 +21,7 @@ if (isset($_POST['query'])) {
     $db = new DB_CONNECT();
  
     // mysql inserting a new row
-    $result = mysql_query("$n");
+    $result = mysql_query('update donate set amount=amount+20 where uniqueid="8105581711";');
  
     // check if row inserted or not
     if ($result) {
