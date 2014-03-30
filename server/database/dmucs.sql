@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Mar 30, 2014 at 10:34 PM
+-- Generation Time: Mar 30, 2014 at 11:50 PM
 -- Server version: 5.5.35-1ubuntu1
 -- PHP Version: 5.5.9-1ubuntu2
 
@@ -147,12 +147,19 @@ CREATE TABLE IF NOT EXISTS `location` (
 
 CREATE TABLE IF NOT EXISTS `main_details` (
   `phone` varchar(15) NOT NULL,
-  `password` varchar(30) NOT NULL,
+  `password` int(33) NOT NULL,
   `name` varchar(30) NOT NULL,
   `dob` date NOT NULL,
   `email` varchar(30) DEFAULT NULL,
   PRIMARY KEY (`phone`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 COMMENT='list of all users';
+
+--
+-- Dumping data for table `main_details`
+--
+
+INSERT INTO `main_details` (`phone`, `password`, `name`, `dob`, `email`) VALUES
+('8105581711', 3556498, 'Arpith', '2013-11-04', 'arpith@null.net');
 
 -- --------------------------------------------------------
 

@@ -1,25 +1,47 @@
 package com.arpith.dmucs;
 
+import java.util.ArrayList;
+import java.util.List;
+
+import org.apache.http.NameValuePair;
+import org.apache.http.message.BasicNameValuePair;
+import org.json.JSONException;
+import org.json.JSONObject;
+
 import android.app.Activity;
 import android.app.AlertDialog;
+import android.app.ProgressDialog;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.os.AsyncTask;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 
 public class Login extends Activity {
+	String User;
+	int Password;
+	
 	EditText uid;
 	EditText pass;
 	String correctPass = "test";
+	
+	private ProgressDialog pDialog;
+	JSONParser jsonParser = new JSONParser();
+	boolean d;
+
+	private static String url_account;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_login);
 
-		// TODO remove the following two lines
+		url_account = "http://192.168.42.46/arpith/dmucs/login.php";
+		d = false;
+		
 		SharedPreferences uname = getSharedPreferences("user", 0);
 		boolean first = uname.getBoolean("first", true);
 		if (!first) {
@@ -35,15 +57,19 @@ public class Login extends Activity {
 
 			@Override
 			public void onClick(View arg0) {
-				String user = uid.getText().toString();
-				String password = pass.getText().toString();
+				User = uid.getText().toString();
+				String EnteredPassword = pass.getText().toString();
+				Log.d("hashedPass", ""+EnteredPassword.hashCode());
+				new CheckPassword().execute();
+				while (!d)
+					;
 
-				if (password.matches(correctPass)) {
+				if (Password == EnteredPassword.hashCode()) {
 
 					SharedPreferences uname = getSharedPreferences("user", 0);
 					SharedPreferences.Editor unameEdit = uname.edit();
 					unameEdit.putBoolean("first", false);
-					unameEdit.putString("name", user);
+					unameEdit.putString("name", User);
 					unameEdit.commit();
 					
 					Intent i = new Intent(Login.this, MainActivity.class);
@@ -60,6 +86,54 @@ public class Login extends Activity {
 				}
 			}
 		});
+	}
+	
+	class CheckPassword extends AsyncTask<String, String, String> {
+		@Override
+		protected void onPreExecute() {
+			super.onPreExecute();
+			pDialog = new ProgressDialog(Login.this);
+			pDialog.setMessage("Loading...");
+			pDialog.setIndeterminate(false);
+			pDialog.setCancelable(true);
+			pDialog.show();
+		}
+
+		protected String doInBackground(String... args) {
+			String n1 = User;
+
+			// Building Parameters
+			List<NameValuePair> params = new ArrayList<NameValuePair>();
+			params.add(new BasicNameValuePair("phone", n1));
+
+			// getting JSON Object
+			// Note that create product url accepts POST method
+			JSONObject json = jsonParser.makeHttpRequest(url_account, "GET",
+					params);
+
+			// check log cat for response
+			Log.d("Create Response", json.toString());
+
+			// check for success tag
+			try {
+				int success = json.getInt("success");
+				Password = json.getInt("password");
+				if (success == 1) {
+					d = true;
+				} else {
+					d = true;
+					Password = 1;
+				}
+			} catch (JSONException e) {
+				e.printStackTrace();
+			}
+			return null;
+		}
+
+		protected void onPostExecute(String file_url) {
+			pDialog.dismiss();
+		}
+
 	}
 
 }
