@@ -1,6 +1,9 @@
 package com.arpith.dmucs;
 
 import java.util.ArrayList;
+
+import me.imid.swipebacklayout.lib.SwipeBackLayout;
+import me.imid.swipebacklayout.lib.app.SwipeBackActivity;
 import android.app.Activity;
 import android.content.ContentResolver;
 import android.content.Intent;
@@ -21,7 +24,7 @@ import android.widget.Toast;
 import android.widget.AdapterView.OnItemClickListener;
 import android.widget.AdapterView.OnItemSelectedListener;
 
-public class MissingPersonReport extends Activity implements
+public class MissingPersonReport extends SwipeBackActivity implements
 		OnItemClickListener, OnItemSelectedListener {
 
 	String query;
@@ -222,12 +225,14 @@ public class MissingPersonReport extends Activity implements
 
 	}
 
-	protected void onResume() {
-		super.onResume();
-	}
+	@Override
+    protected void onResume() {
+        super.onResume();
+        SwipeBackLayout mSwipeBackLayout;
+		mSwipeBackLayout = getSwipeBackLayout();
+		mSwipeBackLayout.setEdgeTrackingEnabled(SwipeBackLayout.EDGE_LEFT);
+    }
 
-	protected void onDestroy() {
-		super.onDestroy();
-	}
+	
 
 }

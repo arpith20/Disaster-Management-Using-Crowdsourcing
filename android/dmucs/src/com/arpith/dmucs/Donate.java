@@ -1,12 +1,13 @@
 package com.arpith.dmucs;
 
-import com.arpith.dmucs.adapter.DonateTabsPagerAdapter;
 import android.app.ActionBar;
 import android.app.ActionBar.Tab;
 import android.app.FragmentTransaction;
 import android.os.Bundle;
 import android.support.v4.app.FragmentActivity;
 import android.support.v4.view.ViewPager;
+
+import com.arpith.dmucs.adapter.DonateTabsPagerAdapter;
 
 public class Donate extends FragmentActivity implements ActionBar.TabListener {
 
@@ -71,5 +72,7 @@ public class Donate extends FragmentActivity implements ActionBar.TabListener {
 	@Override
 	public void onTabUnselected(Tab tab, FragmentTransaction ft) {
 	}
+	
+	
 
 }

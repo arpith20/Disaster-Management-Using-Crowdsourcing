@@ -149,6 +149,14 @@
             android:name="com.arpith.dmucs.WriteQueryDatabase"
             android:label="@string/title_activity_write_query_database" >
         </activity>
+        <activity
+            android:name="com.arpith.dmucs.ReportList"
+            android:label="Report List" >
+        </activity>
+        <activity
+            android:name="com.arpith.dmucs.ReportInfo"
+            android:label="Report List" >
+        </activity>
     </application>
 
 </manifest>

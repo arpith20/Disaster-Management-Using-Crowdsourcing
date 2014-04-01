@@ -3,6 +3,9 @@ package com.arpith.dmucs;
 import java.util.ArrayList;
 import java.util.List;
 
+import me.imid.swipebacklayout.lib.SwipeBackLayout;
+import me.imid.swipebacklayout.lib.app.SwipeBackActivity;
+
 import org.apache.http.NameValuePair;
 import org.apache.http.message.BasicNameValuePair;
 import org.json.JSONException;
@@ -19,7 +22,7 @@ import android.util.Log;
 import android.widget.TextView;
 import android.widget.Toast;
 
-public class Account extends Activity {
+public class Account extends SwipeBackActivity {
 	String phone, incident, lat, lng, damage, no_casualty;
 	String you, comments, done, modified_time;
 	Boolean d;
@@ -137,4 +140,12 @@ public class Account extends Activity {
 		}
 
 	}
+	
+	@Override
+    protected void onResume() {
+        super.onResume();
+        SwipeBackLayout mSwipeBackLayout;
+		mSwipeBackLayout = getSwipeBackLayout();
+		mSwipeBackLayout.setEdgeTrackingEnabled(SwipeBackLayout.EDGE_LEFT);
+    }
 }

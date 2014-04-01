@@ -3,6 +3,9 @@ package com.arpith.dmucs;
 import java.util.ArrayList;
 import java.util.List;
 
+import me.imid.swipebacklayout.lib.SwipeBackLayout;
+import me.imid.swipebacklayout.lib.app.SwipeBackActivity;
+
 import org.apache.http.NameValuePair;
 import org.apache.http.message.BasicNameValuePair;
 import org.json.JSONException;
@@ -22,7 +25,7 @@ import android.widget.Toast;
 
 import com.koushikdutta.ion.Ion;
 
-public class MissingPersonInfo extends Activity {
+public class MissingPersonInfo extends SwipeBackActivity {
 	Boolean d;
 	int success;
 
@@ -144,4 +147,12 @@ public class MissingPersonInfo extends Activity {
 		}
 
 	}
+	
+	@Override
+    protected void onResume() {
+        super.onResume();
+        SwipeBackLayout mSwipeBackLayout;
+		mSwipeBackLayout = getSwipeBackLayout();
+		mSwipeBackLayout.setEdgeTrackingEnabled(SwipeBackLayout.EDGE_LEFT);
+    }
 }

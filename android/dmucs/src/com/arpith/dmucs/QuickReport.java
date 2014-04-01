@@ -3,7 +3,8 @@ package com.arpith.dmucs;
 import java.util.ArrayList;
 import java.util.List;
 
-import android.app.Activity;
+import me.imid.swipebacklayout.lib.SwipeBackLayout;
+import me.imid.swipebacklayout.lib.app.SwipeBackActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
@@ -12,14 +13,16 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.Spinner;
 
-public class QuickReport extends Activity {
+public class QuickReport extends SwipeBackActivity {
 	
 	Button Submit_Report;
-	
+
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_quick_report);
+		
+		
 		
 		Spinner spinner1 = (Spinner) findViewById(R.id.category_spinner);
         List<String> list = new ArrayList<String>();
@@ -52,6 +55,13 @@ public class QuickReport extends Activity {
 		
 	}
 
+	@Override
+    protected void onResume() {
+        super.onResume();
+        SwipeBackLayout mSwipeBackLayout;
+		mSwipeBackLayout = getSwipeBackLayout();
+		mSwipeBackLayout.setEdgeTrackingEnabled(SwipeBackLayout.EDGE_LEFT);
+    }
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
 		// Inflate the menu; this adds items to the action bar if it is present.

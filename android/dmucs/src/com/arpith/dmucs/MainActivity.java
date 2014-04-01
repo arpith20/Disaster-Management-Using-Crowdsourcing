@@ -3,6 +3,8 @@ package com.arpith.dmucs;
 import java.util.ArrayList;
 import java.util.List;
 
+import me.imid.swipebacklayout.lib.SwipeBackLayout;
+import me.imid.swipebacklayout.lib.app.SwipeBackActivity;
 import net.sebastianopoggi.ui.GlowPadBackport.GlowPadView;
 import net.simonvt.menudrawer.MenuDrawer;
 import net.simonvt.menudrawer.Position;
@@ -20,7 +22,7 @@ import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 
-public class MainActivity extends Activity {
+public class MainActivity extends SwipeBackActivity {
 
 	// Drawer-------------
 	private static final int MENU_OVERFLOW = 1;
@@ -60,6 +62,7 @@ public class MainActivity extends Activity {
 		items.add(new Category("Information"));
 		items.add(new Item("Maps", R.drawable.ic_action_select_all_dark));
 		items.add(new Item("About us", R.drawable.ic_action_select_all_dark));
+		items.add(new Item("Report List", R.drawable.ic_action_select_all_dark));
 
 
 		// A custom ListView is needed so the drawer can be notified when it's
@@ -183,6 +186,10 @@ public class MainActivity extends Activity {
 				i = new Intent(MainActivity.this, About.class);
 				startActivity(i);
 				break;
+			case 10:
+				i = new Intent(MainActivity.this, ReportList.class);
+				startActivity(i);
+				break;
 			}
 			mMenuDrawer.closeMenu();
 		}
@@ -287,4 +294,12 @@ public class MainActivity extends Activity {
 
 	}
 	// EndDrawer-------------------------------------------------------------
+	
+	@Override
+    protected void onResume() {
+        super.onResume();
+        SwipeBackLayout mSwipeBackLayout;
+		mSwipeBackLayout = getSwipeBackLayout();
+		mSwipeBackLayout.setEdgeTrackingEnabled(SwipeBackLayout.EDGE_RIGHT);
+    }
 }

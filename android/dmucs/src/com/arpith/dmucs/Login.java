@@ -3,6 +3,9 @@ package com.arpith.dmucs;
 import java.util.ArrayList;
 import java.util.List;
 
+import me.imid.swipebacklayout.lib.SwipeBackLayout;
+import me.imid.swipebacklayout.lib.app.SwipeBackActivity;
+
 import org.apache.http.NameValuePair;
 import org.apache.http.message.BasicNameValuePair;
 import org.json.JSONException;
@@ -20,7 +23,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 
-public class Login extends Activity {
+public class Login extends SwipeBackActivity {
 	String User;
 	int Password;
 	
@@ -135,5 +138,12 @@ public class Login extends Activity {
 		}
 
 	}
+	@Override
+    protected void onResume() {
+        super.onResume();
+        SwipeBackLayout mSwipeBackLayout;
+		mSwipeBackLayout = getSwipeBackLayout();
+		mSwipeBackLayout.setEdgeTrackingEnabled(SwipeBackLayout.EDGE_LEFT);
+    }
 
 }

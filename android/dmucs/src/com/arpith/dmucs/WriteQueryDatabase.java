@@ -4,6 +4,9 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 
+import me.imid.swipebacklayout.lib.SwipeBackLayout;
+import me.imid.swipebacklayout.lib.app.SwipeBackActivity;
+
 import org.apache.http.NameValuePair;
 import org.apache.http.message.BasicNameValuePair;
 import org.json.JSONException;
@@ -25,9 +28,9 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
-public class WriteQueryDatabase extends Activity {
+public class WriteQueryDatabase extends SwipeBackActivity {
 	String query;
-	Boolean d,suc;
+	Boolean d, suc;
 	// Progress Dialog
 	private ProgressDialog pDialog;
 	JSONParser jsonParser = new JSONParser();
@@ -50,35 +53,34 @@ public class WriteQueryDatabase extends Activity {
 			alertDialog.setNeutralButton("OK", null);
 			alertDialog.show();
 		} else {
-			ImageView rs_tick=(ImageView)findViewById(R.id.rs_tick);
+			ImageView rs_tick = (ImageView) findViewById(R.id.rs_tick);
 			Button rs_main = (Button) findViewById(R.id.rs_main);
 			TextView result = (TextView) findViewById(R.id.rs_result);
-			
+
 			rs_tick.setAlpha(0);
 			url_query = "http://";
 			url_query += ip;
 			url_query += "/arpith/dmucs/query.php";
 
 			Bundle e = getIntent().getExtras();
-			query=e.getString("query");
-			String text=e.getString("text");
-			//query="insert into donate_money values (\"8105581713\",\"9818000236\",20);|update donate set amount=amount+20 where uniqueid=\"8105581711\";";
-			
+			query = e.getString("query");
+			String text = e.getString("text");
+			// query="insert into donate_money values (\"8105581713\",\"9818000236\",20);|update donate set amount=amount+20 where uniqueid=\"8105581711\";";
+
 			d = false;
 			new CreateNewProduct().execute();
 			while (!d)
 				;
 
 			// Do after query has been submitted
-			
-			if(suc)
-			result.setText(text);
-			else{
+
+			if (suc)
+				result.setText(text);
+			else {
 				result.setText("Something went wrong..");
 			}
 			rs_tick.setAlpha(150);
 
-		
 			rs_main.setOnClickListener(new View.OnClickListener() {
 
 				@Override
@@ -110,15 +112,15 @@ public class WriteQueryDatabase extends Activity {
 		 * Creating product
 		 * */
 		protected String doInBackground(String... args) {
-			
+
 			// Building Parameters
 			List<NameValuePair> params = new ArrayList<NameValuePair>();
 			params.add(new BasicNameValuePair("query", query));
 
 			// getting JSON Object
 			// Note that create product url accepts POST method
-			JSONObject json = jsonParser.makeHttpRequest(url_query,
-					"POST", params);
+			JSONObject json = jsonParser.makeHttpRequest(url_query, "POST",
+					params);
 
 			// check log cat for response
 			Log.d("Create Response", json.toString());
@@ -128,11 +130,11 @@ public class WriteQueryDatabase extends Activity {
 				int success = json.getInt("success");
 				if (success == 1) {
 					d = true;
-					suc =true;
+					suc = true;
 					// Toast.makeText(getBaseContext(), "Incident Reported",
 					// Toast.LENGTH_LONG).show();
 				} else {
-					d=true;
+					d = true;
 					suc = false;
 				}
 			} catch (JSONException e) {
@@ -146,5 +148,13 @@ public class WriteQueryDatabase extends Activity {
 			pDialog.dismiss();
 		}
 
+	}
+
+	@Override
+	protected void onResume() {
+		super.onResume();
+		SwipeBackLayout mSwipeBackLayout;
+		mSwipeBackLayout = getSwipeBackLayout();
+		mSwipeBackLayout.setEdgeTrackingEnabled(SwipeBackLayout.EDGE_LEFT);
 	}
 }

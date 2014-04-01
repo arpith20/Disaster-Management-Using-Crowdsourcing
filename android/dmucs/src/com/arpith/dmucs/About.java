@@ -1,7 +1,8 @@
 package com.arpith.dmucs;
 import java.util.ArrayList;
 
-import android.app.Activity;
+import me.imid.swipebacklayout.lib.SwipeBackLayout;
+import me.imid.swipebacklayout.lib.app.SwipeBackActivity;
 import android.content.Context;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
@@ -18,7 +19,7 @@ import android.widget.Toast;
 import com.haarman.listviewanimations.ArrayAdapter;
 import com.haarman.listviewanimations.swinginadapters.prepared.SwingBottomInAnimationAdapter;
 
-public class About extends Activity {
+public class About extends SwipeBackActivity {
 
 	private GoogleCardsAdapter mGoogleCardsAdapter;
 
@@ -165,5 +166,13 @@ public class About extends Activity {
 			ImageView imageView;
 		}
 	}
+	
+	@Override
+    protected void onResume() {
+        super.onResume();
+        SwipeBackLayout mSwipeBackLayout;
+		mSwipeBackLayout = getSwipeBackLayout();
+		mSwipeBackLayout.setEdgeTrackingEnabled(SwipeBackLayout.EDGE_LEFT);
+    }
 
 }
