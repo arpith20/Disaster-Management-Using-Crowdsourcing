@@ -3,9 +3,9 @@
 $response = array();
  
 // check for required fields
-if (isset($_POST['phone'])) {
+if (isset($_GET['phone'])) {
  
-    $n = $_POST['phone'];
+    $n = $_GET['phone'];
  
     // include db connect class
     require_once __DIR__ . '/db_connect.php';

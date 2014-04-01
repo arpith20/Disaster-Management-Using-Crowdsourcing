@@ -3,7 +3,6 @@ package com.arpith.dmucs;
 import android.app.Activity;
 import android.os.Bundle;
 import android.widget.TextView;
-import android.widget.Toast;
 
 public class SubmitDonation extends Activity {
 

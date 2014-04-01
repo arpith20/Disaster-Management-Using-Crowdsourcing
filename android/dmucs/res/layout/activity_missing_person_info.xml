@@ -14,7 +14,6 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:padding="20dp" >
-             
 
             <ImageView
                 android:id="@+id/account_photo"
@@ -70,7 +69,7 @@
                 android:layout_below="@id/account_phone"
                 android:layout_marginTop="10dp"
                 android:layout_toRightOf="@id/account_photo"
-                android:text="Date of Birth: "
+                android:text="Reported on: "
                 android:textColor="#ffffff"
                 android:textSize="16dp"
                 android:textStyle="bold" />
@@ -96,76 +95,84 @@
                 android:layout_marginTop="6dp"
                 android:background="#eeeeee" />
 
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="10dp"
+            <ScrollView
+                android:id="@+id/scrollView1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
                 android:layout_alignParentBottom="true"
-                android:layout_below="@+id/line_break"
-                android:background="@android:color/transparent"
-                android:orientation="vertical" >
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentRight="true"
+                android:layout_below="@+id/line_break" >
 
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Last Seen"
-                    android:textAppearance="?android:attr/textAppearanceLarge"
-                    android:textColor="@android:color/white" />
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="10dp"
+                    android:background="@android:color/transparent"
+                    android:orientation="vertical" >
 
-                <TextView
-                    android:id="@+id/m_lastseen"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Small Text"
-                    android:textAppearance="?android:attr/textAppearanceSmall"
-                    android:textColor="@android:color/white" />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Last Seen"
+                        android:textAppearance="?android:attr/textAppearanceLarge"
+                        android:textColor="@android:color/white" />
 
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:paddingTop="10dp"
-                    android:text="Dress Worn"
-                    android:textAppearance="?android:attr/textAppearanceLarge"
-                    android:textColor="@android:color/white" />
+                    <TextView
+                        android:id="@+id/m_lastseen"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Small Text"
+                        android:textAppearance="?android:attr/textAppearanceSmall"
+                        android:textColor="@android:color/white" />
 
-                <TextView
-                    android:id="@+id/m_dress"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Small Text"
-                    android:textAppearance="?android:attr/textAppearanceSmall"
-                    android:textColor="@android:color/white" />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:paddingTop="10dp"
+                        android:text="Dress Worn"
+                        android:textAppearance="?android:attr/textAppearanceLarge"
+                        android:textColor="@android:color/white" />
 
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:paddingTop="10dp"
-                    android:text="Description"
-                    android:textAppearance="?android:attr/textAppearanceLarge"
-                    android:textColor="@android:color/white" />
+                    <TextView
+                        android:id="@+id/m_dress"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Small Text"
+                        android:textAppearance="?android:attr/textAppearanceSmall"
+                        android:textColor="@android:color/white" />
 
-                <TextView
-                    android:id="@+id/m_desc"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:paddingBottom="20dp"
-                    android:text="Small Text"
-                    android:textAppearance="?android:attr/textAppearanceSmall"
-                    android:textColor="@android:color/white" />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:paddingTop="10dp"
+                        android:text="Description"
+                        android:textAppearance="?android:attr/textAppearanceLarge"
+                        android:textColor="@android:color/white" />
 
-                <Button
-                    android:id="@+id/m_ls"
-                    android:layout_width="fill_parent"
-                    android:layout_height="wrap_content"
-                    android:background="@drawable/button_border"
-                    android:text="Last Seen Location" />
+                    <TextView
+                        android:id="@+id/m_desc"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:paddingBottom="20dp"
+                        android:text="Small Text"
+                        android:textAppearance="?android:attr/textAppearanceSmall"
+                        android:textColor="@android:color/white" />
 
-                <Button
-                    android:id="@+id/m_found"
-                    android:layout_width="fill_parent"
-                    android:layout_height="wrap_content"
-                    android:background="@drawable/button_border"
-                    android:text="Click here if you found this person" />
-            </LinearLayout>
+                    <Button
+                        android:id="@+id/m_ls"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/button_border"
+                        android:text="Last Seen Location" />
+
+                    <Button
+                        android:id="@+id/m_found"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/button_border"
+                        android:text="Click here if you found this person" />
+                </LinearLayout>
+            </ScrollView>
         </RelativeLayout>
 
         <LinearLayout
@@ -191,10 +198,14 @@
                 android:text="Swip Up to see larger image"
                 android:textSize="16sp" />
 
-            <WebView
-                android:id="@+id/account_photo_large"
-                android:layout_width="fill_parent"
-                android:layout_height="fill_parent" />
+            <ImageView
+                android:id="@+id/account_photo_big"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:scaleType="fitStart"
+                 >
+            </ImageView>
         </LinearLayout>
     </com.sothree.slidinguppanel.SlidingUpPanelLayout>
 

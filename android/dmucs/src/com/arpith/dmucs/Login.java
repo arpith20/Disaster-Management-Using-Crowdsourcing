@@ -11,7 +11,6 @@ import org.apache.http.message.BasicNameValuePair;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-import android.app.Activity;
 import android.app.AlertDialog;
 import android.app.ProgressDialog;
 import android.content.Intent;
@@ -26,11 +25,11 @@ import android.widget.EditText;
 public class Login extends SwipeBackActivity {
 	String User;
 	int Password;
-	
+
 	EditText uid;
 	EditText pass;
 	String correctPass = "test";
-	
+
 	private ProgressDialog pDialog;
 	JSONParser jsonParser = new JSONParser();
 	boolean d;
@@ -42,9 +41,9 @@ public class Login extends SwipeBackActivity {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_login);
 
-		url_account = "http://192.168.42.46/arpith/dmucs/login.php";
+		url_account = "http://192.168.43.111/arpith/dmucs/login.php";
 		d = false;
-		
+
 		SharedPreferences uname = getSharedPreferences("user", 0);
 		boolean first = uname.getBoolean("first", true);
 		if (!first) {
@@ -62,7 +61,7 @@ public class Login extends SwipeBackActivity {
 			public void onClick(View arg0) {
 				User = uid.getText().toString();
 				String EnteredPassword = pass.getText().toString();
-				Log.d("hashedPass", ""+EnteredPassword.hashCode());
+				Log.d("hashedPass", "" + EnteredPassword.hashCode());
 				new CheckPassword().execute();
 				while (!d)
 					;
@@ -74,10 +73,10 @@ public class Login extends SwipeBackActivity {
 					unameEdit.putBoolean("first", false);
 					unameEdit.putString("name", User);
 					unameEdit.commit();
-					
+
 					Intent i = new Intent(Login.this, MainActivity.class);
 					startActivity(i);
-					
+
 					finish();
 
 				} else {
@@ -90,7 +89,7 @@ public class Login extends SwipeBackActivity {
 			}
 		});
 	}
-	
+
 	class CheckPassword extends AsyncTask<String, String, String> {
 		@Override
 		protected void onPreExecute() {
@@ -138,12 +137,13 @@ public class Login extends SwipeBackActivity {
 		}
 
 	}
+
 	@Override
-    protected void onResume() {
-        super.onResume();
-        SwipeBackLayout mSwipeBackLayout;
+	protected void onResume() {
+		super.onResume();
+		SwipeBackLayout mSwipeBackLayout;
 		mSwipeBackLayout = getSwipeBackLayout();
 		mSwipeBackLayout.setEdgeTrackingEnabled(SwipeBackLayout.EDGE_LEFT);
-    }
+	}
 
 }

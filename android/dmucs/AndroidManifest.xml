@@ -134,10 +134,6 @@
             android:value="@integer/google_play_services_version" />
 
         <activity
-            android:name="com.arpith.dmucs.MissingReportServer"
-            android:label="@string/title_activity_missing_report_server" >
-        </activity>
-        <activity
             android:name="com.arpith.dmucs.Donate"
             android:label="@string/title_activity_donate" >
         </activity>
@@ -155,6 +151,10 @@
         </activity>
         <activity
             android:name="com.arpith.dmucs.ReportInfo"
+            android:label="Report List" >
+        </activity>
+        <activity
+            android:name="com.arpith.dmucs.MissingPersonList"
             android:label="Report List" >
         </activity>
     </application>

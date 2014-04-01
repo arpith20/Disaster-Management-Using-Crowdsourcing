@@ -8,7 +8,6 @@ import me.imid.swipebacklayout.lib.app.SwipeBackActivity;
 import net.sebastianopoggi.ui.GlowPadBackport.GlowPadView;
 import net.simonvt.menudrawer.MenuDrawer;
 import net.simonvt.menudrawer.Position;
-import android.app.Activity;
 import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
@@ -27,14 +26,14 @@ public class MainActivity extends SwipeBackActivity {
 	// Drawer-------------
 	private static final int MENU_OVERFLOW = 1;
 	private static final String STATE_ACTIVE_POSITION = "net.simonvt.menudrawer.samples.ContentSample.activePosition";
-    private static final String STATE_CONTENT_TEXT = "net.simonvt.menudrawer.samples.ContentSample.contentText";
+	private static final String STATE_CONTENT_TEXT = "net.simonvt.menudrawer.samples.ContentSample.contentText";
 
-    private MenuDrawer mMenuDrawer;
+	private MenuDrawer mMenuDrawer;
 
-    private MenuAdapter mAdapter;
-    private ListView mList;
+	private MenuAdapter mAdapter;
+	private ListView mList;
 
-    private int mActivePosition = -1;
+	private int mActivePosition = -1;
 
 	// EndDrawer-------------
 
@@ -64,7 +63,6 @@ public class MainActivity extends SwipeBackActivity {
 		items.add(new Item("About us", R.drawable.ic_action_select_all_dark));
 		items.add(new Item("Report List", R.drawable.ic_action_select_all_dark));
 
-
 		// A custom ListView is needed so the drawer can be notified when it's
 		// scrolled. This is to update the position
 		// of the arrow indicator.
@@ -85,33 +83,35 @@ public class MainActivity extends SwipeBackActivity {
 			public void onGrabbed(View v, int handle) {
 				// Do nothing
 			}
+
 			@Override
 			public void onReleased(View v, int handle) {
 				// Do nothing
 			}
+
 			@Override
 			public void onTrigger(View v, int target) {
 				Intent i;
-				switch(target)
-				{
+				switch (target) {
 				case 0:
-					Toast.makeText(MainActivity.this,
-							"Report Disaster", Toast.LENGTH_SHORT)
-							.show();
-					i=new Intent(MainActivity.this,QuickReport.class);
+					Toast.makeText(MainActivity.this, "Report Disaster",
+							Toast.LENGTH_SHORT).show();
+					i = new Intent(MainActivity.this, QuickReport.class);
 					startActivity(i);
 					break;
 				case 2:
-					i=new Intent(MainActivity.this,MissingPersonReport.class);
+					i = new Intent(MainActivity.this, MissingPersonReport.class);
 					startActivity(i);
 					break;
 				}
 				glowPad.reset(true);
 			}
+
 			@Override
 			public void onGrabbedStateChange(View v, int handle) {
 				// Do nothing
 			}
+
 			@Override
 			public void onFinishFinalAnimation() {
 				// Do nothing
@@ -122,11 +122,11 @@ public class MainActivity extends SwipeBackActivity {
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
 		MenuItem overflowItem = menu.add(0, MENU_OVERFLOW, 0, null);
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.ICE_CREAM_SANDWICH) {
-            overflowItem.setShowAsAction(MenuItem.SHOW_AS_ACTION_ALWAYS);
-        }
-        overflowItem.setIcon(R.drawable.ic_menu_moreoverflow_normal_holo_light);
-        return true;
+		if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.ICE_CREAM_SANDWICH) {
+			overflowItem.setShowAsAction(MenuItem.SHOW_AS_ACTION_ALWAYS);
+		}
+		overflowItem.setIcon(R.drawable.ic_menu_moreoverflow_normal_holo_light);
+		return true;
 	}
 
 	// This method is called once the menu is selected
@@ -135,8 +135,8 @@ public class MainActivity extends SwipeBackActivity {
 	public boolean onOptionsItemSelected(MenuItem item) {
 		switch (item.getItemId()) {
 		case MENU_OVERFLOW:
-            mMenuDrawer.toggleMenu();
-            return true;
+			mMenuDrawer.toggleMenu();
+			return true;
 		}
 		return true;
 	}
@@ -148,18 +148,18 @@ public class MainActivity extends SwipeBackActivity {
 				long id) {
 			mActivePosition = position;
 			mMenuDrawer.setActiveView(view, position);
-			Toast.makeText(getBaseContext(), "Position"+position, Toast.LENGTH_SHORT).show();
+			Toast.makeText(getBaseContext(), "Position" + position,
+					Toast.LENGTH_SHORT).show();
 			Intent i;
-			switch(position)
-			{
-			
+			switch (position) {
+
 			case 0:
 				i = new Intent(MainActivity.this, MainActivity.class);
 				startActivity(i);
 				finish();
 				break;
 			case 1:
-				i = new Intent(MainActivity.this, MissingPersonInfo.class);
+				i = new Intent(MainActivity.this, MissingPersonList.class);
 				startActivity(i);
 				break;
 			case 2:
@@ -293,13 +293,14 @@ public class MainActivity extends SwipeBackActivity {
 		}
 
 	}
+
 	// EndDrawer-------------------------------------------------------------
-	
+
 	@Override
-    protected void onResume() {
-        super.onResume();
-        SwipeBackLayout mSwipeBackLayout;
+	protected void onResume() {
+		super.onResume();
+		SwipeBackLayout mSwipeBackLayout;
 		mSwipeBackLayout = getSwipeBackLayout();
 		mSwipeBackLayout.setEdgeTrackingEnabled(SwipeBackLayout.EDGE_RIGHT);
-    }
+	}
 }

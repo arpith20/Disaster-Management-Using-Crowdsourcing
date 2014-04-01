@@ -11,7 +11,6 @@ import org.apache.http.message.BasicNameValuePair;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-import android.app.Activity;
 import android.app.AlertDialog;
 import android.app.ProgressDialog;
 import android.content.SharedPreferences;
@@ -59,9 +58,9 @@ public class Account extends SwipeBackActivity {
 			Toast.makeText(getBaseContext(), "writing " + url_account,
 					Toast.LENGTH_SHORT).show();
 
-			d = false;
-			new CreateNewProduct().execute();
-			while (!d)
+			//d = false;
+			new Async_Account().execute();
+			//while (!d)
 				;
 
 			// Do after loading
@@ -86,7 +85,7 @@ public class Account extends SwipeBackActivity {
 
 	}
 
-	class CreateNewProduct extends AsyncTask<String, String, String> {
+	class Async_Account extends AsyncTask<String, String, String> {
 		@Override
 		protected void onPreExecute() {
 			super.onPreExecute();

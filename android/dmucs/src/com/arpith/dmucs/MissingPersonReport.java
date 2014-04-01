@@ -4,7 +4,6 @@ import java.util.ArrayList;
 
 import me.imid.swipebacklayout.lib.SwipeBackLayout;
 import me.imid.swipebacklayout.lib.app.SwipeBackActivity;
-import android.app.Activity;
 import android.content.ContentResolver;
 import android.content.Intent;
 import android.database.Cursor;
@@ -15,14 +14,14 @@ import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.AdapterView;
+import android.widget.AdapterView.OnItemClickListener;
+import android.widget.AdapterView.OnItemSelectedListener;
 import android.widget.ArrayAdapter;
 import android.widget.AutoCompleteTextView;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
-import android.widget.AdapterView.OnItemClickListener;
-import android.widget.AdapterView.OnItemSelectedListener;
 
 public class MissingPersonReport extends SwipeBackActivity implements
 		OnItemClickListener, OnItemSelectedListener {
@@ -90,7 +89,12 @@ public class MissingPersonReport extends SwipeBackActivity implements
 				Toast.makeText(getBaseContext(),
 						"Reporting " + NameSel + " as missing.",
 						Toast.LENGTH_LONG).show();
-				Intent i =new Intent(MissingPersonReport.this,MissingReportServer.class);
+				
+				String dress = et_dress.getText().toString();
+				String desc = et_desc.getText().toString();
+				Intent i =new Intent(MissingPersonReport.this,WriteQueryDatabase.class);
+				i.putExtra("query", "insert into missing(Name,phone,dress,description,lat,lng) values ('"+NameSel+"','"+toNumberValue+"','"+dress+"','"+desc+"','0.1','0.1');");
+				i.putExtra("text", NameSel+" successfully reported as missing");
 				startActivity(i);
 			}
 		};

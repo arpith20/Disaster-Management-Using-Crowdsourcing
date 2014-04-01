@@ -3,7 +3,6 @@ package com.arpith.dmucs;
 import me.imid.swipebacklayout.lib.SwipeBackLayout;
 import me.imid.swipebacklayout.lib.app.SwipeBackActivity;
 import android.os.Bundle;
-import android.app.Activity;
 import android.view.Menu;
 
 public class SituationReport extends SwipeBackActivity {

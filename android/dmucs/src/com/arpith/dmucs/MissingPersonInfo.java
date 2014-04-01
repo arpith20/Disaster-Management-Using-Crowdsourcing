@@ -11,7 +11,6 @@ import org.apache.http.message.BasicNameValuePair;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-import android.app.Activity;
 import android.app.AlertDialog;
 import android.app.ProgressDialog;
 import android.content.SharedPreferences;
@@ -21,7 +20,6 @@ import android.preference.PreferenceManager;
 import android.util.Log;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.koushikdutta.ion.Ion;
 
@@ -57,19 +55,23 @@ public class MissingPersonInfo extends SwipeBackActivity {
 			url_account += ip;
 			url_account += "/arpith/dmucs/missing_info.php";
 
-			Toast.makeText(getBaseContext(), "writing " + url_account,
-					Toast.LENGTH_SHORT).show();
-
 			d = false;
-			
-			ImageView imageView = (ImageView)findViewById(R.id.account_photo);
+
+			ImageView imageView = (ImageView) findViewById(R.id.account_photo);
 			Ion.with(this)
-	        .load("http://192.168.43.111/arpith/dmucs/profile/9968035735")
-	        .withBitmap()
-	        .resize(512, 512)
-	        .centerInside()
-	        .intoImageView(imageView);
-			new CreateNewProduct().execute();
+					.load("http://" + ip
+							+ "/arpith/dmucs/profile/9968035735.jpg")
+					.withBitmap().resize(512, 512).centerInside()
+					.intoImageView(imageView);
+
+			ImageView imageView2 = (ImageView) findViewById(R.id.account_photo_big);
+			Ion.with(this)
+					.load("http://" + ip
+							+ "/arpith/dmucs/profile/9968035735.jpg")
+					.withBitmap().resize(1024, 1024).centerInside()
+					.intoImageView(imageView2);
+
+			new Async_FindPerson().execute();
 			while (!d)
 				;
 
@@ -87,15 +89,11 @@ public class MissingPersonInfo extends SwipeBackActivity {
 			loc.setText("(" + lat + ", " + lng + ")");
 			dress.setText(dr);
 			desc.setText(description);
-
-			Toast.makeText(getBaseContext(), "" + success, Toast.LENGTH_SHORT)
-					.show();
-
 		}
 
 	}
 
-	class CreateNewProduct extends AsyncTask<String, String, String> {
+	class Async_FindPerson extends AsyncTask<String, String, String> {
 		@Override
 		protected void onPreExecute() {
 			super.onPreExecute();
@@ -107,7 +105,7 @@ public class MissingPersonInfo extends SwipeBackActivity {
 		}
 
 		protected String doInBackground(String... args) {
-			String n1 = "9968035735";
+			String n1 = "8105581711";
 
 			// Building Parameters
 			List<NameValuePair> params = new ArrayList<NameValuePair>();
@@ -115,7 +113,7 @@ public class MissingPersonInfo extends SwipeBackActivity {
 
 			// getting JSON Object
 			// Note that create product url accepts POST method
-			JSONObject json = jsonParser.makeHttpRequest(url_account, "GET",
+			JSONObject json = jsonParser.makeHttpRequest(url_account, "POST",
 					params);
 
 			// check log cat for response
@@ -147,12 +145,12 @@ public class MissingPersonInfo extends SwipeBackActivity {
 		}
 
 	}
-	
+
 	@Override
-    protected void onResume() {
-        super.onResume();
-        SwipeBackLayout mSwipeBackLayout;
+	protected void onResume() {
+		super.onResume();
+		SwipeBackLayout mSwipeBackLayout;
 		mSwipeBackLayout = getSwipeBackLayout();
 		mSwipeBackLayout.setEdgeTrackingEnabled(SwipeBackLayout.EDGE_LEFT);
-    }
+	}
 }
