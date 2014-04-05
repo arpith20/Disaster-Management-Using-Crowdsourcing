@@ -101,8 +101,8 @@ public class ReportInfo extends Activity {
 			.position(reportlocation)
 			.icon(BitmapDescriptorFactory
 					.fromResource(R.drawable.currentmarker)));
-			map.moveCamera(CameraUpdateFactory.newLatLngZoom(reportlocation, 15));
-			map.animateCamera(CameraUpdateFactory.zoomTo(15), 2000, null);
+			map.animateCamera(CameraUpdateFactory.newLatLngZoom(reportlocation, 9), 4000,
+					null);
 		}
 
 	}
