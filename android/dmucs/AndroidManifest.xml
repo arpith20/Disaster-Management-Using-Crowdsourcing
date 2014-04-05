@@ -48,6 +48,7 @@
             android:theme="@android:style/Theme.Holo.Light.NoActionBar" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
@@ -57,6 +58,7 @@
             android:screenOrientation="portrait" >
             <intent-filter>
                 <action android:name="android.intent.action.PREFERENCE" />
+
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
@@ -66,6 +68,7 @@
             android:screenOrientation="portrait" >
             <intent-filter>
                 <action android:name="android.intent.action.APREFERENCE" />
+
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
@@ -100,7 +103,8 @@
         </activity>
         <activity
             android:name="com.arpith.dmucs.QuickReport"
-            android:label="Report a Disaster" >
+            android:label="Report a Disaster"
+            android:windowSoftInputMode="stateHidden" >
         </activity>
         <activity
             android:name="com.arpith.dmucs.MissingPersonInfo"
@@ -128,7 +132,8 @@
 
         <activity
             android:name="com.arpith.dmucs.Donate"
-            android:label="@string/title_activity_donate" >
+            android:label="@string/title_activity_donate"
+            android:windowSoftInputMode="stateHidden" >
         </activity>
         <activity
             android:name="com.arpith.dmucs.SubmitDonation"
@@ -153,6 +158,16 @@
         <activity
             android:name="com.arpith.dmucs.MissingPersonFound"
             android:label="Report Person as Found" >
+        </activity>
+        <activity
+            android:name="com.arpith.dmucs.ReliefInfo"
+            android:label="Location Information"
+            android:windowSoftInputMode="stateHidden" >
+        </activity>
+        <activity
+            android:name="com.arpith.dmucs.ReliefAdd"
+            android:label="Location Information"
+            android:windowSoftInputMode="stateHidden" >
         </activity>
     </application>
 

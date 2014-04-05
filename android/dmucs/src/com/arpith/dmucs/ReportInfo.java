@@ -36,6 +36,7 @@ public class ReportInfo extends Activity {
 	int success;
 
 	String incident,reportedby,casualties,description,reportedon, lng,lat,rectified;
+	String pid;
 
 	// Progress Dialog
 	private ProgressDialog pDialog;
@@ -50,6 +51,9 @@ public class ReportInfo extends Activity {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_reportinfo);
 
+		Bundle b = getIntent().getExtras();
+		pid=b.getString("pid"); 
+		
 		SharedPreferences getIP = PreferenceManager
 				.getDefaultSharedPreferences(getBaseContext());
 		String ip = getIP.getString("ip", "");
@@ -119,11 +123,11 @@ public class ReportInfo extends Activity {
 		}
 
 		protected String doInBackground(String... args) {
-			String n1 = "8105581711";
+			
 
 			// Building Parameters
 			List<NameValuePair> params = new ArrayList<NameValuePair>();
-			params.add(new BasicNameValuePair("phone", n1));
+			params.add(new BasicNameValuePair("phone", pid));
 
 			// getting JSON Object
 			// Note that create product url accepts POST method

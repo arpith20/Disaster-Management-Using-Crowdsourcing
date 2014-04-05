@@ -4,13 +4,35 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:background="#ff8400" >
-     
-    <TextView android:layout_width="fill_parent"
+
+    <TextView
+        android:id="@+id/tv"
+        android:layout_width="fill_parent"
         android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
         android:gravity="center"
-        android:text="Design Games Screen"
-        android:textSize="20dp"
-        android:layout_centerInParent="true"/>
-     
+        android:text="Choose a location nearest to you or\nadd an new location"
+        android:textSize="20dp" />
+
+    <ListView
+        android:id="@+id/list"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/rel_create"
+        android:layout_below="@+id/tv"
+        android:divider="@null"
+        android:dividerHeight="0dp" />
+
+    <Button
+        android:id="@+id/rel_create"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentRight="true"
+        android:text="Add new collect points"
+        android:background="@drawable/button_border_nopad"
+        android:textColor="@android:color/white" />
  
 </RelativeLayout>
