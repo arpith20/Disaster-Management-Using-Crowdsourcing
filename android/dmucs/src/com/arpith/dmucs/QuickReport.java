@@ -5,6 +5,7 @@ import java.util.List;
 
 import me.imid.swipebacklayout.lib.SwipeBackLayout;
 import me.imid.swipebacklayout.lib.app.SwipeBackActivity;
+import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
@@ -13,7 +14,7 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.Spinner;
 
-public class QuickReport extends SwipeBackActivity {
+public class QuickReport extends Activity {
 	
 	Button Submit_Report;
 
@@ -45,28 +46,12 @@ public class QuickReport extends SwipeBackActivity {
 			
 			@Override
 			public void onClick(View arg0) {
-				Intent i = new Intent (QuickReport.this, ReportServer.class);
+				Intent i = new Intent (QuickReport.this, WriteQueryDatabase.class);
 				startActivity(i);
-				finish();
 			}
 		});
 		
 		
 		
 	}
-
-	@Override
-    protected void onResume() {
-        super.onResume();
-        SwipeBackLayout mSwipeBackLayout;
-		mSwipeBackLayout = getSwipeBackLayout();
-		mSwipeBackLayout.setEdgeTrackingEnabled(SwipeBackLayout.EDGE_LEFT);
-    }
-	@Override
-	public boolean onCreateOptionsMenu(Menu menu) {
-		// Inflate the menu; this adds items to the action bar if it is present.
-		getMenuInflater().inflate(R.menu.quick_report, menu);
-		return true;
-	}
-
 }

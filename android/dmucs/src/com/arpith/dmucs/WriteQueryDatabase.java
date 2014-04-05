@@ -13,6 +13,7 @@ import org.json.JSONObject;
 
 import android.app.AlertDialog;
 import android.app.ProgressDialog;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.AsyncTask;
 import android.os.Bundle;
@@ -80,7 +81,9 @@ public class WriteQueryDatabase extends SwipeBackActivity {
 
 				@Override
 				public void onClick(View arg0) {
-					finish();
+					Intent i = new Intent(WriteQueryDatabase.this,MainActivity.class);
+					i.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+					startActivity(i);
 				}
 			});
 

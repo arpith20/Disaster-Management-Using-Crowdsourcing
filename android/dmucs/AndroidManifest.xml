@@ -103,10 +103,6 @@
             android:label="Report a Disaster" >
         </activity>
         <activity
-            android:name="com.arpith.dmucs.ReportServer"
-            android:label="Report" >
-        </activity>
-        <activity
             android:name="com.arpith.dmucs.MissingPersonInfo"
             android:label="@string/title_activity_missing_person_info" >
         </activity>
@@ -153,6 +149,10 @@
         <activity
             android:name="com.arpith.dmucs.MissingPersonList"
             android:label="Report List" >
+        </activity>
+        <activity
+            android:name="com.arpith.dmucs.MissingPersonFound"
+            android:label="Report Person as Found" >
         </activity>
     </application>
 

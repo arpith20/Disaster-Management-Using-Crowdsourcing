@@ -3,9 +3,6 @@ package com.arpith.dmucs;
 import java.util.ArrayList;
 import java.util.List;
 
-import me.imid.swipebacklayout.lib.SwipeBackLayout;
-import me.imid.swipebacklayout.lib.app.SwipeBackActivity;
-
 import org.apache.http.NameValuePair;
 import org.apache.http.message.BasicNameValuePair;
 import org.json.JSONException;
@@ -14,13 +11,18 @@ import org.json.JSONObject;
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.app.ProgressDialog;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
 import android.util.Log;
+import android.view.View;
+import android.view.View.OnClickListener;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
@@ -35,20 +37,25 @@ public class MissingPersonInfo extends Activity {
 	Boolean d;
 	int success;
 
-	String n, p, h, c, lat, lng, r, description, dr;
+	String n, p, h, c, lat, lng, r, description, dr, more_info, found, f_lat,
+			f_lng, phone_by;
 
 	// Progress Dialog
 	private ProgressDialog pDialog;
 	JSONParser jsonParser = new JSONParser();
 
 	private static String url_account;
-	
+
 	private GoogleMap map;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_missing_person_info);
+
+		Bundle b = getIntent().getExtras();
+		p = b.getString("pid");
+		Toast.makeText(getBaseContext(), p, 300).show();
 
 		SharedPreferences getIP = PreferenceManager
 				.getDefaultSharedPreferences(getBaseContext());
@@ -92,6 +99,11 @@ public class MissingPersonInfo extends Activity {
 			TextView loc = (TextView) findViewById(R.id.m_lastseen);
 			TextView dress = (TextView) findViewById(R.id.m_dress);
 			TextView desc = (TextView) findViewById(R.id.m_desc);
+			TextView tv_more = (TextView) findViewById(R.id.m_moreinfo);
+
+			Button del = (Button) findViewById(R.id.m_del);
+			del.setEnabled(false);
+			del.setText("You are not permitted to delete this report");
 
 			name.setText(n);
 			phone.setText(p);
@@ -99,16 +111,63 @@ public class MissingPersonInfo extends Activity {
 			loc.setText("(" + lat + ", " + lng + ")");
 			dress.setText(dr);
 			desc.setText(description);
-			
-			LatLng reportlocation = new LatLng(Double.parseDouble(lat), Double.parseDouble(lng));
-			map = ((MapFragment) getFragmentManager().findFragmentById(R.id.map))
-					.getMap();
-			Marker ReportLocation = map.addMarker(new MarkerOptions()
-			.position(reportlocation)
-			.icon(BitmapDescriptorFactory
-					.fromResource(R.drawable.currentmarker)));
-			map.animateCamera(CameraUpdateFactory.newLatLngZoom(reportlocation, 9), 4000,
-					null);
+			tv_more.setText(more_info);
+
+			LatLng reportlocation = new LatLng(Double.parseDouble(lat),
+					Double.parseDouble(lng));
+			map = ((MapFragment) getFragmentManager()
+					.findFragmentById(R.id.map)).getMap();
+			Marker ReportLocation = map.addMarker(new MarkerOptions().position(
+					reportlocation).icon(
+					BitmapDescriptorFactory
+							.fromResource(R.drawable.currentmarker)));
+			map.animateCamera(
+					CameraUpdateFactory.newLatLngZoom(reportlocation, 15),
+					4000, null);
+
+			Button f = (Button) findViewById(R.id.m_found);
+			if (Integer.parseInt(found) == 1) {
+				f.setEnabled(false);
+				f.setText("This person has been found");
+
+				LatLng foundlocation = new LatLng(Double.parseDouble(f_lat),
+						Double.parseDouble(f_lng));
+				Marker FoundLocation = map.addMarker(new MarkerOptions()
+						.position(foundlocation)
+						.title("This person has been found here")
+						.icon(BitmapDescriptorFactory
+								.fromResource(R.drawable.currentmarker)));
+				//FoundLocation.showInfoWindow();
+				map.animateCamera(CameraUpdateFactory.newLatLngZoom(foundlocation, 17),4000,null);
+			}
+			f.setOnClickListener(new OnClickListener() {
+
+				@Override
+				public void onClick(View v) {
+					Intent i = new Intent(MissingPersonInfo.this,MissingPersonFound.class);
+					i.putExtra("phone", p);
+					startActivity(i);
+				}
+			});
+
+			SharedPreferences uname = getSharedPreferences("user", 0);
+			String by = uname.getString("name", "0");
+			if (by.matches(phone_by)) {
+				del.setEnabled(true);
+				del.setText("Delete this report");
+				del.setOnClickListener(new OnClickListener() {
+
+					@Override
+					public void onClick(View arg0) {
+						Intent i = new Intent(MissingPersonInfo.this,
+								WriteQueryDatabase.class);
+						i.putExtra("query",
+								"DELETE FROM missing WHERE phone = '" + p + "'");
+						i.putExtra("text", p + " successfully deleted");
+						startActivity(i);
+					}
+				});
+			}
 		}
 
 	}
@@ -125,15 +184,14 @@ public class MissingPersonInfo extends Activity {
 		}
 
 		protected String doInBackground(String... args) {
-			String n1 = "8105581711";
 
 			// Building Parameters
 			List<NameValuePair> params = new ArrayList<NameValuePair>();
-			params.add(new BasicNameValuePair("phone", n1));
+			params.add(new BasicNameValuePair("phone", p));
 
 			// getting JSON Object
 			// Note that create product url accepts POST method
-			JSONObject json = jsonParser.makeHttpRequest(url_account, "POST",
+			JSONObject json = jsonParser.makeHttpRequest(url_account, "GET",
 					params);
 
 			// check log cat for response
@@ -144,11 +202,16 @@ public class MissingPersonInfo extends Activity {
 				success = json.getInt("success");
 				n = json.getString("name");
 				p = json.getString("phone");
+				phone_by = json.getString("phone_by");
 				r = json.getString("reportedon");
 				dr = json.getString("dress");
 				lat = json.getString("lat");
 				lng = json.getString("lng");
+				f_lat = json.getString("f_lat");
+				f_lng = json.getString("f_lng");
 				description = json.getString("description");
+				more_info = json.getString("more_info");
+				found = json.getString("found");
 				if (success == 1) {
 					d = true;
 				} else {

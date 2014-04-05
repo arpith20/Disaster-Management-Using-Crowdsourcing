@@ -2,11 +2,15 @@ package com.arpith.dmucs;
 
 import java.util.ArrayList;
 
-import me.imid.swipebacklayout.lib.SwipeBackLayout;
-import me.imid.swipebacklayout.lib.app.SwipeBackActivity;
+import android.app.Activity;
 import android.content.ContentResolver;
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.database.Cursor;
+import android.location.Criteria;
+import android.location.Location;
+import android.location.LocationManager;
 import android.os.Bundle;
 import android.provider.ContactsContract;
 import android.util.Log;
@@ -23,10 +27,20 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
-public class MissingPersonReport extends SwipeBackActivity implements
-		OnItemClickListener, OnItemSelectedListener {
+import com.google.android.gms.maps.CameraUpdateFactory;
+import com.google.android.gms.maps.GoogleMap;
+import com.google.android.gms.maps.GoogleMap.OnInfoWindowClickListener;
+import com.google.android.gms.maps.GoogleMap.OnMapClickListener;
+import com.google.android.gms.maps.MapFragment;
+import com.google.android.gms.maps.model.BitmapDescriptorFactory;
+import com.google.android.gms.maps.model.LatLng;
+import com.google.android.gms.maps.model.Marker;
+import com.google.android.gms.maps.model.MarkerOptions;
 
-	String query;
+public class MissingPersonReport extends Activity implements
+		OnItemClickListener, OnItemSelectedListener, OnMapClickListener {
+
+	String query, lng, lat;
 	TextView tv_phone;
 	EditText et_desc, et_dress;
 	Button Send;
@@ -42,12 +56,17 @@ public class MissingPersonReport extends SwipeBackActivity implements
 	EditText toNumber = null;
 	String toNumberValue = "";
 
+	private GoogleMap map;
+	LatLng currentLocation;
+
 	/** Called when the activity is first created. */
 	@Override
 	public void onCreate(Bundle bundle) {
 		super.onCreate(bundle);
 
 		setContentView(R.layout.activity_missing_person_report);
+
+		location();
 
 		Send = (Button) findViewById(R.id.Send);
 		tv_phone = (TextView) findViewById(R.id.phone);
@@ -78,6 +97,23 @@ public class MissingPersonReport extends SwipeBackActivity implements
 		Send.setOnClickListener(BtnAction(textView));
 	}
 
+	private void location() {
+		LocationManager locationManager = (LocationManager) getSystemService(Context.LOCATION_SERVICE);
+
+		Criteria criteria = new Criteria();
+		String provider = locationManager.getBestProvider(criteria, true);
+		Location lastKnownLocation = locationManager
+				.getLastKnownLocation(provider);
+		currentLocation = new LatLng(lastKnownLocation.getLatitude(),
+				lastKnownLocation.getLongitude());
+
+		map = ((MapFragment) getFragmentManager().findFragmentById(R.id.map))
+				.getMap();
+		map.setOnMapClickListener(this);
+		map.animateCamera(CameraUpdateFactory.newLatLngZoom(currentLocation, 15), 2000,
+				null);
+	}
+
 	private OnClickListener BtnAction(final AutoCompleteTextView toNumber) {
 		return new OnClickListener() {
 
@@ -89,12 +125,22 @@ public class MissingPersonReport extends SwipeBackActivity implements
 				Toast.makeText(getBaseContext(),
 						"Reporting " + NameSel + " as missing.",
 						Toast.LENGTH_LONG).show();
-				
+
 				String dress = et_dress.getText().toString();
 				String desc = et_desc.getText().toString();
-				Intent i =new Intent(MissingPersonReport.this,WriteQueryDatabase.class);
-				i.putExtra("query", "insert into missing(Name,phone,dress,description,lat,lng) values ('"+NameSel+"','"+toNumberValue+"','"+dress+"','"+desc+"','0.1','0.1');");
-				i.putExtra("text", NameSel+" successfully reported as missing");
+
+				SharedPreferences uname = getSharedPreferences("user", 0);
+				String phone_by = uname.getString("name", "0");
+
+				Intent i = new Intent(MissingPersonReport.this,
+						WriteQueryDatabase.class);
+				i.putExtra("query",
+						"insert into missing(Name,phone,phone_by,dress,description,lat,lng) values ('"
+								+ NameSel + "','" + toNumberValue + "','"
+								+ phone_by + "','" + dress + "','" + desc
+								+ "','"+lat+"','"+lng+"');");
+				i.putExtra("text", NameSel
+						+ " successfully reported as missing");
 				startActivity(i);
 			}
 		};
@@ -230,13 +276,24 @@ public class MissingPersonReport extends SwipeBackActivity implements
 	}
 
 	@Override
-    protected void onResume() {
-        super.onResume();
-        SwipeBackLayout mSwipeBackLayout;
-		mSwipeBackLayout = getSwipeBackLayout();
-		mSwipeBackLayout.setEdgeTrackingEnabled(SwipeBackLayout.EDGE_LEFT);
-    }
+	public void onMapClick(LatLng POINT) {
+		map.clear();
+		lng=String.valueOf(POINT.longitude);
+		lat=String.valueOf(POINT.latitude);
 
-	
+		Marker incident = map.addMarker(new MarkerOptions()
+				.position(POINT)
+				.title("Missong Person Report")
+				.icon(BitmapDescriptorFactory
+						.fromResource(R.drawable.incidentmarker)));
+		incident.showInfoWindow();
+
+		// moves camera to specified location
+		map.animateCamera(CameraUpdateFactory.newLatLngZoom(POINT, 15), 2000,
+				null);
+
+		
+
+	}
 
 }

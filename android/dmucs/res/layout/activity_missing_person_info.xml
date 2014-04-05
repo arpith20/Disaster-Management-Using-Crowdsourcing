@@ -163,9 +163,34 @@
                         android:text="Small Text"
                         android:textAppearance="?android:attr/textAppearanceSmall"
                         android:textColor="@android:color/white" />
+                    
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:paddingTop="10dp"
+                        android:text="More Information"
+                        android:textAppearance="?android:attr/textAppearanceLarge"
+                        android:textColor="@android:color/white" />
+
+                    <TextView
+                        android:id="@+id/m_moreinfo"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:paddingBottom="20dp"
+                        android:text="Small Text"
+                        android:textAppearance="?android:attr/textAppearanceSmall"
+                        android:textColor="@android:color/white" />
 
                     <Button
                         android:id="@+id/m_found"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/button_border"
+                        android:text="Click here if you found this person"
+                        android:textColor="@android:color/white" />
+                    
+                    <Button
+                        android:id="@+id/m_del"
                         android:layout_width="fill_parent"
                         android:layout_height="wrap_content"
                         android:background="@drawable/button_border"

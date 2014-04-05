@@ -26,7 +26,7 @@ if (mysql_num_rows($result) > 0) {
         // temp user array
         $rep = array();
         $rep["pid"] = $row["phone"];	//phoneID
-        $rep["name"] = $row["name"];
+        $rep["name"] = $row["Name"];
         $rep["dress"] = $row["dress"];
         $rep["description"] = $row["description"];
         $rep["lat"] = $row["lat"];

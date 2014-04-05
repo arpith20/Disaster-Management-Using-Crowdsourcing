@@ -15,20 +15,21 @@ if (isset($_GET['phone'])) {
  
     // mysql inserting a new row
     $result = mysql_query("select * from missing where phone='$n'");
-    $result2 = mysql_query("select * from main_details where phone='$n'");
     if ($result) {
 	while($row = mysql_fetch_array($result))
 	{
 		$response["success"]=1;
 		$response["phone"]=$row['phone'];
+		$response["phone_by"]=$row['phone_by'];
 		$response["dress"]=$row['dress'];
 		$response["description"]=$row['description'];
 		$response["lat"]=$row['lat'];
 		$response["lng"]=$row['lng'];
 		$response["reportedon"]=$row['reportedon'];
-	}
-while($row = mysql_fetch_array($result2))
-	{
+		$response["found"]=$row['found'];
+		$response["more_info"]=$row['more_info'];
+		$response["f_lat"]=$row['f_lat'];
+		$response["f_lng"]=$row['f_lng'];
 		$response["name"]=$row['name'];
 	}
         echo json_encode($response);

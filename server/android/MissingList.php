@@ -32,6 +32,7 @@ if (mysql_num_rows($result) > 0) {
         $rep["lat"] = $row["lat"];
         $rep["lng"] = $row["lng"];
         $rep["reportedon"] = $row["reportedon"];
+        $rep["found"] = $row["found"];
        
         // push single product into final response array
         array_push($response["reports"], $rep);
