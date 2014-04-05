@@ -1,6 +1,43 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
+    <string-array name="incidents">
+        <item>fire</item>
+        <item>draught and warter shortage</item>
+        <item>zombie apocalypse</item>
+        <item>accident</item>
+        <item>car accident</item>
+        <item>other</item>
+        <item>tsunami</item>
+        <item>flood</item>
+        <item>earthquake</item>
+        <item>sinkhole</item>
+        <item>landslides</item>
+        <item>ice strom</item>
+        <item>strom</item>
+        <item>wildfire</item>
+        <item>tornado</item>
+        <item>thunderstrom</item>
+        <item>landslide and debris flow</item>
+        <item>hurricane and tropical stroms</item>
+        <item>wind</item>
+        <item>agricultural diseases and pests</item>
+        <item>emergency diseases</item>
+        <item>pandemic</item>
+        <item>extreame heat</item>
+        <item>flash flood</item>
+        <item>hail</item>
+        <item>civil unrest</item>
+        <item>explosion</item>
+        <item>cyber attack</item>
+        <item>chemical threat</item>
+        <item>biological weapons</item>
+        <item>radiological emergencies</item>
+        <item>nuclear</item>
+        <item>haarzardous materials</item>
+        <item>power service disruption</item>
+        <item>bankruptcy</item>
+    </string-array>
     <string name="app_name">dmucs</string>
     <string name="action_settings">Settings</string>
     <string name="hello_world">Hello world!</string>

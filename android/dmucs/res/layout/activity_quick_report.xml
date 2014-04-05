@@ -30,12 +30,13 @@
             android:textColor="@android:color/white"
             android:textSize="15sp" />
 
-        <Spinner
-            android:id="@+id/category_spinner"
+        <AutoCompleteTextView
+            android:id="@+id/autocomplete_incident"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
-            android:background="@drawable/button_border"
-            android:prompt="@string/spinner_title" />
+            android:completionThreshold="1"
+            android:hint="Start typing to get suggestions"
+            android:textColor="@android:color/white" />
 
         <TextView
             android:layout_width="fill_parent"
@@ -173,6 +174,20 @@
                 android:textAppearance="?android:attr/textAppearanceSmall"
                 android:textColor="@color/radio_colors" />
         </com.makeramen.segmented.SegmentedRadioGroup>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingTop="10sp"
+            android:text="Location"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:textColor="@android:color/white" />
+
+        <fragment
+            android:id="@+id/map"
+            android:layout_width="match_parent"
+            android:layout_height="400dp"
+            class="com.google.android.gms.maps.MapFragment" />
 
         <TextView
             android:layout_width="fill_parent"
