@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:gravity="center_vertical"
+    android:paddingTop="10dip"
+    android:orientation="vertical" >
+
+    <TextView
+        android:id="@+id/name"
+        style="@style/SlideMenuHeaderText"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="15dip"
+        android:layout_marginBottom="5dip"
+        android:gravity="center_vertical"
+        android:text="MY PROFILE"
+        android:textSize="12dip"
+        android:textStyle="bold" />
+
+    <View
+        android:layout_width="fill_parent"
+        android:layout_height="2dip"
+        android:background="#666666" />
+
+</LinearLayout>

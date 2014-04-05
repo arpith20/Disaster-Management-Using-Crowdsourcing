@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/popup_header"
+    android:layout_width="match_parent"
+    android:layout_height="24dip"
+    android:background="@drawable/swarm_popup_header_background"
+    android:gravity="center_vertical"
+    android:paddingBottom="3dip"
+    android:paddingLeft="10dip"
+    android:paddingRight="10dip"
+    android:paddingTop="3dip" >
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="18dip"
+        android:layout_alignParentLeft="true"
+        android:layout_centerVertical="true"
+        android:scaleType="fitStart"
+        android:src="@drawable/swarm_logo" />
+
+</RelativeLayout>

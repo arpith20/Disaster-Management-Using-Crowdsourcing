@@ -1,0 +1,11 @@
+<resources xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <style name="HoloTheme" parent="@android:style/Theme.Holo.Light.NoActionBar">
+        
+    </style>
+
+    <style name="ActivityDialog" parent="@android:style/Theme.Holo.Light.Dialog">
+        <item name="android:windowBackground">@drawable/swarm_panel_background</item>
+    </style>
+
+</resources>

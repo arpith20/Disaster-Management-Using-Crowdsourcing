@@ -1,0 +1,397 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@drawable/swarm_background" >
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:orientation="vertical" >
+
+        <include layout="@layout/swarm_header" />
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="15dip" >
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:orientation="horizontal" >
+
+                <com.swarmconnect.ui.AsyncImageView
+                    android:id="@+id/profile_pic"
+                    style="@style/profile_pic"
+                    android:layout_width="50dip"
+                    android:layout_height="50dip" />
+
+                <TextView
+                    android:id="@+id/username"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dip"
+                    android:shadowColor="#cccccc"
+                    android:shadowDx="1"
+                    android:shadowDy="1"
+                    android:shadowRadius="1"
+                    android:text="@string/username"
+                    android:textColor="#222222"
+                    android:textSize="18dip"
+                    android:textStyle="bold" />
+            </LinearLayout>
+
+            <View style="@style/linebreak" />
+
+            <LinearLayout
+                android:id="@+id/social_accounts"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:paddingBottom="5dip"
+                android:paddingTop="5dip" >
+
+                <TextView
+                    style="@style/LightShadow.DarkText"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="5dip"
+                    android:text="@string/connected_social_accounts"
+                    android:textStyle="bold" />
+
+                <LinearLayout
+                    android:id="@+id/facebook"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal"
+                    android:paddingBottom="8dip"
+                    android:paddingTop="8dip" >
+
+                    <ImageView
+                        android:layout_width="30dip"
+                        android:layout_height="30dip"
+                        android:layout_marginRight="10dip"
+                        android:src="@drawable/swarm_facebook" />
+
+                    <TextView
+                        style="@style/LightShadow.DarkText"
+                        android:layout_width="0dip"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Facebook"
+                        android:textSize="18dip"
+                        android:textStyle="bold" />
+
+                    <ImageView
+                        android:id="@+id/facebook_check"
+                        android:layout_width="25dip"
+                        android:layout_height="25dip"
+                        android:src="@drawable/swarm_checkmark_green"
+                        android:visibility="gone" />
+                </LinearLayout>
+
+                <View style="@style/light_linebreak" />
+
+                <LinearLayout
+                    android:id="@+id/twitter"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal"
+                    android:paddingBottom="8dip"
+                    android:paddingTop="8dip" >
+
+                    <ImageView
+                        android:layout_width="30dip"
+                        android:layout_height="30dip"
+                        android:layout_marginRight="10dip"
+                        android:src="@drawable/swarm_twitter" />
+
+                    <TextView
+                        style="@style/LightShadow.DarkText"
+                        android:layout_width="0dip"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Twitter"
+                        android:textSize="18dip"
+                        android:textStyle="bold" />
+
+                    <ImageView
+                        android:id="@+id/twitter_check"
+                        android:layout_width="25dip"
+                        android:layout_height="25dip"
+                        android:src="@drawable/swarm_checkmark_green"
+                        android:visibility="gone" />
+                </LinearLayout>
+
+                <View style="@style/light_linebreak" />
+
+                <LinearLayout
+                    android:id="@+id/google"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal"
+                    android:paddingBottom="8dip"
+                    android:paddingTop="8dip" >
+
+                    <ImageView
+                        android:layout_width="30dip"
+                        android:layout_height="30dip"
+                        android:layout_marginRight="10dip"
+                        android:src="@drawable/swarm_google" />
+
+                    <TextView
+                        style="@style/LightShadow.DarkText"
+                        android:layout_width="0dip"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Google Plus"
+                        android:textSize="18dip"
+                        android:textStyle="bold" />
+
+                    <ImageView
+                        android:id="@+id/google_check"
+                        android:layout_width="25dip"
+                        android:layout_height="25dip"
+                        android:src="@drawable/swarm_checkmark_green"
+                        android:visibility="gone" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/share_settings"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:paddingBottom="5dip"
+                android:paddingTop="5dip"
+                android:visibility="gone" >
+
+                <View style="@style/linebreak" />
+
+                <TextView
+                    style="@style/LightShadow.DarkText"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="5dip"
+                    android:text="@string/sharing_settings"
+                    android:textStyle="bold" />
+
+                <LinearLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal"
+                    android:paddingRight="5dip" >
+
+                    <TextView
+                        style="@style/DarkText"
+                        android:layout_width="0dip"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Share Achievements" />
+
+                    <CheckBox
+                        android:id="@+id/achievement_check"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+                </LinearLayout>
+
+                <View style="@style/light_linebreak" />
+
+                <LinearLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal"
+                    android:paddingRight="5dip" >
+
+                    <TextView
+                        style="@style/DarkText"
+                        android:layout_width="0dip"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Share High Scores" />
+
+                    <CheckBox
+                        android:id="@+id/leaderboard_check"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+                </LinearLayout>
+
+                <View style="@style/light_linebreak" />
+
+                <LinearLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal"
+                    android:paddingRight="5dip" >
+
+                    <TextView
+                        style="@style/DarkText"
+                        android:layout_width="0dip"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Share New Games" />
+
+                    <CheckBox
+                        android:id="@+id/newgame_check"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/set_password_box"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical" >
+
+                <View style="@style/linebreak" />
+
+                <TextView
+                    android:id="@+id/password_error"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="right|bottom"
+                    android:textColor="@color/error_text"
+                    android:textSize="12dp" />
+
+                <LinearLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal" >
+
+                    <TextView
+                        style="@style/LightShadow.DarkText"
+                        android:layout_width="130dip"
+                        android:layout_height="wrap_content"
+                        android:text="@string/set_current_pass" />
+
+                    <EditText
+                        android:id="@+id/current_password"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:imeOptions="flagNoExtractUi"
+                        android:inputType="textPassword"
+                        android:singleLine="true" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal" >
+
+                    <TextView
+                        style="@style/LightShadow.DarkText"
+                        android:layout_width="130dip"
+                        android:layout_height="wrap_content"
+                        android:text="@string/set_new_pass" />
+
+                    <EditText
+                        android:id="@+id/new_password"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:imeOptions="flagNoExtractUi"
+                        android:inputType="textPassword"
+                        android:singleLine="true" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal" >
+
+                    <TextView
+                        style="@style/LightShadow.DarkText"
+                        android:layout_width="130dip"
+                        android:layout_height="wrap_content"
+                        android:text="@string/set_confirm_pass" />
+
+                    <EditText
+                        android:id="@+id/confirm_password"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:imeOptions="flagNoExtractUi"
+                        android:inputType="textPassword"
+                        android:singleLine="true" />
+                </LinearLayout>
+
+                <Button
+                    android:id="@+id/set_pass"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="6dip"
+                    android:layout_marginTop="6dip"
+                    android:background="@drawable/swarm_grey_button"
+                    android:padding="9dip"
+                    android:shadowColor="#ffffff"
+                    android:shadowDx="1.0"
+                    android:shadowDy="1.0"
+                    android:shadowRadius="0.5"
+                    android:text="@string/set_change_pass"
+                    android:textColor="#000000"
+                    android:textSize="16dip"
+                    android:textStyle="bold" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/password_box"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical" >
+
+                <View style="@style/linebreak" />
+
+                <TextView
+                    style="@style/LightShadow.DarkText"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="5dip"
+                    android:text="@string/set_change_pass_details"
+                    android:textStyle="bold" />
+
+                <Button
+                    android:id="@+id/change_pass"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="6dip"
+                    android:layout_marginTop="6dip"
+                    android:background="@drawable/swarm_grey_button"
+                    android:padding="9dip"
+                    android:shadowColor="#ffffff"
+                    android:shadowDx="1.0"
+                    android:shadowDy="1.0"
+                    android:shadowRadius="0.5"
+                    android:text="@string/set_change_pass"
+                    android:textColor="#000000"
+                    android:textSize="16dip"
+                    android:textStyle="bold" />
+            </LinearLayout>
+
+            <View style="@style/linebreak" />
+
+            <Button
+                android:id="@+id/logout"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dip"
+                android:background="@drawable/swarm_grey_button"
+                android:padding="11dip"
+                android:shadowColor="#ffffff"
+                android:shadowDx="1.0"
+                android:shadowDy="1.0"
+                android:shadowRadius="0.5"
+                android:text="@string/set_logout"
+                android:textColor="#000000"
+                android:textStyle="bold" />
+        </LinearLayout>
+    </LinearLayout>
+
+</ScrollView>

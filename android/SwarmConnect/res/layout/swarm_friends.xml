@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@drawable/swarm_background"
+    android:orientation="vertical" >
+
+    <include layout="@layout/swarm_header" />
+
+    <TextView
+        android:id="@+id/empty_list"
+        style="@style/LightShadow.BlackText"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginLeft="10dip"
+        android:layout_marginRight="10dip"
+        android:gravity="center"
+        android:text="@string/fri_get_friends"
+        android:textColor="#000000"
+        android:textStyle="bold"
+        android:visibility="gone" />
+
+    <ListView
+        android:id="@+id/list"
+        android:layout_width="fill_parent"
+        android:layout_height="1dip"
+        android:layout_weight="1"
+        android:cacheColorHint="#00000000"
+        android:divider="#888888"
+        android:dividerHeight="1px" />
+    
+    <View
+        android:layout_width="fill_parent"
+        android:layout_height="1px"
+        android:background="#666666"
+        />
+
+    <LinearLayout
+        android:id="@+id/footer"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/swarm_footer_background"
+        android:gravity="center_vertical"
+        android:orientation="horizontal" >
+
+        <Button
+            android:id="@+id/facebook"
+            style="@style/green_button"
+            android:layout_width="fill_parent"
+            android:layout_height="35dip"
+            android:layout_marginBottom="5dip"
+            android:layout_marginLeft="10dip"
+            android:layout_marginRight="10dip"
+            android:layout_marginTop="5dip"
+            android:text="Add More Friends" />
+    </LinearLayout>
+
+</LinearLayout>

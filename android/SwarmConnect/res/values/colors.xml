@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <color name="white">#ffffff</color>
+    <color name="blue_highlight">#cde4f3</color>
+    <color name="error_text">#8f1a2d</color>
+	<color name="popup_background">#ffffff</color>
+	<color name="slide_menu_background">#333333</color>
+</resources>

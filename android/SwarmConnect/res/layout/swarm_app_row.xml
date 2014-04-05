@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:padding="9dip"
+    android:gravity="center_vertical"
+    android:background="@drawable/swarm_selectable_row_background"
+    >
+    
+    <com.swarmconnect.ui.AsyncImageView 
+    	android:id="@+id/pic"
+		android:layout_width="38dip"
+		android:layout_height="38dip" />
+	
+	<LinearLayout
+		android:orientation="vertical"
+		android:layout_width="fill_parent"
+		android:layout_height="wrap_content"
+		android:paddingLeft="9dip"
+		>
+	    <TextView
+	        android:id="@+id/name"
+            style="@style/LightShadow.DarkText"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:ellipsize="end"
+            android:singleLine="true"
+            android:text=""
+            android:textSize="18dip"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/publisher"
+            style="@style/LightShadow.GreyText"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:ellipsize="end"
+            android:singleLine="true"
+            android:text=""
+            android:textSize="14dip" />
+    </LinearLayout>
+
+</LinearLayout>

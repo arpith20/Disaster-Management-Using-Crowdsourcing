@@ -1,0 +1,227 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@drawable/swarm_background"
+    android:orientation="vertical" >
+
+    <include layout="@layout/swarm_header" />
+
+    <ScrollView
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent" >
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingTop="10dip" >
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dip"
+                android:orientation="horizontal" >
+
+                <RelativeLayout
+                    android:layout_width="90dip"
+                    android:layout_height="90dip"
+                    android:background="#aaaaaa" >
+
+                    <View
+                        android:layout_width="fill_parent"
+                        android:layout_height="fill_parent"
+                        android:layout_centerInParent="true"
+                        android:layout_margin="1dip"
+                        android:background="#ffffff" />
+
+                    <com.swarmconnect.ui.AsyncImageView
+                        android:id="@+id/pic"
+                        android:layout_width="fill_parent"
+                        android:layout_height="fill_parent"
+                        android:layout_centerInParent="true"
+                        android:layout_margin="4dip" />
+
+                    <ImageView
+                        android:id="@+id/edit_pic"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignRight="@id/pic"
+                        android:layout_alignTop="@id/pic"
+                        android:background="@drawable/swarm_white_rounded_corners"
+                        android:padding="4dip"
+                        android:src="@drawable/swarm_camera" />
+                </RelativeLayout>
+
+                <LinearLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent"
+                    android:layout_marginLeft="10dip"
+                    android:layout_marginRight="10dip"
+                    android:orientation="vertical" >
+
+                    <LinearLayout
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="bottom"
+                        android:orientation="horizontal" >
+
+                        <TextView
+                            android:id="@+id/username"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:ellipsize="end"
+                            android:gravity="bottom"
+                            android:singleLine="true"
+                            android:textColor="#333333"
+                            android:textSize="24dip"
+                            android:textStyle="bold" />
+
+                        <ImageButton
+                            android:id="@+id/username_edit"
+                            android:layout_width="30dip"
+                            android:layout_height="30dip"
+                            android:background="@drawable/swarm_grey_button"
+                            android:src="@drawable/swarm_edit"
+                            android:visibility="gone" />
+                    </LinearLayout>
+
+                    <TextView
+                        android:id="@+id/last_seen"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="-3dip"
+                        android:ellipsize="end"
+                        android:gravity="bottom"
+                        android:singleLine="true"
+                        android:textColor="#666666"
+                        android:textSize="14dip" />
+
+                    <LinearLayout
+                        android:layout_width="fill_parent"
+                        android:layout_height="0dip"
+                        android:layout_weight="1"
+                        android:gravity="bottom"
+                        android:orientation="horizontal" >
+
+                        <Button
+                            android:id="@+id/friend"
+                            android:layout_width="0dip"
+                            android:layout_height="35dip"
+                            android:layout_marginRight="5dip"
+                            android:layout_weight="1"
+                            style="@style/green_button"
+                            android:text="@string/add_friend" />
+
+                        <Button
+                            android:id="@+id/message"
+                            android:layout_width="0dip"
+                            android:layout_height="35dip"
+                            android:layout_weight="1"
+                            style="@style/blue_button"
+                            android:text="@string/message" />
+                    </LinearLayout>
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dip"
+                android:layout_marginLeft="3dip"
+                android:layout_marginTop="10dip"
+                android:orientation="vertical"
+                android:padding="10dip" >
+
+                <LinearLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal" >
+
+                    <ImageView
+                        android:layout_width="20dip"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="10dip"
+                        android:src="@drawable/swarm_trophy" />
+
+                    <TextView
+                        android:id="@+id/points"
+                        style="@style/DarkText"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="16dip" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/gender_holder"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="3dip"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal" >
+
+                    <ImageView
+                        android:layout_width="20dip"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="10dip"
+                        android:src="@drawable/swarm_user" />
+
+                    <TextView
+                        android:id="@+id/gender"
+                        style="@style/DarkText"
+                        android:layout_width="0dip"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:textSize="16dip" />
+
+                    <ImageButton
+                        android:id="@+id/gender_edit"
+                        android:layout_width="30dip"
+                        android:layout_height="30dip"
+                        android:background="@drawable/swarm_grey_button"
+                        android:src="@drawable/swarm_edit" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/geo_holder"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="3dip"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal" >
+
+                    <ImageView
+                        android:layout_width="20dip"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="10dip"
+                        android:src="@drawable/swarm_geo" />
+
+                    <TextView
+                        android:id="@+id/geo"
+                        style="@style/DarkText"
+                        android:layout_width="0dip"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:textSize="16dip" />
+
+                    <ImageButton
+                        android:id="@+id/geo_edit"
+                        android:layout_width="30dip"
+                        android:layout_height="30dip"
+                        android:background="@drawable/swarm_grey_button"
+                        android:src="@drawable/swarm_edit" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/block_holder"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical" />
+
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>

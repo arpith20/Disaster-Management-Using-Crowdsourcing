@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.swarmconnect.ui.SlideMenuView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent" >
+
+    <LinearLayout
+        android:id="@+id/menu_holder"
+        android:layout_width="260dip"
+        android:layout_height="fill_parent"
+        android:background="@color/slide_menu_background"
+        android:orientation="horizontal"
+        android:paddingLeft="10dip" >
+
+        <LinearLayout
+            android:layout_width="0dip"
+            android:layout_height="fill_parent"
+            android:layout_weight="1"
+            android:orientation="vertical" >
+
+            <TextView
+                android:id="@+id/search"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dip"
+                android:drawableLeft="@drawable/swarm_search_light"
+                android:drawablePadding="10dip"
+                android:background="#444444"
+                android:paddingLeft="15dip"
+                android:paddingTop="7dip"
+                android:paddingBottom="7dip"
+                android:text="Search Swarm"
+                android:textColor="#f0f0f0" />
+
+            <ListView
+                android:id="@+id/list"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:layout_marginTop="10dip"
+                android:cacheColorHint="#00000000"
+                android:divider="@null"
+                android:scrollbars="none" />
+        </LinearLayout>
+
+        <View
+            android:layout_width="10dip"
+            android:layout_height="fill_parent"
+            android:background="@drawable/swarm_slide_menu_gradient" />
+    </LinearLayout>
+
+</com.swarmconnect.ui.SlideMenuView>

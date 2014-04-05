@@ -3,8 +3,6 @@ package com.arpith.dmucs;
 import java.util.ArrayList;
 import java.util.List;
 
-import me.imid.swipebacklayout.lib.SwipeBackLayout;
-import me.imid.swipebacklayout.lib.app.SwipeBackActivity;
 import net.sebastianopoggi.ui.GlowPadBackport.GlowPadView;
 import net.simonvt.menudrawer.MenuDrawer;
 import net.simonvt.menudrawer.Position;
@@ -21,7 +19,11 @@ import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 
-public class MainActivity extends SwipeBackActivity {
+import com.swarmconnect.Swarm;
+import com.swarmconnect.SwarmActivity;
+import com.swarmconnect.SwarmLeaderboard;
+
+public class MainActivity extends SwarmActivity {
 
 	// Drawer-------------
 	private static final int MENU_OVERFLOW = 1;
@@ -46,6 +48,8 @@ public class MainActivity extends SwipeBackActivity {
 			mActivePosition = savedInstanceState.getInt(STATE_ACTIVE_POSITION);
 		}
 
+		Swarm.init(this, SwarmConsts.App.APP_ID, SwarmConsts.App.APP_AUTH);
+		
 		mMenuDrawer = MenuDrawer.attach(this, MenuDrawer.MENU_DRAG_CONTENT,
 				Position.LEFT);
 		mMenuDrawer.setContentView(R.layout.activity_main);
@@ -62,6 +66,8 @@ public class MainActivity extends SwipeBackActivity {
 		items.add(new Item("Maps", R.drawable.ic_action_select_all_dark));
 		items.add(new Item("About us", R.drawable.ic_action_select_all_dark));
 		items.add(new Item("Report List", R.drawable.ic_action_select_all_dark));
+		items.add(new Item("Dashboard", R.drawable.ic_action_select_all_dark));
+		items.add(new Item("Leaderboards", R.drawable.ic_action_select_all_dark));
 
 		// A custom ListView is needed so the drawer can be notified when it's
 		// scrolled. This is to update the position
@@ -190,6 +196,14 @@ public class MainActivity extends SwipeBackActivity {
 				i = new Intent(MainActivity.this, ReportList.class);
 				startActivity(i);
 				break;
+			case 11:
+				//TODO: WOW...romove this
+				SwarmLeaderboard.submitScore(SwarmConsts.Leaderboard.SCORE_ID, 10);
+				Swarm.showDashboard();
+				break;
+			case 12:
+				Swarm.showLeaderboards();
+				break;
 			}
 			mMenuDrawer.closeMenu();
 		}
@@ -295,12 +309,4 @@ public class MainActivity extends SwipeBackActivity {
 	}
 
 	// EndDrawer-------------------------------------------------------------
-
-	@Override
-	protected void onResume() {
-		super.onResume();
-		SwipeBackLayout mSwipeBackLayout;
-		mSwipeBackLayout = getSwipeBackLayout();
-		mSwipeBackLayout.setEdgeTrackingEnabled(SwipeBackLayout.EDGE_RIGHT);
-	}
 }

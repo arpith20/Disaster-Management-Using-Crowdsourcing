@@ -169,6 +169,17 @@
             android:label="Location Information"
             android:windowSoftInputMode="stateHidden" >
         </activity>
+        <activity
+            android:name="com.swarmconnect.SwarmMainActivity"
+            android:configChanges="orientation|keyboardHidden"
+            android:label="Swarm"
+            android:screenOrientation="portrait"
+            android:theme="@style/HoloTheme"
+            android:windowSoftInputMode="stateHidden" />
+
+        <service
+            android:name="com.swarmconnect.NotificationService"
+            android:process=":swarm" />
     </application>
 
 </manifest>

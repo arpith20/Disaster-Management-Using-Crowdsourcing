@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <style name="HoloTheme" parent="@android:style/Theme.NoTitleBar"></style>
+
+    <style name="row">
+        <item name="android:orientation">horizontal</item>
+        <item name="android:layout_width">fill_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:gravity">center_vertical</item>
+    </style>
+
+    <style name="DarkText">
+        <item name="android:textColor">#333333</item>
+    </style>
+
+    <style name="GreyText">
+        <item name="android:textColor">#666666</item>
+    </style>
+
+    <style name="LightGreyText">
+        <item name="android:textColor">#999999</item>
+    </style>
+
+    <style name="WhiteText">
+        <item name="android:textColor">#FFFFFF</item>
+    </style>
+
+    <style name="profile_pic">
+        <item name="android:padding">2dip</item>
+        <item name="android:background">@drawable/swarm_profile_pic_background</item>
+    </style>
+
+    <style name="BlackShadow">
+        <item name="android:shadowColor">#000000</item>
+        <item name="android:shadowDx">1</item>
+        <item name="android:shadowDy">1</item>
+        <item name="android:shadowRadius">1</item>
+    </style>
+
+    <style name="LightShadow">
+        <item name="android:shadowColor">#CCCCCC</item>
+        <item name="android:shadowDx">1</item>
+        <item name="android:shadowDy">1</item>
+        <item name="android:shadowRadius">1</item>
+    </style>
+
+    <style name="WhiteShadow">
+        <item name="android:shadowColor">#FFFFFF</item>
+        <item name="android:shadowDx">1</item>
+        <item name="android:shadowDy">1</item>
+        <item name="android:shadowRadius">1</item>
+    </style>
+
+    <style name="LightShadow.DarkText">
+        <item name="android:textColor">#333333</item>
+    </style>
+
+    <style name="LightShadow.BlackText">
+        <item name="android:textColor">#000000</item>
+    </style>
+
+    <style name="WhiteShadow.DarkText">
+        <item name="android:textColor">#333333</item>
+    </style>
+
+    <style name="LightShadow.GreyText">
+        <item name="android:textColor">#666666</item>
+    </style>
+
+    <style name="BlackShadow.WhiteText">
+        <item name="android:textColor">#FFFFFF</item>
+    </style>
+
+    <style name="SlideMenuHeaderText">
+        <item name="android:textColor">#cccccc</item>
+    </style>
+
+    <style name="SlideMenuRowText">
+        <item name="android:textColor">#f0f0f0</item>
+    </style>
+
+    <style name="linebreak">
+        <item name="android:layout_width">fill_parent</item>
+        <item name="android:layout_height">1px</item>
+        <item name="android:background">#666666</item>
+        <item name="android:layout_marginTop">10dip</item>
+        <item name="android:layout_marginBottom">10dip</item>
+    </style>
+
+    <style name="block_linebreak">
+        <item name="android:layout_width">fill_parent</item>
+        <item name="android:layout_height">1px</item>
+        <item name="android:background">#999999</item>
+    </style>
+    
+    <style name="light_linebreak">
+        <item name="android:layout_width">fill_parent</item>
+        <item name="android:layout_height">1px</item>
+        <item name="android:background">#cccccc</item>
+    </style>
+    
+    <style name="grey_button">
+        <item name="android:shadowColor">#ffffff</item>
+        <item name="android:shadowDx">1</item>
+        <item name="android:shadowDy">1</item>
+        <item name="android:shadowRadius">1</item>
+        <item name="android:background">@drawable/swarm_grey_button</item>
+        <item name="android:padding">9dip</item>
+        <item name="android:textColor">#000000</item>
+        <item name="android:textSize">13dip</item>
+        <item name="android:textStyle">normal</item>
+    </style>
+
+    <style name="blue_button">
+        <item name="android:shadowColor">#000000</item>
+        <item name="android:shadowDx">1</item>
+        <item name="android:shadowDy">1</item>
+        <item name="android:shadowRadius">1</item>
+        <item name="android:background">@drawable/swarm_blue_button</item>
+        <item name="android:padding">9dip</item>
+        <item name="android:textColor">#ffffff</item>
+        <item name="android:textSize">13dip</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="blue_button_text">
+        <item name="android:shadowColor">#000000</item>
+        <item name="android:shadowDx">1</item>
+        <item name="android:shadowDy">1</item>
+        <item name="android:shadowRadius">1</item>
+        <item name="android:textColor">#ffffff</item>
+        <item name="android:textSize">13dip</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="green_button">
+        <item name="android:shadowColor">#000000</item>
+        <item name="android:shadowDx">1</item>
+        <item name="android:shadowDy">1</item>
+        <item name="android:shadowRadius">1</item>
+        <item name="android:background">@drawable/swarm_green_button</item>
+        <item name="android:padding">9dip</item>
+        <item name="android:textColor">#ffffff</item>
+        <item name="android:textSize">13dip</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="ActivityDialog" parent="@android:style/Theme.Dialog">
+        <item name="android:windowBackground">@drawable/swarm_panel_background</item>
+    </style>
+
+</resources>
