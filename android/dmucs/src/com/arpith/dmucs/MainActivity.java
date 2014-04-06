@@ -19,6 +19,11 @@ import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.parse.Parse;
+import com.parse.ParseAnalytics;
+import com.parse.ParseInstallation;
+import com.parse.PushService;
+
 import com.swarmconnect.Swarm;
 import com.swarmconnect.SwarmActivity;
 import com.swarmconnect.SwarmLeaderboard;
@@ -48,7 +53,13 @@ public class MainActivity extends SwarmActivity {
 			mActivePosition = savedInstanceState.getInt(STATE_ACTIVE_POSITION);
 		}
 
-		Swarm.init(this, SwarmConsts.App.APP_ID, SwarmConsts.App.APP_AUTH);
+		
+		//Swarm.init(this, SwarmConsts.App.APP_ID, SwarmConsts.App.APP_AUTH);
+		
+		Parse.initialize(this, "6LFiTT4PXBrL6xdDtWQZetifXsDPH2tO1i4GG5Xa", "sGACSZocjP0YQNGuEvDEUYktRSMA5W10S9zwzW1B");
+		PushService.setDefaultPushCallback(this, DMUCSNotification.class);
+		ParseInstallation.getCurrentInstallation().saveInBackground();
+		PushService.subscribe(getBaseContext(), "disaster", DMUCSNotification.class);
 		
 		mMenuDrawer = MenuDrawer.attach(this, MenuDrawer.MENU_DRAG_CONTENT,
 				Position.LEFT);
@@ -56,7 +67,7 @@ public class MainActivity extends SwarmActivity {
 
 		List<Object> items = new ArrayList<Object>();
 		items.add(new Item("Home", R.drawable.ic_launcher));
-		items.add(new Item("Alerts", R.drawable.ic_action_select_all_dark));
+		items.add(new Item("Missing Person", R.drawable.ic_action_select_all_dark));
 		items.add(new Item("Donate", R.drawable.ic_action_select_all_dark));
 		items.add(new Item("Account", R.drawable.ic_action_refresh_dark));
 		items.add(new Category("Settings"));
@@ -68,6 +79,7 @@ public class MainActivity extends SwarmActivity {
 		items.add(new Item("Report List", R.drawable.ic_action_select_all_dark));
 		items.add(new Item("Dashboard", R.drawable.ic_action_select_all_dark));
 		items.add(new Item("Leaderboards", R.drawable.ic_action_select_all_dark));
+		items.add(new Item("Notifications", R.drawable.ic_action_select_all_dark));
 
 		// A custom ListView is needed so the drawer can be notified when it's
 		// scrolled. This is to update the position
@@ -198,11 +210,16 @@ public class MainActivity extends SwarmActivity {
 				break;
 			case 11:
 				//TODO: WOW...romove this
+				
 				SwarmLeaderboard.submitScore(SwarmConsts.Leaderboard.SCORE_ID, 10);
 				Swarm.showDashboard();
 				break;
 			case 12:
 				Swarm.showLeaderboards();
+				break;
+			case 13:
+				i = new Intent(MainActivity.this, DMUCSNotification.class);
+				startActivity(i);
 				break;
 			}
 			mMenuDrawer.closeMenu();

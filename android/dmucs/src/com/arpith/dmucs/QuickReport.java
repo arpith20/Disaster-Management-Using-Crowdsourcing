@@ -1,7 +1,20 @@
 package com.arpith.dmucs;
 
-import java.util.ArrayList;
-import java.util.List;
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import android.app.Activity;
+import android.content.Context;
+import android.content.SharedPreferences;
+import android.location.Criteria;
+import android.location.Location;
+import android.location.LocationManager;
+import android.os.Bundle;
+import android.util.Log;
+import android.view.View;
+import android.widget.ArrayAdapter;
+import android.widget.AutoCompleteTextView;
+import android.widget.Button;
 
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
@@ -11,23 +24,7 @@ import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.MarkerOptions;
-
-import me.imid.swipebacklayout.lib.SwipeBackLayout;
-import me.imid.swipebacklayout.lib.app.SwipeBackActivity;
-import android.app.Activity;
-import android.content.Context;
-import android.content.Intent;
-import android.content.SharedPreferences;
-import android.location.Criteria;
-import android.location.Location;
-import android.location.LocationManager;
-import android.os.Bundle;
-import android.view.Menu;
-import android.view.View;
-import android.widget.ArrayAdapter;
-import android.widget.AutoCompleteTextView;
-import android.widget.Button;
-import android.widget.Spinner;
+import com.parse.ParsePush;
 
 public class QuickReport extends Activity implements OnMapClickListener{
 	
@@ -54,8 +51,20 @@ public class QuickReport extends Activity implements OnMapClickListener{
 			
 			@Override
 			public void onClick(View arg0) {
-				Intent i = new Intent (QuickReport.this, WriteQueryDatabase.class);
-				startActivity(i);
+				JSONObject data;
+				try {
+					data = new JSONObject(
+							"{\"action\": \"com.arpith.dmucs.UPDATE_STATUS\", \"name\": \"A disaster has been reported near you\", \"location\": \"Test\"}");
+					ParsePush push = new ParsePush();
+					push.setChannel("disaster");
+					push.setData(data);
+					push.sendInBackground();
+				} catch (JSONException e) {
+					Log.d("json", "error");
+					e.printStackTrace();
+				}
+				//Intent i = new Intent (QuickReport.this, WriteQueryDatabase.class);
+				//startActivity(i);
 			}
 		});
 		
