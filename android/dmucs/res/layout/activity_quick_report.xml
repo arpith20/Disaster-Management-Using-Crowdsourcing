@@ -44,7 +44,7 @@
             android:fontFamily="sans-serif-light"
             android:gravity="left"
             android:paddingTop="10sp"
-            android:text="Number of casualities"
+            android:text="Number of casualties"
             android:textColor="@android:color/white"
             android:textSize="15sp" />
 

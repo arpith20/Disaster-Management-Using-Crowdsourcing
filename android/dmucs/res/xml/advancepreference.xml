@@ -1,6 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android" >
-    <EditTextPreference android:key="ip" android:summary="IP address of the server" android:negativeButtonText="Cancel" android:title="IP Address" android:positiveButtonText="Ok" android:dialogMessage="Enter IP Address of the server" android:dialogTitle="IP Address"/>
-    
+
+    <EditTextPreference
+        android:dialogMessage="Enter IP Address of the server"
+        android:dialogTitle="IP Address"
+        android:key="ip"
+        android:negativeButtonText="Cancel"
+        android:positiveButtonText="Ok"
+        android:summary="IP address of the server"
+        android:title="IP Address" />
+
+    <PreferenceCategory android:title="Debug" >
+    </PreferenceCategory>
+
+    <CheckBoxPreference
+        android:key="debug_notification"
+        android:summary="Creates dummy notifications for dubugging purposes"
+        android:title="Debug Notification" />
 
 </PreferenceScreen>

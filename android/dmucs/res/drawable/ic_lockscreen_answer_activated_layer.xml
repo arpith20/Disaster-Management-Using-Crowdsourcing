@@ -27,5 +27,5 @@
         android:right="@dimen/incoming_call_widget_asset_margin"
         android:bottom="@dimen/incoming_call_widget_asset_margin"
         android:left="@dimen/incoming_call_widget_asset_margin"
-        android:drawable="@drawable/ic_lockscreen_answer_activated" />
+        android:drawable="@drawable/report" />
 </layer-list>
