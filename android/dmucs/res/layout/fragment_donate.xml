@@ -16,7 +16,7 @@
         android:layout_toRightOf="@+id/add"
         android:background="@drawable/button_border_nopad"
         android:gravity="center"
-        android:text="Donate INR 0"
+        android:text="Donate INR 1"
         android:textColor="@android:color/white" />
 
     <EditText

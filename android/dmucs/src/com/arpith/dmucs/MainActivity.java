@@ -54,7 +54,7 @@ public class MainActivity extends SwarmActivity {
 		}
 
 		
-		//Swarm.init(this, SwarmConsts.App.APP_ID, SwarmConsts.App.APP_AUTH);
+		Swarm.init(this, SwarmConsts.App.APP_ID, SwarmConsts.App.APP_AUTH);
 		
 		Parse.initialize(this, "6LFiTT4PXBrL6xdDtWQZetifXsDPH2tO1i4GG5Xa", "sGACSZocjP0YQNGuEvDEUYktRSMA5W10S9zwzW1B");
 		PushService.setDefaultPushCallback(this, DMUCSNotification.class);
@@ -80,6 +80,7 @@ public class MainActivity extends SwarmActivity {
 		items.add(new Item("Dashboard", R.drawable.ic_action_select_all_dark));
 		items.add(new Item("Leaderboards", R.drawable.ic_action_select_all_dark));
 		items.add(new Item("Notifications", R.drawable.ic_action_select_all_dark));
+		items.add(new Item("Scatternet", R.drawable.ic_action_select_all_dark));
 
 		// A custom ListView is needed so the drawer can be notified when it's
 		// scrolled. This is to update the position
@@ -220,6 +221,9 @@ public class MainActivity extends SwarmActivity {
 			case 13:
 				i = new Intent(MainActivity.this, DMUCSNotification.class);
 				startActivity(i);
+				break;
+			case 14:
+				startActivity(new Intent("me.arpith.dmucscom.SCATTERACTIVITY"));
 				break;
 			}
 			mMenuDrawer.closeMenu();

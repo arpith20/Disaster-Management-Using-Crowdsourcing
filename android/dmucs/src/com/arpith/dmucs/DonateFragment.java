@@ -159,7 +159,6 @@ public class DonateFragment extends Fragment {
 
 			if (resultCode == -1) {
 				String contents = data.getStringExtra("SCAN_RESULT");
-				contents += "resultCode" + resultCode;
 				id.setText(contents);
 			} else {
 				Toast.makeText(getActivity(),

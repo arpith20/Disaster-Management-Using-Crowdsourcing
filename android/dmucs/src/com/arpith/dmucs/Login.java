@@ -19,6 +19,7 @@ import android.os.AsyncTask;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.view.View.OnLongClickListener;
 import android.widget.Button;
 import android.widget.EditText;
 
@@ -28,8 +29,7 @@ public class Login extends SwipeBackActivity {
 
 	EditText uid;
 	EditText pass;
-	String correctPass = "test";
-
+	
 	private ProgressDialog pDialog;
 	JSONParser jsonParser = new JSONParser();
 	boolean d;
@@ -54,6 +54,18 @@ public class Login extends SwipeBackActivity {
 		uid = (EditText) findViewById(R.id.uid);
 		pass = (EditText) findViewById(R.id.pass);
 		Button b = (Button) findViewById(R.id.btnLogin);
+		
+		b.setOnLongClickListener(new OnLongClickListener() {
+			
+			@Override
+			public boolean onLongClick(View arg0) {
+				Intent i = new Intent(Login.this, MainActivity.class);
+				startActivity(i);
+
+				finish();
+				return true;
+			}
+		});;
 
 		b.setOnClickListener(new View.OnClickListener() {
 

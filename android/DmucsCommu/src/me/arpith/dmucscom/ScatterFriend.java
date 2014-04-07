@@ -5,11 +5,7 @@ import itu.beddernet.approuter.IBeddernetServiceCallback;
 
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
-import java.util.ArrayList;
 import java.util.Calendar;
-import java.util.List;
-
-import dk.itu.spvc.scatterfriend.R;
 
 import android.app.Activity;
 import android.content.ComponentName;
@@ -24,7 +20,6 @@ import android.os.RemoteException;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
-import android.view.MenuItem;
 
 public class ScatterFriend extends Activity implements ServiceConnection {
 	private static final String TAG = ScatterFriend.class.getSimpleName();

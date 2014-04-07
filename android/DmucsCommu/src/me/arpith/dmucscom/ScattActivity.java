@@ -1,6 +1,5 @@
 package me.arpith.dmucscom;
 
-import dk.itu.spvc.scatterfriend.R;
 import android.database.Cursor;
 import android.os.Bundle;
 import android.os.RemoteException;

@@ -1,29 +1,26 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="dk.itu.spvc.scatterfriend"
+    package="me.arpith.dmucscom"
     android:versionCode="1"
     android:versionName="1.0" >
 
     <uses-sdk android:minSdkVersion="14" />
 
     <application
-        android:debuggable="true"
         android:icon="@drawable/icon"
         android:label="DMUCS"
         android:theme="@android:style/Theme.Holo.Light.DarkActionBar" >
-        
         <activity android:name="me.arpith.dmucscom.ScatterFriend" >
         </activity>
-
         <activity android:name="me.arpith.dmucscom.FriendActivity" >
         </activity>
         <activity android:name="me.arpith.dmucscom.RequestActivity" >
         </activity>
         <activity android:name="me.arpith.dmucscom.ScattActivity" >
             <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
+                <action android:name="me.arpith.dmucscom.SCATTERACTIVITY" />
 
-                <category android:name="android.intent.category.LAUNCHER" />
+                <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
 
