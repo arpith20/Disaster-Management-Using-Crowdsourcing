@@ -118,6 +118,7 @@ public class MissingPersonReport extends Activity implements
 		return new OnClickListener() {
 
 			public void onClick(View v) {
+				SubmitScore.submitscore(getBaseContext(), SwarmConsts.Scores.MISSING_REPORT);
 
 				String NameSel = "";
 				NameSel = toNumber.getText().toString();

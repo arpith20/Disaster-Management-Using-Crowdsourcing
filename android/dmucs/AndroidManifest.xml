@@ -5,8 +5,8 @@
     android:versionName="1.0" >
 
     <uses-sdk
-        android:minSdkVersion="14"
-        android:targetSdkVersion="17" />
+        android:minSdkVersion="16"
+        android:targetSdkVersion="18" />
 
     <permission
         android:name="com.arpith.dmucs.permission.MAPS_RECEIVE"
@@ -181,6 +181,11 @@
         </activity>
         <activity
             android:name="com.arpith.dmucs.ReliefAdd"
+            android:label="Location Information"
+            android:windowSoftInputMode="stateHidden" >
+        </activity>
+        <activity
+            android:name="com.arpith.dmucs.Gamification"
             android:label="Location Information"
             android:windowSoftInputMode="stateHidden" >
         </activity>

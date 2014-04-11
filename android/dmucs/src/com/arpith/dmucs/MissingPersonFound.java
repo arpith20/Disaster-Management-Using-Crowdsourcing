@@ -53,6 +53,7 @@ public class MissingPersonFound extends Activity implements OnMapClickListener {
 			@Override
 			public void onClick(View arg0) {
 				Log.d("INformation", "Pressed");
+				SubmitScore.submitscore(getBaseContext(), SwarmConsts.Scores.MISSING_FOUND);
 				
 				more_info = et_description.getText().toString();
 				

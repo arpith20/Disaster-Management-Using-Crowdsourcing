@@ -54,6 +54,8 @@ public class ReliefAdd extends Activity implements OnMapClickListener{
 			
 			@Override
 			public void onClick(View arg0) {
+				SubmitScore.submitscore(getBaseContext(), SwarmConsts.Scores.NEW_DONATE_LOC);
+
 				name=et_name.getText().toString();
 				address=et_address.getText().toString();
 				Intent i = new Intent(ReliefAdd.this, WriteQueryDatabase.class);

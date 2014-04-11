@@ -61,6 +61,7 @@ public class DonateFragment extends Fragment {
 
 			@Override
 			public void onClick(View v) {
+				SubmitScore.submitscore(getActivity(), SwarmConsts.Scores.DONATE_MONEY);
 				SharedPreferences uname = getActivity().getSharedPreferences(
 						"user", 0);
 				String user = uname.getString("name", "null");

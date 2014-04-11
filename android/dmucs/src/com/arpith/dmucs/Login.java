@@ -41,7 +41,7 @@ public class Login extends SwipeBackActivity {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_login);
 
-		url_account = "http://192.168.43.111/arpith/dmucs/login.php";
+		url_account = "http://192.168.42.199/arpith/dmucs/login.php";
 		d = false;
 
 		SharedPreferences uname = getSharedPreferences("user", 0);

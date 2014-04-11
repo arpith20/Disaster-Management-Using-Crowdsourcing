@@ -25,6 +25,7 @@ import android.widget.EditText;
 import android.widget.RadioGroup;
 import android.widget.RadioGroup.OnCheckedChangeListener;
 
+import com.arpith.dmucs.SwarmConsts.Leaderboard;
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.GoogleMap.OnMapClickListener;
@@ -35,6 +36,7 @@ import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.MarkerOptions;
 import com.makeramen.segmented.SegmentedRadioGroup;
 import com.parse.ParsePush;
+import com.swarmconnect.SwarmLeaderboard;
 
 public class QuickReport extends Activity implements OnMapClickListener,
 		OnCheckedChangeListener {
@@ -83,6 +85,7 @@ public class QuickReport extends Activity implements OnMapClickListener,
 
 			@Override
 			public void onClick(View arg0) {
+				SubmitScore.submitscore(getBaseContext(), SwarmConsts.Scores.QUICK_REPORT);
 				inc = incident.getText().toString();
 				comment = et_comment.getText().toString();
 				

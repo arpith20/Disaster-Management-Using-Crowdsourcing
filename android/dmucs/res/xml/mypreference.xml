@@ -2,9 +2,15 @@
 <PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android" >
 
     <CheckBoxPreference
-        android:defaultValue="true"
+        android:defaultValue="false"
         android:key="splash"
         android:summary="Shows a splash screen at startup"
         android:title="Splash" />
+    <CheckBoxPreference
+        android:key="gamification"
+        android:defaultValue="true"
+        android:summaryOff="Gamification is off."
+        android:summaryOn="You will receive points for eack good deed!"
+        android:title="Gamification" />
 
 </PreferenceScreen>
