@@ -3,9 +3,8 @@
     android:orientation="horizontal"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
-	android:paddingLeft="3dip"
-	android:paddingBottom="7dip"
-	android:paddingTop="5dip"
+	android:background="@drawable/card_background_white"
+    android:padding="16dp"
     >
     <ImageView
     	android:id="@+id/user_image"

@@ -68,35 +68,35 @@ public class MainActivity extends SwarmActivity {
 
 		items.add(new Category("Incident Module"));
 		items.add(new Item("Report an incident",
-				R.drawable.ic_action_select_all_dark));
-		items.add(new Item("Report List", R.drawable.ic_action_select_all_dark));
+				R.drawable.icon_report));
+		items.add(new Item("Report List", R.drawable.icon_list));
 
 		items.add(new Category("Missing Person Module"));
 		items.add(new Item("Report missing person",
-				R.drawable.ic_action_select_all_dark));
+				R.drawable.icon_missing));
 		items.add(new Item("Missing People list",
-				R.drawable.ic_action_select_all_dark));
+				R.drawable.icon_miss_list));
 
 		items.add(new Category("Donation"));
-		items.add(new Item("Donate", R.drawable.ic_action_select_all_dark));
+		items.add(new Item("Donate", R.drawable.icon_donate));
 
 		items.add(new Category("Settings"));
-		items.add(new Item("General", R.drawable.ic_action_refresh_dark));
-		items.add(new Item("Advanced", R.drawable.ic_action_select_all_dark));
+		items.add(new Item("General", R.drawable.icon_setting));
+		items.add(new Item("Advanced", R.drawable.icon_advance));
 		items.add(new Item("Account Information",
-				R.drawable.ic_action_refresh_dark));
+				R.drawable.icon_account));
 
 		items.add(new Category("Gamification"));
-		items.add(new Item("Dashboard", R.drawable.ic_action_select_all_dark));
-		items.add(new Item("Leaderboards", R.drawable.ic_action_select_all_dark));
-		items.add(new Item("Logout", R.drawable.ic_action_select_all_dark));
+		items.add(new Item("Dashboard", R.drawable.icon_dash));
+		items.add(new Item("Leaderboards", R.drawable.icon_leaderboard));
+		items.add(new Item("Logout", R.drawable.icon_logout));
 
 		items.add(new Category("Other"));
-		items.add(new Item("Scatternet", R.drawable.ic_action_select_all_dark));
-		items.add(new Item("Maps", R.drawable.ic_action_select_all_dark));
+		items.add(new Item("Scatternet", R.drawable.icon_scatter));
+		items.add(new Item("Maps", R.drawable.icon_map));
 		items.add(new Item("Notifications",
-				R.drawable.ic_action_select_all_dark));
-		items.add(new Item("About us", R.drawable.ic_action_select_all_dark));
+				R.drawable.icon_notification));
+		items.add(new Item("About us", R.drawable.icon_about));
 
 		// A custom ListView is needed so the drawer can be notified when it's
 		// scrolled. This is to update the position

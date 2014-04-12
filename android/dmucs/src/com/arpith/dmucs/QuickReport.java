@@ -15,7 +15,6 @@ import android.location.Location;
 import android.location.LocationManager;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
-import android.support.v4.app.NotificationCompat;
 import android.util.Log;
 import android.view.View;
 import android.widget.ArrayAdapter;
@@ -25,7 +24,6 @@ import android.widget.EditText;
 import android.widget.RadioGroup;
 import android.widget.RadioGroup.OnCheckedChangeListener;
 
-import com.arpith.dmucs.SwarmConsts.Leaderboard;
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.GoogleMap.OnMapClickListener;
@@ -36,7 +34,6 @@ import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.MarkerOptions;
 import com.makeramen.segmented.SegmentedRadioGroup;
 import com.parse.ParsePush;
-import com.swarmconnect.SwarmLeaderboard;
 
 public class QuickReport extends Activity implements OnMapClickListener,
 		OnCheckedChangeListener {

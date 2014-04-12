@@ -10,13 +10,17 @@
         android:icon="@drawable/icon"
         android:label="DMUCS"
         android:theme="@android:style/Theme.Holo.Light.DarkActionBar" >
-        <activity android:name="me.arpith.dmucscom.ScatterFriend" >
+        <activity
+            android:name="me.arpith.dmucscom.ScatterFriend"
+            android:theme="@android:style/Theme.Holo.Light.NoActionBar" >
         </activity>
         <activity android:name="me.arpith.dmucscom.FriendActivity" >
         </activity>
         <activity android:name="me.arpith.dmucscom.RequestActivity" >
         </activity>
-        <activity android:name="me.arpith.dmucscom.ScattActivity" >
+        <activity
+            android:name="me.arpith.dmucscom.ScattActivity"
+            android:theme="@android:style/Theme.Holo.Light.NoActionBar" >
             <intent-filter>
                 <action android:name="me.arpith.dmucscom.SCATTERACTIVITY" />
 

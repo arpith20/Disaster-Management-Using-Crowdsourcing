@@ -1,50 +1,48 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
+    android:background="@layout/background_gradient"
     android:focusable="true"
-	android:focusableInTouchMode="true"
-    >
-	<LinearLayout
-    	android:orientation="horizontal"
-    	android:layout_width="fill_parent"
-    	android:layout_height="wrap_content"
-    	android:padding="7dp"
-    	android:background="#efefef"
-    >
-		<EditText
-			android:id="@+id/writeTweet"
-			android:layout_width="200dp"
-			android:layout_height="wrap_content"
-			android:textSize="15dp"
-			android:hint="what do u wanna share?"
-			android:textColor="#aaa"
+    android:focusableInTouchMode="true"
+    android:orientation="vertical" >
 
-		></EditText>
-		<Button
-			android:id="@+id/share"
-			android:layout_width="80dp"
-			android:layout_height="wrap_content"
-			android:text="share"
-			android:onClick="writeTweet"
-		></Button>
-		<TextView
-			android:id="@+id/numOfMembers"
-			android:layout_width="wrap_content"
-			android:layout_height="wrap_content"
-			android:textSize="16dp"
-			android:textColor="#555"
-			android:paddingLeft="5dip"
-	></TextView>
-	</LinearLayout>
- 	<ListView
- 		android:id="@+id/tweetList"
-		android:layout_width="fill_parent"
-		android:layout_height="wrap_content"
-		android:layout_weight="1"
-		android:divider="#aaa"
-		android:dividerHeight="1.1dip"
-		android:background="#efefef"
- 	></ListView>
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:background="@android:color/transparent"
+        android:orientation="horizontal"
+        android:padding="7dp" >
+
+        <EditText
+            android:id="@+id/writeTweet"
+            android:layout_width="fill_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="0.54"
+            android:background="@drawable/apptheme_edit_text_holo_light"
+            android:gravity="center"
+            android:textColor="@android:color/white" >
+        </EditText>
+
+        <Button
+            android:id="@+id/share"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/apptheme_btn_default_holo_light"
+            android:onClick="writeTweet"
+            android:padding="-20px"
+            android:text="share" >
+        </Button>
+    </LinearLayout>
+
+    <ListView
+        android:id="@+id/tweetList"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:background="@android:color/transparent"
+        android:divider="@null"
+        android:dividerHeight="0dp" >
+    </ListView>
+
 </LinearLayout>
