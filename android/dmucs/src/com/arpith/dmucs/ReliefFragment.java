@@ -69,7 +69,6 @@ public class ReliefFragment extends Fragment {
 		SharedPreferences getIP = PreferenceManager
 				.getDefaultSharedPreferences(getActivity());
 		String ip = getIP.getString("ip", "192.168.43.111");
-		Toast.makeText(getActivity(), ip, 200).show();
 		url_all_reports = "http://" + ip + "/arpith/dmucs/ReliefList.php";
 		// Hashmap for ListView
 		locationList = new ArrayList<HashMap<String, String>>();
@@ -189,12 +188,7 @@ public class ReliefFragment extends Fragment {
 						locationList.add(map);
 					}
 				} else {
-					// no reports found
-					// Launch Add New quickreport Activity
-					Intent i = new Intent(getActivity(), QuickReport.class);
-					// Closing all previous activities
-					i.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
-					startActivity(i);
+					
 				}
 			} catch (JSONException e) {
 				e.printStackTrace();

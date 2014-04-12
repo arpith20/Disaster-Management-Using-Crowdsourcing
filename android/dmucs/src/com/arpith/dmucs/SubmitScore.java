@@ -6,9 +6,10 @@ import android.preference.PreferenceManager;
 import android.util.Log;
 
 import com.arpith.dmucs.SwarmConsts.Leaderboard;
+import com.swarmconnect.SwarmActivity;
 import com.swarmconnect.SwarmLeaderboard;
 
-public class SubmitScore {
+public class SubmitScore extends SwarmActivity{
 	public static boolean submitscore(Context c, int score) {
 		SharedPreferences pref = PreferenceManager
 				.getDefaultSharedPreferences(c);

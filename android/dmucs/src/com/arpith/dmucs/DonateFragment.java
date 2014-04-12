@@ -67,9 +67,8 @@ public class DonateFragment extends Fragment {
 				String user = uname.getString("name", "null");
 				String uid = id.getText().toString();
 
-				Toast.makeText(getActivity(), "" + amount, 300).show();
 				Intent i = new Intent(getActivity(), WriteQueryDatabase.class);
-				String query = "insert into donate_money values (\"" + uid
+				String query = "insert into donate_money (phone,phone_by,amount)values (\"" + uid
 						+ "\",\"" + user + "\"," + amount
 						+ ");|update donate set amount=amount+" + amount
 						+ " where uniqueid=\"" + uid + "\";";

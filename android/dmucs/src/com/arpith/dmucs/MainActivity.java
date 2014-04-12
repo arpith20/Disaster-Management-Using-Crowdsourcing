@@ -22,6 +22,7 @@ import android.widget.Toast;
 import com.parse.Parse;
 import com.parse.ParseInstallation;
 import com.parse.PushService;
+import com.swarmconnect.Swarm;
 import com.swarmconnect.SwarmActivity;
 
 public class MainActivity extends SwarmActivity {
@@ -29,7 +30,6 @@ public class MainActivity extends SwarmActivity {
 	// Drawer-------------
 	private static final int MENU_OVERFLOW = 1;
 	private static final String STATE_ACTIVE_POSITION = "net.simonvt.menudrawer.samples.ContentSample.activePosition";
-	private static final String STATE_CONTENT_TEXT = "net.simonvt.menudrawer.samples.ContentSample.contentText";
 
 	private MenuDrawer mMenuDrawer;
 
@@ -49,6 +49,9 @@ public class MainActivity extends SwarmActivity {
 			mActivePosition = savedInstanceState.getInt(STATE_ACTIVE_POSITION);
 		}
 
+		Swarm.preload(MainActivity.this, SwarmConsts.App.APP_ID,
+				SwarmConsts.App.APP_AUTH);
+
 		Parse.initialize(this, "6LFiTT4PXBrL6xdDtWQZetifXsDPH2tO1i4GG5Xa",
 				"sGACSZocjP0YQNGuEvDEUYktRSMA5W10S9zwzW1B");
 		PushService.setDefaultPushCallback(this, DMUCSNotification.class);
@@ -62,23 +65,38 @@ public class MainActivity extends SwarmActivity {
 
 		List<Object> items = new ArrayList<Object>();
 		items.add(new Item("Home", R.drawable.ic_launcher));
-		items.add(new Item("Missing Person",
+
+		items.add(new Category("Incident Module"));
+		items.add(new Item("Report an incident",
 				R.drawable.ic_action_select_all_dark));
+		items.add(new Item("Report List", R.drawable.ic_action_select_all_dark));
+
+		items.add(new Category("Missing Person Module"));
+		items.add(new Item("Report missing person",
+				R.drawable.ic_action_select_all_dark));
+		items.add(new Item("Missing People list",
+				R.drawable.ic_action_select_all_dark));
+
+		items.add(new Category("Donation"));
 		items.add(new Item("Donate", R.drawable.ic_action_select_all_dark));
-		items.add(new Item("Account", R.drawable.ic_action_refresh_dark));
+
 		items.add(new Category("Settings"));
 		items.add(new Item("General", R.drawable.ic_action_refresh_dark));
 		items.add(new Item("Advanced", R.drawable.ic_action_select_all_dark));
-		items.add(new Category("Information"));
-		items.add(new Item("Maps", R.drawable.ic_action_select_all_dark));
-		items.add(new Item("About us", R.drawable.ic_action_select_all_dark));
-		items.add(new Item("Report List", R.drawable.ic_action_select_all_dark));
+		items.add(new Item("Account Information",
+				R.drawable.ic_action_refresh_dark));
+
+		items.add(new Category("Gamification"));
 		items.add(new Item("Dashboard", R.drawable.ic_action_select_all_dark));
 		items.add(new Item("Leaderboards", R.drawable.ic_action_select_all_dark));
+		items.add(new Item("Logout", R.drawable.ic_action_select_all_dark));
+
+		items.add(new Category("Other"));
+		items.add(new Item("Scatternet", R.drawable.ic_action_select_all_dark));
+		items.add(new Item("Maps", R.drawable.ic_action_select_all_dark));
 		items.add(new Item("Notifications",
 				R.drawable.ic_action_select_all_dark));
-		items.add(new Item("Scatternet", R.drawable.ic_action_select_all_dark));
-		items.add(new Item("Logout", R.drawable.ic_action_select_all_dark));
+		items.add(new Item("About us", R.drawable.ic_action_select_all_dark));
 
 		// A custom ListView is needed so the drawer can be notified when it's
 		// scrolled. This is to update the position
@@ -175,58 +193,66 @@ public class MainActivity extends SwarmActivity {
 				startActivity(i);
 				finish();
 				break;
-			case 1:
-				i = new Intent(MainActivity.this, MissingPersonList.class);
-				startActivity(i);
-				break;
 			case 2:
-				i = new Intent(MainActivity.this, Donate.class);
-				startActivity(i);
-				break;
-			case 3:
-				i = new Intent(MainActivity.this, Account.class);
+				i = new Intent(MainActivity.this, QuickReport.class);
 				startActivity(i);
 				break;
 			case 5:
-				i = new Intent(MainActivity.this, Preference.class);
+				i = new Intent(MainActivity.this, MissingPersonReport.class);
 				startActivity(i);
 				break;
 			case 6:
-				i = new Intent(MainActivity.this, APreference.class);
+				i = new Intent(MainActivity.this, MissingPersonList.class);
 				startActivity(i);
 				break;
 			case 8:
-				i = new Intent(MainActivity.this, Maps.class);
+				i = new Intent(MainActivity.this, Donate.class);
 				startActivity(i);
 				break;
-			case 9:
-				i = new Intent(MainActivity.this, About.class);
+			case 12:
+				i = new Intent(MainActivity.this, Account.class);
 				startActivity(i);
 				break;
 			case 10:
-				i = new Intent(MainActivity.this, ReportList.class);
+				i = new Intent(MainActivity.this, Preference.class);
 				startActivity(i);
 				break;
 			case 11:
+				i = new Intent(MainActivity.this, APreference.class);
+				startActivity(i);
+				break;
+			case 19:
+				i = new Intent(MainActivity.this, Maps.class);
+				startActivity(i);
+				break;
+			case 21:
+				i = new Intent(MainActivity.this, About.class);
+				startActivity(i);
+				break;
+			case 3:
+				i = new Intent(MainActivity.this, ReportList.class);
+				startActivity(i);
+				break;
+			case 14:
 				Intent activity_dash = new Intent(MainActivity.this,
 						Gamification.class);
 				activity_dash.putExtra("task", "DASHBOARD");
 				startActivity(activity_dash);
 				break;
-			case 12:
+			case 15:
 				Intent activity_leader = new Intent(MainActivity.this,
 						Gamification.class);
 				activity_leader.putExtra("task", "LEADERBOARD");
 				startActivity(activity_leader);
 				break;
-			case 13:
+			case 20:
 				i = new Intent(MainActivity.this, DMUCSNotification.class);
 				startActivity(i);
 				break;
-			case 14:
+			case 18:
 				startActivity(new Intent("me.arpith.dmucscom.SCATTERACTIVITY"));
 				break;
-			case 15:
+			case 16:
 				Intent activity_logout = new Intent(MainActivity.this,
 						Gamification.class);
 				activity_logout.putExtra("task", "LOGOUT");

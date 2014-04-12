@@ -30,7 +30,6 @@
     <uses-permission android:name="android.permission.VIBRATE" />
     <uses-permission android:name="android.permission.GET_ACCOUNTS" />
     <uses-permission android:name="com.google.android.c2dm.permission.RECEIVE" />
-    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
 
     <permission
         android:name="com.arpith.dmucs.permission.C2D_MESSAGE"
@@ -87,14 +86,6 @@
             android:name="com.arpith.dmucs.MainActivity"
             android:label="@string/title_activity_main"
             android:theme="@android:style/Theme.Holo.Light.NoActionBar" >
-        </activity>
-        <activity
-            android:name="com.arpith.dmucs.ReportDisaster1"
-            android:label="@string/title_activity_report_disaster1" >
-        </activity>
-        <activity
-            android:name="com.arpith.dmucs.ReportDisaster2"
-            android:label="@string/title_activity_report_disaster2" >
         </activity>
         <activity
             android:name="com.arpith.dmucs.Account"
@@ -202,12 +193,6 @@
             android:process=":swarm" />
         <service android:name="com.parse.PushService" />
 
-        <receiver android:name="com.parse.ParseBroadcastReceiver" >
-            <intent-filter>
-                <action android:name="android.intent.action.BOOT_COMPLETED" />
-                <action android:name="android.intent.action.USER_PRESENT" />
-            </intent-filter>
-        </receiver>
         <receiver
             android:name="com.parse.GcmBroadcastReceiver"
             android:permission="com.google.android.c2dm.permission.SEND" >
@@ -219,7 +204,6 @@
                 <category android:name="com.arpith.dmucs" />
             </intent-filter>
         </receiver>
-        
         <receiver
             android:name="com.arpith.dmucs.MyCustomReceiver"
             android:exported="false" >

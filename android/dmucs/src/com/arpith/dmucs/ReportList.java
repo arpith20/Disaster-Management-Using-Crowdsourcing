@@ -28,6 +28,7 @@ import android.widget.ListAdapter;
 import android.widget.ListView;
 import android.widget.SimpleAdapter;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.google.android.gms.maps.model.LatLng;
 
@@ -164,13 +165,8 @@ public class ReportList extends ListActivity {
 						reportsList.add(map);
 					}
 				} else {
-					// no reports found
-					// Launch Add New quickreport Activity
-					Intent i = new Intent(getApplicationContext(),
-							QuickReport.class);
-					// Closing all previous activities
-					i.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
-					startActivity(i);
+					Toast.makeText(getBaseContext(), "No reports near you", Toast.LENGTH_LONG).show();
+					finish();
 				}
 			} catch (JSONException e) {
 				e.printStackTrace();

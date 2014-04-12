@@ -1,12 +1,12 @@
 package com.arpith.dmucs;
 
-import android.app.Activity;
 import android.os.Bundle;
 import android.widget.Toast;
 
 import com.swarmconnect.Swarm;
+import com.swarmconnect.SwarmActivity;
 
-public class Gamification extends Activity {
+public class Gamification extends SwarmActivity {
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
