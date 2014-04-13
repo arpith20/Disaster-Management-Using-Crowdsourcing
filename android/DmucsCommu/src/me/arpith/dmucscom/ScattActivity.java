@@ -24,6 +24,8 @@ public class ScattActivity extends ScatterFriend {
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.main);
+		getActionBar().setBackgroundDrawable(new ColorDrawable(Color.BLACK));
+		
 		writeTweetView = (EditText) findViewById(R.id.writeTweet);
 		ListView tweetList = (ListView) findViewById(R.id.tweetList);
 

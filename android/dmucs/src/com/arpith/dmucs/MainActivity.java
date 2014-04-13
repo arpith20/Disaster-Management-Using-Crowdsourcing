@@ -204,10 +204,12 @@ public class MainActivity extends SwarmActivity {
 				break;
 			case 6:
 				i = new Intent(MainActivity.this, MissingPersonList.class);
+				i.putExtra("within", "10");
 				startActivity(i);
 				break;
 			case 8:
 				i = new Intent(MainActivity.this, Donate.class);
+				i.putExtra("within", "20");
 				startActivity(i);
 				break;
 			case 12:
@@ -232,6 +234,7 @@ public class MainActivity extends SwarmActivity {
 				break;
 			case 3:
 				i = new Intent(MainActivity.this, ReportList.class);
+				i.putExtra("within", "20");
 				startActivity(i);
 				break;
 			case 14:

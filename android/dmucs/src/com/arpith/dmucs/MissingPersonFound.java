@@ -8,6 +8,7 @@ import android.location.Criteria;
 import android.location.Location;
 import android.location.LocationManager;
 import android.os.Bundle;
+import android.telephony.gsm.SmsManager;
 import android.util.Log;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -43,7 +44,6 @@ public class MissingPersonFound extends Activity implements OnMapClickListener {
 
 		Log.d("INformation", phone + "--------" + found_by);
 		et_description = (EditText) findViewById(R.id.f_description);
-		
 
 		location();
 
@@ -53,16 +53,34 @@ public class MissingPersonFound extends Activity implements OnMapClickListener {
 			@Override
 			public void onClick(View arg0) {
 				Log.d("INformation", "Pressed");
-				SubmitScore.submitscore(getBaseContext(), SwarmConsts.Scores.MISSING_FOUND);
-				
+				sendSMS(phone);
+
+				SubmitScore.submitscore(getBaseContext(),
+						SwarmConsts.Scores.MISSING_FOUND);
+
 				more_info = et_description.getText().toString();
-				
-				Intent i = new Intent(MissingPersonFound.this,WriteQueryDatabase.class);
-				i.putExtra("query", "update missing set found='1', found_by='"+found_by+"', f_lat='"+f_lat+"', f_lng='"+f_lng+"', more_info='"+more_info+"' where phone='"+phone+"'");
+
+				Intent i = new Intent(MissingPersonFound.this,
+						WriteQueryDatabase.class);
+				i.putExtra("query", "update missing set found='1', found_by='"
+						+ found_by + "', f_lat='" + f_lat + "', f_lng='"
+						+ f_lng + "', more_info='" + more_info
+						+ "' where phone='" + phone + "'");
 				i.putExtra("text", "Done!");
 				startActivity(i);
 			}
 		});
+	}
+
+	private void sendSMS(String to) {
+		SmsManager smsManager = SmsManager.getDefault();
+		smsManager
+				.sendTextMessage(
+						to,
+						null,
+						"The person you reported as missing has been found. Please contact "+found_by+" or open the app for more details",
+						null, null);
+
 	}
 
 	private void location() {

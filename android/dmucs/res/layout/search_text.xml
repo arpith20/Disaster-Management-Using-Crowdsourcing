@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:gravity="fill_horizontal"
+    android:orientation="horizontal" >
+
+    <EditText
+        android:id="@+id/search_text"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="4dip"
+        android:hint="Search"
+        android:imeActionId="1337"
+        android:imeOptions="actionDone"
+        android:inputType="textCapCharacters|textNoSuggestions"
+        android:singleLine="true"
+        android:textStyle="bold" />
+
+</RelativeLayout>

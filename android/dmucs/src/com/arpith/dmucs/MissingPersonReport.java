@@ -8,6 +8,8 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.database.Cursor;
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
 import android.location.Criteria;
 import android.location.Location;
 import android.location.LocationManager;
@@ -65,6 +67,8 @@ public class MissingPersonReport extends Activity implements
 
 		setContentView(R.layout.activity_missing_person_report);
 
+		getActionBar().setBackgroundDrawable(new ColorDrawable(Color.BLACK));
+		
 		location();
 
 		Send = (Button) findViewById(R.id.Send);

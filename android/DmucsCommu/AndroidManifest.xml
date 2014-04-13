@@ -4,10 +4,10 @@
     android:versionCode="1"
     android:versionName="1.0" >
 
-    <uses-sdk android:minSdkVersion="14" />
+    <uses-sdk android:minSdkVersion="16" />
 
     <application
-        android:icon="@drawable/icon"
+        android:icon="@drawable/ic_launcher_web"
         android:label="DMUCS"
         android:theme="@android:style/Theme.Holo.Light.DarkActionBar" >
         <activity
@@ -18,9 +18,7 @@
         </activity>
         <activity android:name="me.arpith.dmucscom.RequestActivity" >
         </activity>
-        <activity
-            android:name="me.arpith.dmucscom.ScattActivity"
-            android:theme="@android:style/Theme.Holo.Light.NoActionBar" >
+        <activity android:name="me.arpith.dmucscom.ScattActivity" >
             <intent-filter>
                 <action android:name="me.arpith.dmucscom.SCATTERACTIVITY" />
 

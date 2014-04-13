@@ -10,6 +10,8 @@ import android.app.PendingIntent;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
 import android.location.Criteria;
 import android.location.Location;
 import android.location.LocationManager;
@@ -58,6 +60,8 @@ public class QuickReport extends Activity implements OnMapClickListener,
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_quick_report);
+		
+		getActionBar().setBackgroundDrawable(new ColorDrawable(Color.BLACK));
 
 		segmentText_cas = (SegmentedRadioGroup) findViewById(R.id.id_casuality);
 		segmentText_cas.setOnCheckedChangeListener(this);

@@ -20,6 +20,8 @@ import android.os.AsyncTask;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
 import android.support.v4.app.Fragment;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -28,6 +30,7 @@ import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ListAdapter;
 import android.widget.ListView;
 import android.widget.SimpleAdapter;
@@ -37,8 +40,9 @@ import com.google.android.gms.maps.model.LatLng;
 
 public class ReliefFragment extends Fragment {
 
+	ListAdapter adapter;
 	ListView lv;
-	String pid, name, lat,lng,  address;
+	String pid, name, lat, lng, address;
 
 	// Progress Dialog
 	private ProgressDialog pDialog;
@@ -57,6 +61,9 @@ public class ReliefFragment extends Fragment {
 
 	// products JSONArray
 	JSONArray products = null;
+
+	String within;
+	EditText et_within;
 
 	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -87,14 +94,14 @@ public class ReliefFragment extends Fragment {
 				// getting values from selected ListItem
 				String pid = ((TextView) view.findViewById(R.id.pid)).getText()
 						.toString();
-				String name = ((TextView) view.findViewById(R.id.person_name)).getText()
-						.toString();
+				String name = ((TextView) view.findViewById(R.id.person_name))
+						.getText().toString();
 				String lat = ((TextView) view.findViewById(R.id.lat)).getText()
 						.toString();
 				String lng = ((TextView) view.findViewById(R.id.lng)).getText()
 						.toString();
-				String address = ((TextView) view.findViewById(R.id.address)).getText()
-						.toString();
+				String address = ((TextView) view.findViewById(R.id.address))
+						.getText().toString();
 				// Starting new intent
 				Intent in = new Intent(getActivity(), ReliefInfo.class);
 				// sending pid to next activity
@@ -106,14 +113,55 @@ public class ReliefFragment extends Fragment {
 				startActivity(in);
 			}
 		});
-		
-		Button new_b = (Button)rootView.findViewById(R.id.rel_create);
+
+		Button new_b = (Button) rootView.findViewById(R.id.rel_create);
 		new_b.setOnClickListener(new OnClickListener() {
-			
+
 			@Override
 			public void onClick(View v) {
-				Intent i = new Intent(getActivity(),ReliefAdd.class);
+				Intent i = new Intent(getActivity(), ReliefAdd.class);
 				startActivity(i);
+			}
+		});
+
+		Bundle b = getActivity().getIntent().getExtras();
+		et_within = (EditText) rootView.findViewById(R.id.et_within);
+		within = b.getString("within");
+		et_within.setText(within);
+
+		Button resubmit = (Button) rootView.findViewById(R.id.b_restart);
+		resubmit.setOnClickListener(new OnClickListener() {
+
+			@Override
+			public void onClick(View arg0) {
+				startActivity(getActivity().getIntent().putExtra("within",
+						et_within.getText().toString()));
+				getActivity().finish();
+			}
+		});
+
+		EditText search = (EditText) rootView.findViewById(R.id.et_search);
+		search.addTextChangedListener(new TextWatcher() {
+
+			@Override
+			public void onTextChanged(CharSequence s, int start, int before,
+					int count) {
+				((SimpleAdapter) ReliefFragment.this.adapter).getFilter()
+						.filter(s);
+
+			}
+
+			@Override
+			public void beforeTextChanged(CharSequence s, int start, int count,
+					int after) {
+				// TODO Auto-generated method stub
+
+			}
+
+			@Override
+			public void afterTextChanged(Editable s) {
+				// TODO Auto-generated method stub
+
 			}
 		});
 
@@ -181,22 +229,24 @@ public class ReliefFragment extends Fragment {
 								currentLocation.latitude,
 								currentLocation.longitude, "K");
 
-						// creating new HashMap
-						HashMap<String, String> map = new HashMap<String, String>();
+						if (Integer.parseInt(loc) <= Integer.parseInt(within)) {
+							// creating new HashMap
+							HashMap<String, String> map = new HashMap<String, String>();
 
-						// adding each child node to HashMap key => value
-						map.put("pid", pid);
-						map.put("name", name);
-						map.put("lat", lat);
-						map.put("lng", lng);
-						map.put("loc", loc);
-						map.put("address", address);
+							// adding each child node to HashMap key => value
+							map.put("pid", pid);
+							map.put("name", name);
+							map.put("lat", lat);
+							map.put("lng", lng);
+							map.put("loc", loc);
+							map.put("address", address);
 
-						// adding HashList to ArrayList
-						locationList.add(map);
+							// adding HashList to ArrayList
+							locationList.add(map);
+						}
 					}
 				} else {
-					
+
 				}
 			} catch (JSONException e) {
 				e.printStackTrace();
@@ -217,11 +267,11 @@ public class ReliefFragment extends Fragment {
 					/**
 					 * Updating parsed JSON data into ListView
 					 * */
-					ListAdapter adapter = new SimpleAdapter(getActivity(),
-							locationList, R.layout.relief_view, new String[] {
-									"pid", "name","lat","lng", "loc", "address" },
-							new int[] { R.id.pid, R.id.person_name,R.id.lat,R.id.lng,
-									R.id.location, R.id.address });
+					adapter = new SimpleAdapter(getActivity(), locationList,
+							R.layout.relief_view, new String[] { "pid", "name",
+									"lat", "lng", "loc", "address" },
+							new int[] { R.id.pid, R.id.person_name, R.id.lat,
+									R.id.lng, R.id.location, R.id.address });
 					lv.setAdapter(adapter);
 				}
 			});
