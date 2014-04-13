@@ -3,9 +3,9 @@
 	$response = array();
 
 	// check for required fields
-	if (isset($_GET['phone'])) {
+	if (isset($_GET['uid'])) {
 
-		$n = $_GET['phone'];
+		$n = $_GET['uid'];
 
 		// include db connect class
 		require_once __DIR__ . '/db_connect.php';
@@ -14,7 +14,7 @@
 		$db = new DB_CONNECT();
 
 		// mysql inserting a new row
-		$result  = mysql_query("select * from report where phone='$n'");
+		$result  = mysql_query("select * from report where uid='$n'");
 		$result2 = mysql_query("select * from main_details where phone='$n'");
 		if ($result) {
 			while ($row = mysql_fetch_array($result)) {

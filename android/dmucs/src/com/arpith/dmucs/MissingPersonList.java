@@ -165,8 +165,7 @@ public class MissingPersonList extends ListActivity {
 						reportsList.add(map);
 					}
 				} else {
-					Toast.makeText(getBaseContext(), "No Missing People near you", Toast.LENGTH_LONG).show();
-					finish();
+					
 				}
 			} catch (JSONException e) {
 				e.printStackTrace();

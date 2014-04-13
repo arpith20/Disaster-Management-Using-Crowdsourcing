@@ -23,6 +23,7 @@
 		while ($row = mysql_fetch_array($result)) {
 			// temp user array
 			$rep                = array();
+			$rep["uid"]			= $row["uid"];
 			$rep["pid"]         = $row["phone"]; //phoneID
 			$rep["name"]        = $row["Name"];
 			$rep["dress"]       = $row["dress"];

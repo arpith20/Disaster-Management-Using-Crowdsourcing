@@ -78,14 +78,14 @@ public class ReportList extends ListActivity {
 			public void onItemClick(AdapterView<?> parent, View view,
 					int position, long id) {
 				// getting values from selected ListItem
-				String pid = ((TextView) view.findViewById(R.id.pid)).getText()
+				String uid = ((TextView) view.findViewById(R.id.uid)).getText()
 						.toString();
 
 				// Starting new intent
 				Intent in = new Intent(getApplicationContext(),
 						ReportInfo.class);
-				// sending pid to next activity
-				in.putExtra("pid", pid);
+				// sending uid to next activity
+				in.putExtra("uid", uid);
 				startActivity(in);
 			}
 		});
@@ -131,7 +131,7 @@ public class ReportList extends ListActivity {
 						JSONObject c = products.getJSONObject(i);
 
 						// Storing each json item in variable
-						String pid = c.getString("pid");
+						String uid = c.getString("uid");
 						String incident = c.getString("incident");
 						String lat = c.getString("lat");
 						String lng = c.getString("lng");
@@ -155,7 +155,7 @@ public class ReportList extends ListActivity {
 						HashMap<String, String> map = new HashMap<String, String>();
 
 						// adding each child node to HashMap key => value
-						map.put("pid", pid);
+						map.put("uid", uid);
 						map.put("incident", incident);
 						map.put("loc", loc);
 						map.put("report_time", report_time);
@@ -165,8 +165,7 @@ public class ReportList extends ListActivity {
 						reportsList.add(map);
 					}
 				} else {
-					Toast.makeText(getBaseContext(), "No reports near you", Toast.LENGTH_LONG).show();
-					finish();
+					
 				}
 			} catch (JSONException e) {
 				e.printStackTrace();
@@ -189,7 +188,7 @@ public class ReportList extends ListActivity {
 					 * */
 					ListAdapter adapter = new SimpleAdapter(ReportList.this,
 							reportsList, R.layout.report_view, new String[] {
-									"pid", "incident","loc","report_time","comments" }, new int[] { R.id.pid,
+									"uid", "incident","loc","report_time","comments" }, new int[] { R.id.uid,
 									R.id.incident,R.id.location,R.id.time,R.id.comments });
 					setListAdapter(adapter);
 				}

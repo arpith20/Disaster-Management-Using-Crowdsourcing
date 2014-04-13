@@ -87,7 +87,14 @@ public class ReliefFragment extends Fragment {
 				// getting values from selected ListItem
 				String pid = ((TextView) view.findViewById(R.id.pid)).getText()
 						.toString();
-
+				String name = ((TextView) view.findViewById(R.id.person_name)).getText()
+						.toString();
+				String lat = ((TextView) view.findViewById(R.id.lat)).getText()
+						.toString();
+				String lng = ((TextView) view.findViewById(R.id.lng)).getText()
+						.toString();
+				String address = ((TextView) view.findViewById(R.id.address)).getText()
+						.toString();
 				// Starting new intent
 				Intent in = new Intent(getActivity(), ReliefInfo.class);
 				// sending pid to next activity
@@ -180,6 +187,8 @@ public class ReliefFragment extends Fragment {
 						// adding each child node to HashMap key => value
 						map.put("pid", pid);
 						map.put("name", name);
+						map.put("lat", lat);
+						map.put("lng", lng);
 						map.put("loc", loc);
 						map.put("address", address);
 
@@ -210,8 +219,8 @@ public class ReliefFragment extends Fragment {
 					 * */
 					ListAdapter adapter = new SimpleAdapter(getActivity(),
 							locationList, R.layout.relief_view, new String[] {
-									"pid", "name", "loc", "address" },
-							new int[] { R.id.pid, R.id.person_name,
+									"pid", "name","lat","lng", "loc", "address" },
+							new int[] { R.id.pid, R.id.person_name,R.id.lat,R.id.lng,
 									R.id.location, R.id.address });
 					lv.setAdapter(adapter);
 				}

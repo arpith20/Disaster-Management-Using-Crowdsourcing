@@ -135,6 +135,7 @@ public class MainActivity extends SwarmActivity {
 					startActivity(i);
 					break;
 				case 2:
+					Toast.makeText(getBaseContext(), "Please wait..", Toast.LENGTH_LONG).show();
 					i = new Intent(MainActivity.this, MissingPersonReport.class);
 					startActivity(i);
 					break;
