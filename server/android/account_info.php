@@ -29,8 +29,6 @@
 			while ($row = mysql_fetch_array($result2)) {
 				$response["h_lat"] = $row['h_lat'];
 				$response["h_lng"] = $row['h_lng'];
-				$response["c_lat"] = $row['c_lat'];
-				$response["c_lng"] = $row['c_lng'];
 			}
 			echo json_encode($response);
 		} else {

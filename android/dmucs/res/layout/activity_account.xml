@@ -9,7 +9,6 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent" >
 
-       
         <ImageButton
             android:id="@+id/account_photo"
             android:layout_width="100dp"
@@ -53,10 +52,10 @@
             android:layout_below="@id/account_name"
             android:layout_marginTop="10dp"
             android:layout_toRightOf="@id/account_phone"
+            android:gravity="right"
             android:text="9999999999"
             android:textColor="#eeeeee"
-            android:textSize="16dp"
-            android:gravity="right" />
+            android:textSize="16dp" />
 
         <TextView
             android:id="@+id/account_dobT"
@@ -78,105 +77,111 @@
             android:layout_below="@id/account_phone"
             android:layout_marginTop="10dp"
             android:layout_toRightOf="@id/account_dobT"
+            android:gravity="right"
             android:text="20/11/1992"
             android:textColor="#eeeeee"
-            android:textSize="16dp"
-            android:gravity="right" />
+            android:textSize="16dp" />
 
         <View
             android:id="@+id/line_break"
             android:layout_width="fill_parent"
             android:layout_height="1dp"
-            android:layout_marginTop="6dp"
             android:layout_below="@id/account_photo"
+            android:layout_marginTop="6dp"
             android:background="#eeeeee" />
 
-        <TextView
-            android:id="@+id/account_homeT"
+        <ScrollView
+            android:id="@+id/scrollView1"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/line_break"
-            android:layout_margin="5dp"
-            android:text="Home Location "
-            android:textColor="@android:color/white"
-            android:textSize="25dp"
-            android:textStyle="bold" >
-        </TextView>
-
-        <TextView
-            android:id="@+id/account_home"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/account_homeT"
-            android:paddingLeft="10dp"
-            android:text="dummy text"
-            android:textColor="#ffffff"
-            android:textSize="20dp"
-            android:textStyle="bold" />
-
-        <TextView
-            android:id="@+id/account_currentT"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/account_home"
-            android:layout_margin="5dp"
-            android:text="Current Location"
-            android:textColor="@android:color/white"
-            android:textSize="25dp"
-            android:textStyle="bold" >
-        </TextView>
-
-        <TextView
-            android:id="@+id/account_current"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/account_currentT"
-            android:paddingLeft="10dp"
-            android:text="dummy text"
-            android:textColor="#ffffff"
-            android:textSize="20dp"
-            android:textStyle="bold" />
-        <TextView
-            android:id="@+id/account_pointsT"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/account_current"
-            android:layout_margin="5dp"
-            android:text="Points"
-            android:textColor="@android:color/white"
-            android:textSize="25dp"
-            android:textStyle="bold" >
-        </TextView>
-
-        <TextView
-            android:id="@+id/account_points"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/account_pointsT"
-            android:paddingLeft="10dp"
-            android:text="dummy text"
-            android:textColor="#ffffff"
-            android:textSize="20dp"
-            android:textStyle="bold" />
-
-        <Button
-            android:id="@+id/button_home"
-            style="?android:attr/buttonStyleSmall"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignBottom="@+id/account_home"
+            android:layout_height="fill_parent"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentLeft="true"
             android:layout_alignParentRight="true"
-            android:text="View" />
+            android:layout_below="@+id/line_break" >
 
-        <Button
-            android:id="@+id/button_current"
-            style="?android:attr/buttonStyleSmall"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignBottom="@+id/account_current"
-            android:layout_alignParentRight="true"
-            android:text="View" />
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="10dp"
+                android:layout_alignTop="@+id/line_break"
+                android:background="@android:color/transparent"
+                android:orientation="vertical" >
 
+                <TextView
+                    android:id="@+id/account_homeT"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="5dp"
+                    android:text="Home Location "
+                    android:textColor="@android:color/white"
+                    android:textSize="25dp"
+                    android:textStyle="bold" >
+                </TextView>
+
+                <fragment
+                    android:id="@+id/map1"
+                    android:layout_width="match_parent"
+                    android:layout_height="200dp"
+                    class="com.google.android.gms.maps.MapFragment" />
+
+                <TextView
+                    android:id="@+id/account_home"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingLeft="10dp"
+                    android:text="dummy text"
+                    android:textColor="#ffffff"
+                    android:textSize="20dp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/account_currentT"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="5dp"
+                    android:text="Current Location"
+                    android:textColor="@android:color/white"
+                    android:textSize="25dp"
+                    android:textStyle="bold" >
+                </TextView>
+
+                <fragment
+                    android:id="@+id/map2"
+                    android:layout_width="match_parent"
+                    android:layout_height="200dp"
+                    class="com.google.android.gms.maps.MapFragment" />
+
+                <TextView
+                    android:id="@+id/account_current"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingLeft="10dp"
+                    android:textColor="#ffffff"
+                    android:textSize="20dp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/account_pointsT"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="5dp"
+                    android:text="Points"
+                    android:textColor="@android:color/white"
+                    android:textSize="25dp"
+                    android:textStyle="bold" >
+                </TextView>
+
+                <TextView
+                    android:id="@+id/account_points"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingLeft="10dp"
+                    android:text="dummy text"
+                    android:textColor="#ffffff"
+                    android:textSize="20dp"
+                    android:textStyle="bold" />
+
+            </LinearLayout>
+        </ScrollView>
     </RelativeLayout>
 
 </ScrollView>

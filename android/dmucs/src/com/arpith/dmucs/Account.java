@@ -3,37 +3,50 @@ package com.arpith.dmucs;
 import java.util.ArrayList;
 import java.util.List;
 
-import me.imid.swipebacklayout.lib.SwipeBackLayout;
-import me.imid.swipebacklayout.lib.app.SwipeBackActivity;
-
 import org.apache.http.NameValuePair;
 import org.apache.http.message.BasicNameValuePair;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import com.google.android.gms.maps.CameraUpdateFactory;
+import com.google.android.gms.maps.GoogleMap;
+import com.google.android.gms.maps.MapFragment;
+import com.google.android.gms.maps.model.BitmapDescriptorFactory;
+import com.google.android.gms.maps.model.LatLng;
+import com.google.android.gms.maps.model.Marker;
+import com.google.android.gms.maps.model.MarkerOptions;
+import com.koushikdutta.ion.Ion;
+
+import android.app.Activity;
 import android.app.AlertDialog;
 import android.app.ProgressDialog;
+import android.content.Context;
 import android.content.SharedPreferences;
+import android.location.Criteria;
+import android.location.Location;
+import android.location.LocationManager;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
 import android.util.Log;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
-public class Account extends SwipeBackActivity {
-	String phone, incident, lat, lng, damage, no_casualty;
-	String you, comments, done, modified_time;
+public class Account extends Activity {
 	Boolean d;
 	int success;
-	
-	String n,p,dob,h,c,h_lat,h_lng,c_lat,c_lng,points;
-	
+
+	String name, email, phone, dob, h_lat, h_lng, points, n1;
+	String name2;
 	// Progress Dialog
 	private ProgressDialog pDialog;
 	JSONParser jsonParser = new JSONParser();
 
 	private static String url_account;
+	
+	private GoogleMap map1;
+	private GoogleMap map2;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -51,37 +64,72 @@ public class Account extends SwipeBackActivity {
 			alertDialog.show();
 		} else {
 
+			SharedPreferences uname = getSharedPreferences("user", 0);
+			points = uname.getInt("points", 0) + "";
+			TextView pnts = (TextView) findViewById(R.id.account_points);
+			pnts.setText(points);
+			n1 = uname.getString("name", "0");
+
 			url_account = "http://";
 			url_account += ip;
 			url_account += "/arpith/dmucs/account_info.php";
+			
+			ImageView imageView = (ImageView) findViewById(R.id.account_photo);
+			Ion.with(this)
+					.load("http://" + ip
+							+ "/arpith/dmucs/profile/"+n1+".jpg")
+					.withBitmap().resize(512, 512).centerInside()
+					.intoImageView(imageView);
 
-			Toast.makeText(getBaseContext(), "writing " + url_account,
-					Toast.LENGTH_SHORT).show();
-
-			//d = false;
 			new Async_Account().execute();
-			//while (!d)
-				;
-
-			// Do after loading
-			TextView name = (TextView)findViewById(R.id.account_name);
-			TextView phone = (TextView)findViewById(R.id.account_phoneno);
-			TextView db = (TextView)findViewById(R.id.account_dob);
-			TextView h_loc = (TextView)findViewById(R.id.account_home);
-			TextView c_loc = (TextView)findViewById(R.id.account_current);
-			TextView pnts = (TextView)findViewById(R.id.account_points);
-			
-			name.setText(n);
-			phone.setText(p);
-			db.setText(dob);
-			h_loc.setText("("+h_lat+", "+h_lng+")");
-			c_loc.setText("("+c_lat+", "+c_lng+")");
-			pnts.setText(points);
-			
-			Toast.makeText(getBaseContext(), "" + success, Toast.LENGTH_SHORT)
-					.show();
-
 		}
+	}
+
+	void doAfterLoad() {
+		map1 = ((MapFragment) getFragmentManager()
+				.findFragmentById(R.id.map1)).getMap();
+		map2 = ((MapFragment) getFragmentManager()
+				.findFragmentById(R.id.map2)).getMap();
+		
+		LatLng homelocation = new LatLng(Double.parseDouble(h_lat),
+				Double.parseDouble(h_lng));
+		Marker HomeLocation = map1.addMarker(new MarkerOptions().position(
+				homelocation).icon(
+				BitmapDescriptorFactory
+						.fromResource(R.drawable.currentmarker)));
+		map1.animateCamera(
+				CameraUpdateFactory.newLatLngZoom(homelocation, 15),
+				4000, null);
+		
+		LocationManager locationManager = (LocationManager) getSystemService(Context.LOCATION_SERVICE);
+
+		Criteria criteria = new Criteria();
+		String provider = locationManager.getBestProvider(criteria, true);
+		Location lastKnownLocation = locationManager
+				.getLastKnownLocation(provider);
+		LatLng currentLocation = new LatLng(lastKnownLocation.getLatitude(),
+				lastKnownLocation.getLongitude());
+		Marker CurrentLocation = map2.addMarker(new MarkerOptions().position(
+				currentLocation).icon(
+				BitmapDescriptorFactory
+						.fromResource(R.drawable.currentmarker)));
+		map2.animateCamera(
+				CameraUpdateFactory.newLatLngZoom(currentLocation, 15),
+				4000, null);
+		
+		// Do after loading
+		TextView tv_name = (TextView) findViewById(R.id.account_name);
+		TextView tv_phone = (TextView) findViewById(R.id.account_phoneno);
+		TextView tv_dob = (TextView) findViewById(R.id.account_dob);
+		TextView tv_h_loc = (TextView) findViewById(R.id.account_home);
+		
+
+		tv_name.setText(name);
+		tv_phone.setText(phone);
+		tv_dob.setText(dob);
+		tv_h_loc.setText("(" + h_lat + ", " + h_lng + ")");
+
+		
 
 	}
 
@@ -97,7 +145,6 @@ public class Account extends SwipeBackActivity {
 		}
 
 		protected String doInBackground(String... args) {
-			String n1 = "8105581711";
 
 			// Building Parameters
 			List<NameValuePair> params = new ArrayList<NameValuePair>();
@@ -105,8 +152,8 @@ public class Account extends SwipeBackActivity {
 
 			// getting JSON Object
 			// Note that create product url accepts POST method
-			JSONObject json = jsonParser.makeHttpRequest(url_account,
-					"GET", params);
+			JSONObject json = jsonParser.makeHttpRequest(url_account, "GET",
+					params);
 
 			// check log cat for response
 			Log.d("Create Response", json.toString());
@@ -114,19 +161,17 @@ public class Account extends SwipeBackActivity {
 			// check for success tag
 			try {
 				success = json.getInt("success");
-				n=json.getString("name");
-				p=json.getString("phone");
-				dob=json.getString("dob");
-				h_lat=json.getString("h_lat");
-				h_lng=json.getString("h_lng");
-				c_lat=json.getString("c_lat");
-				c_lng=json.getString("c_lng");
-				c=json.getString("name");
-				points=json.getString("points");
+				name = json.getString("name");
+				phone = json.getString("phone");
+				dob = json.getString("dob");
+				h_lat = json.getString("h_lat");
+				h_lng = json.getString("h_lng");
+				email = json.getString("email");
+				points = json.getString("points");
 				if (success == 1) {
 					d = true;
 				} else {
-					d=true;
+					d = false;
 				}
 			} catch (JSONException e) {
 				e.printStackTrace();
@@ -135,16 +180,9 @@ public class Account extends SwipeBackActivity {
 		}
 
 		protected void onPostExecute(String file_url) {
+			doAfterLoad();
 			pDialog.dismiss();
 		}
 
 	}
-	
-	@Override
-    protected void onResume() {
-        super.onResume();
-        SwipeBackLayout mSwipeBackLayout;
-		mSwipeBackLayout = getSwipeBackLayout();
-		mSwipeBackLayout.setEdgeTrackingEnabled(SwipeBackLayout.EDGE_LEFT);
-    }
 }
