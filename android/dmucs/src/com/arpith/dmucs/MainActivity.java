@@ -9,6 +9,7 @@ import net.simonvt.menudrawer.Position;
 import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
+import android.util.TypedValue;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -32,6 +33,8 @@ public class MainActivity extends SwarmActivity {
 	private static final String STATE_ACTIVE_POSITION = "net.simonvt.menudrawer.samples.ContentSample.activePosition";
 
 	private MenuDrawer mMenuDrawer;
+	
+	TextView tv;
 
 	private MenuAdapter mAdapter;
 	private ListView mList;
@@ -58,7 +61,7 @@ public class MainActivity extends SwarmActivity {
 		ParseInstallation.getCurrentInstallation().saveInBackground();
 		PushService.subscribe(getBaseContext(), "disaster",
 				DMUCSNotification.class);
-
+		
 		mMenuDrawer = MenuDrawer.attach(this, MenuDrawer.MENU_DRAG_CONTENT,
 				Position.LEFT);
 		mMenuDrawer.setContentView(R.layout.activity_main);
@@ -110,18 +113,22 @@ public class MainActivity extends SwarmActivity {
 
 		// EndDrawer------------------------------------------------------
 
+		tv = (TextView) findViewById(R.id.textView1);
+		
 		final GlowPadView glowPad = (GlowPadView) findViewById(R.id.incomingCallWidget);
 		glowPad.setPointsMultiplier(8);
 		glowPad.ping();
 		glowPad.setOnTriggerListener(new GlowPadView.OnTriggerListener() {
 			@Override
 			public void onGrabbed(View v, int handle) {
-				// Do nothing
+				tv.setTextSize(TypedValue.COMPLEX_UNIT_SP, 20);
+				tv.setText("Swipe right to report an incident\nSwipe left to report a missing person");
 			}
 
 			@Override
 			public void onReleased(View v, int handle) {
-				// Do nothing
+				tv.setTextSize(TypedValue.COMPLEX_UNIT_SP, 30);
+				tv.setText("Perform Quick action");
 			}
 
 			@Override

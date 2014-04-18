@@ -35,4 +35,16 @@
         app:snapMargin="@dimen/glowpadview_snap_margin"
         app:targetDrawables="@array/incoming_call_widget_2way_targets" />
 
+    <ImageView
+        android:id="@+id/imageView1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:adjustViewBounds="true"
+        android:maxHeight="42dp"
+        android:maxWidth="42dp"
+        android:src="@drawable/drawer"
+        android:layout_marginBottom="40px" />
+
 </RelativeLayout>

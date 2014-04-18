@@ -100,17 +100,17 @@ public class About extends SwipeBackActivity {
 				break;
 			case 1:
 				viewHolder.textView.setText("Kumar Visahl");
-				viewHolder.textView_mail.setText("null@example.com");
+				viewHolder.textView_mail.setText("vishal9223@yahoo.co.in");
 				viewHolder.textView_git.setText("github.com/null");
 				break;
 			case 2:
 				viewHolder.textView.setText("Vinutha");
-				viewHolder.textView_mail.setText("null@example.com");
+				viewHolder.textView_mail.setText("vinuthareddy92@gmail.com");
 				viewHolder.textView_git.setText("github.com/null");
 				break;
 			case 3:
-				viewHolder.textView.setText("Mani");
-				viewHolder.textView_mail.setText("null@example.com");
+				viewHolder.textView.setText("Manigandan");
+				viewHolder.textView_mail.setText("himanichandraa@gmail.com");
 				viewHolder.textView_git.setText("github.com/null");
 				break;
 
