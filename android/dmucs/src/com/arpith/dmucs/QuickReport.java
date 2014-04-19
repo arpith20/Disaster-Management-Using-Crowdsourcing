@@ -45,7 +45,7 @@ public class QuickReport extends Activity implements OnMapClickListener,
 	private GoogleMap map;
 	LatLng currentLocation;
 
-	String lat, lng, phone, no_casualty = "-1", you = "1", missing = "0", inc,
+	String lat, lng, phone, no_casualty = "0", you = "1", missing = "0", inc,
 			comment;
 
 	SegmentedRadioGroup segmentText_cas;
@@ -169,6 +169,9 @@ public class QuickReport extends Activity implements OnMapClickListener,
 				.getLastKnownLocation(provider);
 		currentLocation = new LatLng(lastKnownLocation.getLatitude(),
 				lastKnownLocation.getLongitude());
+		
+		lng = String.valueOf(currentLocation.longitude);
+		lat = String.valueOf(currentLocation.latitude);
 
 		map = ((MapFragment) getFragmentManager().findFragmentById(R.id.map))
 				.getMap();

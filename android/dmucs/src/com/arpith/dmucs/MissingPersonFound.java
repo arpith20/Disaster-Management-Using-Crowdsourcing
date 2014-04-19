@@ -24,6 +24,7 @@ import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.MarkerOptions;
 
+@SuppressWarnings("deprecation")
 public class MissingPersonFound extends Activity implements OnMapClickListener {
 
 	String phone, found_by, f_lat, f_lng, more_info;

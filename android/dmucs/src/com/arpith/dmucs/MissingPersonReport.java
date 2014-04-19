@@ -109,6 +109,9 @@ public class MissingPersonReport extends Activity implements
 				.getLastKnownLocation(provider);
 		currentLocation = new LatLng(lastKnownLocation.getLatitude(),
 				lastKnownLocation.getLongitude());
+		
+		lng=String.valueOf(currentLocation.longitude);
+		lat=String.valueOf(currentLocation.latitude);
 
 		map = ((MapFragment) getFragmentManager().findFragmentById(R.id.map))
 				.getMap();

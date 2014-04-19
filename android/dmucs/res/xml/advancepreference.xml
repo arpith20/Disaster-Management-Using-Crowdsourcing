@@ -8,7 +8,8 @@
         android:negativeButtonText="Cancel"
         android:positiveButtonText="Ok"
         android:summary="IP address of the server"
-        android:title="IP Address" />
+        android:title="IP Address"
+        android:defaultValue="192.168.43.111" />
 
     <PreferenceCategory android:title="Debug" >
     </PreferenceCategory>

@@ -170,24 +170,36 @@
             </LinearLayout>
         </ScrollView>
 
-        <Button
-            android:id="@+id/button1"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignLeft="@+id/account_photo"
-            android:layout_alignRight="@+id/account_photo"
-            android:layout_alignTop="@+id/account_photo"
-            android:text="Button" />
-
-        <Button
-            android:id="@+id/button2"
+        <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignBottom="@+id/account_photo"
             android:layout_alignLeft="@+id/account_photo"
             android:layout_alignRight="@+id/account_photo"
-            android:text="Button" />
+            android:layout_alignTop="@+id/account_photo"
+            android:orientation="vertical" >
 
+            <Button
+                android:id="@+id/plus"
+                android:layout_width="fill_parent"
+                android:layout_height="40dp"
+                android:background="@drawable/plus" />
+
+            <TextView
+                android:id="@+id/tv_vote"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="12"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:textColor="@android:color/white" />
+
+            <Button
+                android:id="@+id/minus"
+                android:layout_width="fill_parent"
+                android:layout_height="40dp"
+                android:background="@drawable/minus" />
+        </LinearLayout>
     </RelativeLayout>
 
 </RelativeLayout>

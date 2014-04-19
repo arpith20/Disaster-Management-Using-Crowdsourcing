@@ -7,11 +7,8 @@ import net.sebastianopoggi.ui.GlowPadBackport.GlowPadView;
 import net.simonvt.menudrawer.MenuDrawer;
 import net.simonvt.menudrawer.Position;
 import android.content.Intent;
-import android.os.Build;
 import android.os.Bundle;
 import android.util.TypedValue;
-import android.view.Menu;
-import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
@@ -28,12 +25,8 @@ import com.swarmconnect.SwarmActivity;
 
 public class MainActivity extends SwarmActivity {
 
-	// Drawer-------------
-	private static final int MENU_OVERFLOW = 1;
-	private static final String STATE_ACTIVE_POSITION = "net.simonvt.menudrawer.samples.ContentSample.activePosition";
-
 	private MenuDrawer mMenuDrawer;
-	
+
 	TextView tv;
 
 	private MenuAdapter mAdapter;
@@ -47,11 +40,6 @@ public class MainActivity extends SwarmActivity {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 
-		// Drawer---------------------------------------------------------
-		if (savedInstanceState != null) {
-			mActivePosition = savedInstanceState.getInt(STATE_ACTIVE_POSITION);
-		}
-
 		Swarm.preload(MainActivity.this, SwarmConsts.App.APP_ID,
 				SwarmConsts.App.APP_AUTH);
 
@@ -61,7 +49,7 @@ public class MainActivity extends SwarmActivity {
 		ParseInstallation.getCurrentInstallation().saveInBackground();
 		PushService.subscribe(getBaseContext(), "disaster",
 				DMUCSNotification.class);
-		
+
 		mMenuDrawer = MenuDrawer.attach(this, MenuDrawer.MENU_DRAG_CONTENT,
 				Position.LEFT);
 		mMenuDrawer.setContentView(R.layout.activity_main);
@@ -70,15 +58,12 @@ public class MainActivity extends SwarmActivity {
 		items.add(new Item("Home", R.drawable.ic_launcher));
 
 		items.add(new Category("Incident Module"));
-		items.add(new Item("Report an incident",
-				R.drawable.icon_report));
+		items.add(new Item("Report an incident", R.drawable.icon_report));
 		items.add(new Item("Report List", R.drawable.icon_list));
 
 		items.add(new Category("Missing Person Module"));
-		items.add(new Item("Report missing person",
-				R.drawable.icon_missing));
-		items.add(new Item("Missing People list",
-				R.drawable.icon_miss_list));
+		items.add(new Item("Report missing person", R.drawable.icon_missing));
+		items.add(new Item("Missing People list", R.drawable.icon_miss_list));
 
 		items.add(new Category("Donation"));
 		items.add(new Item("Donate", R.drawable.icon_donate));
@@ -86,8 +71,7 @@ public class MainActivity extends SwarmActivity {
 		items.add(new Category("Settings"));
 		items.add(new Item("General", R.drawable.icon_setting));
 		items.add(new Item("Advanced", R.drawable.icon_advance));
-		items.add(new Item("Account Information",
-				R.drawable.icon_account));
+		items.add(new Item("Account Information", R.drawable.icon_account));
 
 		items.add(new Category("Gamification"));
 		items.add(new Item("Dashboard", R.drawable.icon_dash));
@@ -97,8 +81,7 @@ public class MainActivity extends SwarmActivity {
 		items.add(new Category("Other"));
 		items.add(new Item("Scatternet", R.drawable.icon_scatter));
 		items.add(new Item("Maps", R.drawable.icon_map));
-		items.add(new Item("Notifications",
-				R.drawable.icon_notification));
+		items.add(new Item("Notifications", R.drawable.icon_notification));
 		items.add(new Item("About us", R.drawable.icon_about));
 
 		// A custom ListView is needed so the drawer can be notified when it's
@@ -114,7 +97,7 @@ public class MainActivity extends SwarmActivity {
 		// EndDrawer------------------------------------------------------
 
 		tv = (TextView) findViewById(R.id.textView1);
-		
+
 		final GlowPadView glowPad = (GlowPadView) findViewById(R.id.incomingCallWidget);
 		glowPad.setPointsMultiplier(8);
 		glowPad.ping();
@@ -142,7 +125,8 @@ public class MainActivity extends SwarmActivity {
 					startActivity(i);
 					break;
 				case 2:
-					Toast.makeText(getBaseContext(), "Please wait..", Toast.LENGTH_LONG).show();
+					Toast.makeText(getBaseContext(), "Please wait..",
+							Toast.LENGTH_LONG).show();
 					i = new Intent(MainActivity.this, MissingPersonReport.class);
 					startActivity(i);
 					break;
@@ -162,28 +146,6 @@ public class MainActivity extends SwarmActivity {
 		});
 	}
 
-	@Override
-	public boolean onCreateOptionsMenu(Menu menu) {
-		MenuItem overflowItem = menu.add(0, MENU_OVERFLOW, 0, null);
-		if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.ICE_CREAM_SANDWICH) {
-			overflowItem.setShowAsAction(MenuItem.SHOW_AS_ACTION_ALWAYS);
-		}
-		overflowItem.setIcon(R.drawable.ic_menu_moreoverflow_normal_holo_light);
-		return true;
-	}
-
-	// This method is called once the menu is selected
-
-	@Override
-	public boolean onOptionsItemSelected(MenuItem item) {
-		switch (item.getItemId()) {
-		case MENU_OVERFLOW:
-			mMenuDrawer.toggleMenu();
-			return true;
-		}
-		return true;
-	}
-
 	// Drawer---------------------------------------------------------------
 	private AdapterView.OnItemClickListener mItemClickListener = new AdapterView.OnItemClickListener() {
 		@Override
@@ -191,8 +153,7 @@ public class MainActivity extends SwarmActivity {
 				long id) {
 			mActivePosition = position;
 			mMenuDrawer.setActiveView(view, position);
-			Toast.makeText(getBaseContext(), "Position" + position,
-					Toast.LENGTH_SHORT).show();
+
 			Intent i;
 			switch (position) {
 

@@ -25,13 +25,17 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 public class WriteQueryDatabase extends SwipeBackActivity {
-	String query;
-	Boolean d, suc;
+	
+	ImageView rs_tick;
+	Button rs_main;
+	TextView result;
+	
+	String query, text;
+	Boolean suc;
 	// Progress Dialog
 	private ProgressDialog pDialog;
 	JSONParser jsonParser = new JSONParser();
 
-	// url to create new product
 	private static String url_query;
 
 	@Override
@@ -49,9 +53,9 @@ public class WriteQueryDatabase extends SwipeBackActivity {
 			alertDialog.setNeutralButton("OK", null);
 			alertDialog.show();
 		} else {
-			ImageView rs_tick = (ImageView) findViewById(R.id.rs_tick);
-			Button rs_main = (Button) findViewById(R.id.rs_main);
-			TextView result = (TextView) findViewById(R.id.rs_result);
+			rs_tick = (ImageView) findViewById(R.id.rs_tick);
+			rs_main = (Button) findViewById(R.id.rs_main);
+			result = (TextView) findViewById(R.id.rs_result);
 
 			rs_tick.setAlpha(0);
 			url_query = "http://";
@@ -60,16 +64,60 @@ public class WriteQueryDatabase extends SwipeBackActivity {
 
 			Bundle e = getIntent().getExtras();
 			query = e.getString("query");
-			String text = e.getString("text");
-			// query="insert into donate_money values (\"8105581713\",\"9818000236\",20);|update donate set amount=amount+20 where uniqueid=\"8105581711\";";
+			text = e.getString("text");
+			
+			Log.d("Query",query);
 
-			d = false;
-			new CreateNewProduct().execute();
-			while (!d)
-				;
+			new AsyncWriteDatabase().execute();
+		}
 
-			// Do after query has been submitted
+	}
 
+	class AsyncWriteDatabase extends AsyncTask<String, String, String> {
+
+		/**
+		 * Before starting background thread Show Progress Dialog
+		 * */
+		@Override
+		protected void onPreExecute() {
+			super.onPreExecute();
+			pDialog = new ProgressDialog(WriteQueryDatabase.this);
+			pDialog.setMessage("Writing to Database...");
+			pDialog.setIndeterminate(false);
+			pDialog.setCancelable(true);
+			pDialog.show();
+		}
+
+		protected String doInBackground(String... args) {
+
+			// Building Parameters
+			List<NameValuePair> params = new ArrayList<NameValuePair>();
+			params.add(new BasicNameValuePair("query", query));
+
+			JSONObject json = jsonParser.makeHttpRequest(url_query, "POST",
+					params);
+
+			// check log cat for response
+			Log.d("Create Response", json.toString());
+
+			// check for success tag
+			try {
+				int success = json.getInt("success");
+				if (success == 1) {
+					suc = true;
+				} else {
+					suc = false;
+				}
+			} catch (JSONException e) {
+				e.printStackTrace();
+			}
+			return null;
+		}
+
+		protected void onPostExecute(String file_url) {
+			// dismiss the dialog once done
+			pDialog.dismiss();
+			
 			if (suc)
 				result.setText(text);
 			else {
@@ -86,64 +134,6 @@ public class WriteQueryDatabase extends SwipeBackActivity {
 					startActivity(i);
 				}
 			});
-
-		}
-
-	}
-
-	class CreateNewProduct extends AsyncTask<String, String, String> {
-
-		/**
-		 * Before starting background thread Show Progress Dialog
-		 * */
-		@Override
-		protected void onPreExecute() {
-			super.onPreExecute();
-			pDialog = new ProgressDialog(WriteQueryDatabase.this);
-			pDialog.setMessage("Reporting...");
-			pDialog.setIndeterminate(false);
-			pDialog.setCancelable(true);
-			pDialog.show();
-		}
-
-		/**
-		 * Creating product
-		 * */
-		protected String doInBackground(String... args) {
-
-			// Building Parameters
-			List<NameValuePair> params = new ArrayList<NameValuePair>();
-			params.add(new BasicNameValuePair("query", query));
-
-			// getting JSON Object
-			// Note that create product url accepts POST method
-			JSONObject json = jsonParser.makeHttpRequest(url_query, "POST",
-					params);
-
-			// check log cat for response
-			Log.d("Create Response", json.toString());
-
-			// check for success tag
-			try {
-				int success = json.getInt("success");
-				if (success == 1) {
-					d = true;
-					suc = true;
-					// Toast.makeText(getBaseContext(), "Incident Reported",
-					// Toast.LENGTH_LONG).show();
-				} else {
-					d = true;
-					suc = false;
-				}
-			} catch (JSONException e) {
-				e.printStackTrace();
-			}
-			return null;
-		}
-
-		protected void onPostExecute(String file_url) {
-			// dismiss the dialog once done
-			pDialog.dismiss();
 		}
 
 	}

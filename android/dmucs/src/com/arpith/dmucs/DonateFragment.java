@@ -106,7 +106,7 @@ public class DonateFragment extends Fragment {
 						getActivity());
 				builder.setTitle("Enter amount");
 				builder.setMessage("We thank you for this donation!");
-				// Set up the input
+
 				final EditText input = new EditText(getActivity());
 				// Specify the type of input expected; this, for example, sets
 				// the input as a password, and will mask the text

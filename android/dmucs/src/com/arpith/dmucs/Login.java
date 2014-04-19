@@ -17,7 +17,10 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.AsyncTask;
 import android.os.Bundle;
+import android.preference.PreferenceManager;
 import android.util.Log;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.View.OnLongClickListener;
 import android.widget.Button;
@@ -30,6 +33,8 @@ public class Login extends SwipeBackActivity {
 	EditText uid;
 	EditText pass;
 	
+	String ip, EnteredPassword;
+
 	private ProgressDialog pDialog;
 	JSONParser jsonParser = new JSONParser();
 	boolean d;
@@ -40,8 +45,7 @@ public class Login extends SwipeBackActivity {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_login);
-
-		url_account = "http://192.168.42.199/arpith/dmucs/login.php";
+		
 		d = false;
 
 		SharedPreferences uname = getSharedPreferences("user", 0);
@@ -54,9 +58,9 @@ public class Login extends SwipeBackActivity {
 		uid = (EditText) findViewById(R.id.uid);
 		pass = (EditText) findViewById(R.id.pass);
 		Button b = (Button) findViewById(R.id.btnLogin);
-		
+
 		b.setOnLongClickListener(new OnLongClickListener() {
-			
+
 			@Override
 			public boolean onLongClick(View arg0) {
 				Intent i = new Intent(Login.this, MainActivity.class);
@@ -65,39 +69,23 @@ public class Login extends SwipeBackActivity {
 				finish();
 				return true;
 			}
-		});;
+		});
+		;
 
 		b.setOnClickListener(new View.OnClickListener() {
 
 			@Override
 			public void onClick(View arg0) {
+				SharedPreferences getIP = PreferenceManager
+						.getDefaultSharedPreferences(getBaseContext());
+				ip = getIP.getString("ip", "");
+				url_account = "http://"+ip+"/arpith/dmucs/login.php";
+				
 				User = uid.getText().toString();
-				String EnteredPassword = pass.getText().toString();
+				EnteredPassword = pass.getText().toString();
+
 				Log.d("hashedPass", "" + EnteredPassword.hashCode());
 				new CheckPassword().execute();
-				while (!d)
-					;
-
-				if (Password == EnteredPassword.hashCode()) {
-
-					SharedPreferences uname = getSharedPreferences("user", 0);
-					SharedPreferences.Editor unameEdit = uname.edit();
-					unameEdit.putBoolean("first", false);
-					unameEdit.putString("name", User);
-					unameEdit.commit();
-
-					Intent i = new Intent(Login.this, MainActivity.class);
-					startActivity(i);
-
-					finish();
-
-				} else {
-					AlertDialog.Builder alertDialog = new AlertDialog.Builder(
-							Login.this);
-					alertDialog.setTitle("Incorrect Username or password");
-					alertDialog.setNeutralButton("OK", null);
-					alertDialog.show();
-				}
 			}
 		});
 	}
@@ -120,8 +108,6 @@ public class Login extends SwipeBackActivity {
 			List<NameValuePair> params = new ArrayList<NameValuePair>();
 			params.add(new BasicNameValuePair("phone", n1));
 
-			// getting JSON Object
-			// Note that create product url accepts POST method
 			JSONObject json = jsonParser.makeHttpRequest(url_account, "GET",
 					params);
 
@@ -135,7 +121,7 @@ public class Login extends SwipeBackActivity {
 				if (success == 1) {
 					d = true;
 				} else {
-					d = true;
+					d = false;
 					Password = 1;
 				}
 			} catch (JSONException e) {
@@ -146,8 +132,46 @@ public class Login extends SwipeBackActivity {
 
 		protected void onPostExecute(String file_url) {
 			pDialog.dismiss();
+			if (Password == EnteredPassword.hashCode()) {
+
+				SharedPreferences uname = getSharedPreferences("user", 0);
+				SharedPreferences.Editor unameEdit = uname.edit();
+				unameEdit.putBoolean("first", false);
+				unameEdit.putString("name", User);
+				unameEdit.commit();
+
+				Intent i = new Intent(Login.this, MainActivity.class);
+				startActivity(i);
+
+				finish();
+
+			} else {
+				AlertDialog.Builder alertDialog = new AlertDialog.Builder(
+						Login.this);
+				alertDialog.setTitle("Incorrect Username or password");
+				alertDialog.setNeutralButton("OK", null);
+				alertDialog.show();
+			}
 		}
 
+	}
+
+	@Override
+	public boolean onCreateOptionsMenu(Menu menu) {
+		// Inflate the menu; this adds items to the action bar if it is present.
+		getMenuInflater().inflate(R.menu.login, menu);
+		return true;
+	}
+
+	@Override
+	public boolean onOptionsItemSelected(MenuItem item) {
+		switch (item.getItemId()) {
+		case R.id.advanced:
+			Intent i = new Intent(Login.this, APreference.class);
+			startActivity(i);
+			break;
+		}
+		return super.onOptionsItemSelected(item);
 	}
 
 	@Override

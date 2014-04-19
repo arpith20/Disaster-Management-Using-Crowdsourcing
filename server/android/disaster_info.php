@@ -29,6 +29,7 @@
 				$response["comments"]    = $row['comments'];
 				$response["done"]        = $row['done'];
 				$response["report_time"] = $row['report_time'];
+				$response["vote"] 		 = $row['vote'];
 			}
 			while ($row = mysql_fetch_array($result2)) {
 				$response["name"] = $row['name'];

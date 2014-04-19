@@ -13,6 +13,8 @@ import android.app.AlertDialog;
 import android.app.ProgressDialog;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
@@ -53,9 +55,10 @@ public class MissingPersonInfo extends Activity {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_missing_person_info);
 
+		getActionBar().setBackgroundDrawable(new ColorDrawable(Color.BLACK));
+		
 		Bundle b = getIntent().getExtras();
 		p = b.getString("pid");
-		Toast.makeText(getBaseContext(), p, 300).show();
 
 		SharedPreferences getIP = PreferenceManager
 				.getDefaultSharedPreferences(getBaseContext());
@@ -77,14 +80,14 @@ public class MissingPersonInfo extends Activity {
 			ImageView imageView = (ImageView) findViewById(R.id.account_photo);
 			Ion.with(this)
 					.load("http://" + ip
-							+ "/arpith/dmucs/profile/9968035735.jpg")
+							+ "/arpith/dmucs/profile/"+p+".jpg")
 					.withBitmap().resize(512, 512).centerInside()
 					.intoImageView(imageView);
 
 			ImageView imageView2 = (ImageView) findViewById(R.id.account_photo_big);
 			Ion.with(this)
 					.load("http://" + ip
-							+ "/arpith/dmucs/profile/9968035735.jpg")
+							+ "/arpith/dmucs/profile/"+p+".jpg")
 					.withBitmap().resize(1024, 1024).centerInside()
 					.intoImageView(imageView2);
 
@@ -189,8 +192,6 @@ public class MissingPersonInfo extends Activity {
 			List<NameValuePair> params = new ArrayList<NameValuePair>();
 			params.add(new BasicNameValuePair("phone", p));
 
-			// getting JSON Object
-			// Note that create product url accepts POST method
 			JSONObject json = jsonParser.makeHttpRequest(url_account, "GET",
 					params);
 

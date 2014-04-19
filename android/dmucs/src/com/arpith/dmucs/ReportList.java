@@ -47,15 +47,13 @@ public class ReportList extends ListActivity {
 
 	ArrayList<HashMap<String, String>> reportsList;
 
-	// url to get all products list
 	private static String url_all_reports;
 
 	// JSON Node names
 	private static final String TAG_SUCCESS = "success";
 	private static final String TAG_REPORTS = "reports";
 
-	// products JSONArray
-	JSONArray products = null;
+	JSONArray reports = null;
 
 	String within;
 	EditText et_within;
@@ -72,14 +70,11 @@ public class ReportList extends ListActivity {
 		// Hashmap for ListView
 		reportsList = new ArrayList<HashMap<String, String>>();
 
-		// Loading products in Background Thread
 		new LoadAllReports().execute();
 
 		// Get listview
 		ListView lv = getListView();
 
-		// on seleting single product
-		// launching Edit Product Screen
 		lv.setOnItemClickListener(new OnItemClickListener() {
 
 			@Override
@@ -127,14 +122,10 @@ public class ReportList extends ListActivity {
 			@Override
 			public void beforeTextChanged(CharSequence s, int start, int count,
 					int after) {
-				// TODO Auto-generated method stub
-
 			}
 
 			@Override
 			public void afterTextChanged(Editable s) {
-				// TODO Auto-generated method stub
-
 			}
 		});
 
@@ -146,15 +137,12 @@ public class ReportList extends ListActivity {
 		protected void onPreExecute() {
 			super.onPreExecute();
 			pDialog = new ProgressDialog(ReportList.this);
-			pDialog.setMessage("Loading products. Please wait...");
+			pDialog.setMessage("Loading Reports. Please wait...");
 			pDialog.setIndeterminate(false);
 			pDialog.setCancelable(false);
 			pDialog.show();
 		}
 
-		/**
-		 * getting All products from url
-		 * */
 		protected String doInBackground(String... args) {
 			// Building Parameters
 			List<NameValuePair> params = new ArrayList<NameValuePair>();
@@ -163,20 +151,18 @@ public class ReportList extends ListActivity {
 					params);
 
 			// Check your log cat for JSON reponse
-			Log.d("All Products: ", json.toString());
+			Log.d("All Reports: ", json.toString());
 
 			try {
 				// Checking for SUCCESS TAG
 				int success = json.getInt(TAG_SUCCESS);
 
 				if (success == 1) {
-					// products found
-					// Getting Array of Products
-					products = json.getJSONArray(TAG_REPORTS);
 
-					// looping through All Products
-					for (int i = 0; i < products.length(); i++) {
-						JSONObject c = products.getJSONObject(i);
+					reports = json.getJSONArray(TAG_REPORTS);
+
+					for (int i = 0; i < reports.length(); i++) {
+						JSONObject c = reports.getJSONObject(i);
 
 						// Storing each json item in variable
 						String uid = c.getString("uid");
@@ -230,7 +216,6 @@ public class ReportList extends ListActivity {
 		 * After completing background task Dismiss the progress dialog
 		 * **/
 		protected void onPostExecute(String file_url) {
-			// dismiss the dialog after getting all products
 			pDialog.dismiss();
 			// updating UI from Background Thread
 			runOnUiThread(new Runnable() {

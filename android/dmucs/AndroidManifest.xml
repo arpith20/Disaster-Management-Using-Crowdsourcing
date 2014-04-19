@@ -140,24 +140,22 @@
             android:windowSoftInputMode="stateHidden" >
         </activity>
         <activity
-            android:name="com.arpith.dmucs.SubmitDonation"
-            android:label="@string/title_activity_submit_donation" >
-        </activity>
-        <activity
             android:name="com.arpith.dmucs.WriteQueryDatabase"
             android:label="@string/title_activity_write_query_database" >
         </activity>
         <activity
             android:name="com.arpith.dmucs.ReportList"
-            android:label="Report List" >
+            android:label="Report List"
+            android:windowSoftInputMode="stateHidden" >
         </activity>
         <activity
             android:name="com.arpith.dmucs.ReportInfo"
-            android:label="Report List" >
+            android:label="Report Info" >
         </activity>
         <activity
             android:name="com.arpith.dmucs.MissingPersonList"
-            android:label="Report List" >
+            android:label="Missing Person List"
+            android:windowSoftInputMode="stateHidden" >
         </activity>
         <activity
             android:name="com.arpith.dmucs.MissingPersonFound"
@@ -179,7 +177,7 @@
         </activity>
         <activity
             android:name="com.arpith.dmucs.Gamification"
-            android:label="Location Information"
+            android:label="Gamification"
             android:windowSoftInputMode="stateHidden" >
         </activity>
         <activity

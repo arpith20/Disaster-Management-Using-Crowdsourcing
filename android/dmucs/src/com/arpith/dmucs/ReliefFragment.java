@@ -52,15 +52,13 @@ public class ReliefFragment extends Fragment {
 
 	ArrayList<HashMap<String, String>> locationList;
 
-	// url to get all products list
 	private static String url_all_reports;
 
 	// JSON Node names
 	private static final String TAG_SUCCESS = "success";
 	private static final String TAG_LOC = "locations";
 
-	// products JSONArray
-	JSONArray products = null;
+	JSONArray locations = null;
 
 	String within;
 	EditText et_within;
@@ -84,8 +82,6 @@ public class ReliefFragment extends Fragment {
 		// Get listview
 		lv = (ListView) rootView.findViewById(R.id.list);
 
-		// on seleting single product
-		// launching Edit Product Screen
 		lv.setOnItemClickListener(new OnItemClickListener() {
 
 			@Override
@@ -180,9 +176,6 @@ public class ReliefFragment extends Fragment {
 			pDialog.show();
 		}
 
-		/**
-		 * getting All products from url
-		 * */
 		protected String doInBackground(String... args) {
 			// Building Parameters
 			List<NameValuePair> params = new ArrayList<NameValuePair>();
@@ -191,20 +184,18 @@ public class ReliefFragment extends Fragment {
 					params);
 
 			// Check your log cat for JSON reponse
-			Log.d("All Products: ", json.toString());
+			Log.d("All Locations: ", json.toString());
 
 			try {
 				// Checking for SUCCESS TAG
 				int success = json.getInt(TAG_SUCCESS);
 
 				if (success == 1) {
-					// products found
-					// Getting Array of Products
-					products = json.getJSONArray(TAG_LOC);
 
-					// looping through All Products
-					for (int i = 0; i < products.length(); i++) {
-						JSONObject c = products.getJSONObject(i);
+					locations = json.getJSONArray(TAG_LOC);
+
+					for (int i = 0; i < locations.length(); i++) {
+						JSONObject c = locations.getJSONObject(i);
 
 						// Storing each json item in variable
 						pid = c.getString("pid");
@@ -259,7 +250,6 @@ public class ReliefFragment extends Fragment {
 		 * After completing background task Dismiss the progress dialog
 		 * **/
 		protected void onPostExecute(String file_url) {
-			// dismiss the dialog after getting all products
 			pDialog.dismiss();
 			// updating UI from Background Thread
 			getActivity().runOnUiThread(new Runnable() {

@@ -12,7 +12,7 @@ import android.widget.TextView;
 
 public class DMUCSNotification extends Activity {
 
-	Boolean answer = true;
+	Boolean answer = false;
 	String uid="1";
 	
 	@Override

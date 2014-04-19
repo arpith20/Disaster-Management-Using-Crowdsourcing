@@ -32,7 +32,6 @@ public class Splash extends Activity {
 				versionName = this.getPackageManager().getPackageInfo(
 						this.getPackageName(), 0).versionName;
 			} catch (NameNotFoundException e) {
-				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
 			app_version.setText("Version: "+versionName);
@@ -41,7 +40,6 @@ public class Splash extends Activity {
 					try {
 						sleep(2000);
 					} catch (InterruptedException e) {
-						// TODO: handle exception
 						e.printStackTrace();
 					} finally {
 						Intent openMainPage = new Intent(

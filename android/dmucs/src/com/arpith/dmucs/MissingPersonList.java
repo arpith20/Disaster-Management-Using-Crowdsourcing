@@ -33,7 +33,6 @@ import android.widget.ListAdapter;
 import android.widget.ListView;
 import android.widget.SimpleAdapter;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.google.android.gms.maps.model.LatLng;
 
@@ -48,15 +47,13 @@ public class MissingPersonList extends ListActivity {
 
 	ArrayList<HashMap<String, String>> reportsList;
 
-	// url to get all products list
 	private static String url_all_reports;
 
 	// JSON Node names
 	private static final String TAG_SUCCESS = "success";
 	private static final String TAG_REPORTS = "reports";
 
-	// products JSONArray
-	JSONArray products = null;
+	JSONArray people = null;
 
 	String within;
 	EditText et_within;
@@ -73,14 +70,11 @@ public class MissingPersonList extends ListActivity {
 		// Hashmap for ListView
 		reportsList = new ArrayList<HashMap<String, String>>();
 
-		// Loading products in Background Thread
 		new LoadAllReports().execute();
 
 		// Get listview
 		ListView lv = getListView();
 
-		// on seleting single product
-		// launching Edit Product Screen
 		lv.setOnItemClickListener(new OnItemClickListener() {
 
 			@Override
@@ -154,9 +148,6 @@ public class MissingPersonList extends ListActivity {
 			pDialog.show();
 		}
 
-		/**
-		 * getting All products from url
-		 * */
 		protected String doInBackground(String... args) {
 			// Building Parameters
 			List<NameValuePair> params = new ArrayList<NameValuePair>();
@@ -165,20 +156,18 @@ public class MissingPersonList extends ListActivity {
 					params);
 
 			// Check your log cat for JSON reponse
-			Log.d("All Products: ", json.toString());
+			Log.d("All People: ", json.toString());
 
 			try {
 				// Checking for SUCCESS TAG
 				int success = json.getInt(TAG_SUCCESS);
 
 				if (success == 1) {
-					// products found
-					// Getting Array of Products
-					products = json.getJSONArray(TAG_REPORTS);
+					
+					people = json.getJSONArray(TAG_REPORTS);
 
-					// looping through All Products
-					for (int i = 0; i < products.length(); i++) {
-						JSONObject c = products.getJSONObject(i);
+					for (int i = 0; i < people.length(); i++) {
+						JSONObject c = people.getJSONObject(i);
 
 						// Storing each json item in variable
 						String pid = c.getString("pid");
@@ -232,7 +221,6 @@ public class MissingPersonList extends ListActivity {
 		 * After completing background task Dismiss the progress dialog
 		 * **/
 		protected void onPostExecute(String file_url) {
-			// dismiss the dialog after getting all products
 			pDialog.dismiss();
 			// updating UI from Background Thread
 			runOnUiThread(new Runnable() {
