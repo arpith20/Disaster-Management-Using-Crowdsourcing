@@ -110,6 +110,11 @@
             android:windowSoftInputMode="stateHidden" >
         </activity>
         <activity
+            android:name="com.arpith.dmucs.ReportIncident"
+            android:label="Report a Disaster"
+            android:windowSoftInputMode="stateHidden" >
+        </activity>
+        <activity
             android:name="com.arpith.dmucs.MissingPersonInfo"
             android:label="@string/title_activity_missing_person_info" >
         </activity>
@@ -141,6 +146,10 @@
         </activity>
         <activity
             android:name="com.arpith.dmucs.WriteQueryDatabase"
+            android:label="@string/title_activity_write_query_database" >
+        </activity>
+        <activity
+            android:name="com.arpith.dmucs.WriteWithoutDuplicateDatabase"
             android:label="@string/title_activity_write_query_database" >
         </activity>
         <activity

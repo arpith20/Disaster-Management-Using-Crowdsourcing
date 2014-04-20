@@ -121,7 +121,7 @@ public class MainActivity extends SwarmActivity {
 				case 0:
 					Toast.makeText(MainActivity.this, "Report Disaster",
 							Toast.LENGTH_SHORT).show();
-					i = new Intent(MainActivity.this, QuickReport.class);
+					i = new Intent(MainActivity.this, ReportIncident.class);
 					startActivity(i);
 					break;
 				case 2:

@@ -66,7 +66,15 @@ public class ReportList extends ListActivity {
 		SharedPreferences getIP = PreferenceManager
 				.getDefaultSharedPreferences(getBaseContext());
 		String ip = getIP.getString("ip", "192.168.43.111");
-		url_all_reports = "http://" + ip + "/arpith/dmucs/DisasterList.php";
+		
+		//if duplicate values are alloud by the user
+		Boolean duplicate = getIP.getBoolean("duplicate", true);
+		if (duplicate)
+			url_all_reports = "http://" + ip + "/arpith/dmucs/DisasterList.php";
+		else
+			url_all_reports = "http://" + ip
+					+ "/arpith/dmucs/DisasterList_NoDup.php";
+		
 		// Hashmap for ListView
 		reportsList = new ArrayList<HashMap<String, String>>();
 
