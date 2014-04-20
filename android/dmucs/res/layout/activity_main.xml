@@ -27,7 +27,7 @@
         android:visibility="visible"
         app:feedbackCount="1"
         app:glowRadius="@dimen/glowpadview_glow_radius"
-        app:handleDrawable="@drawable/ic_in_call_touch_handle"
+        app:handleDrawable="@drawable/ic_lockscreen_handle_pressed"
         app:innerRadius="@dimen/glowpadview_inner_radius"
         app:outerRadius="@dimen/glowpadview_target_placement_radius"
         app:outerRingDrawable="@drawable/ic_lockscreen_outerring"

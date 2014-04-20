@@ -9,7 +9,7 @@
         android:positiveButtonText="Ok"
         android:summary="IP address of the server"
         android:title="IP Address"
-        android:defaultValue="192.168.43.111" />
+        android:defaultValue="192.168.42.56" />
 
     <PreferenceCategory android:title="Debug" >
     </PreferenceCategory>
@@ -17,6 +17,7 @@
     <CheckBoxPreference
         android:key="debug_notification"
         android:summary="Creates dummy notifications for dubugging purposes"
-        android:title="Debug Notification" />
+        android:title="Debug Notification"
+        android:defaultValue="true" />
 
 </PreferenceScreen>

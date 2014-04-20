@@ -22,6 +22,7 @@ import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.View.OnClickListener;
 import android.view.View.OnLongClickListener;
 import android.widget.Button;
 import android.widget.EditText;
@@ -86,6 +87,17 @@ public class Login extends SwipeBackActivity {
 
 				Log.d("hashedPass", "" + EnteredPassword.hashCode());
 				new CheckPassword().execute();
+			}
+		});
+		
+		Button signup = (Button) findViewById(R.id.signup);
+		signup.setOnClickListener(new OnClickListener() {
+			
+			@Override
+			public void onClick(View arg0) {
+				Intent i =new Intent(Login.this,SignUp.class);
+				startActivity(i);
+				//finish();
 			}
 		});
 	}

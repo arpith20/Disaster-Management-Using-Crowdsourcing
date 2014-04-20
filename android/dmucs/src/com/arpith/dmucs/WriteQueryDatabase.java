@@ -25,11 +25,11 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 public class WriteQueryDatabase extends SwipeBackActivity {
-	
+
 	ImageView rs_tick;
 	Button rs_main;
 	TextView result;
-	
+
 	String query, text;
 	Boolean suc;
 	// Progress Dialog
@@ -46,30 +46,23 @@ public class WriteQueryDatabase extends SwipeBackActivity {
 		SharedPreferences getIP = PreferenceManager
 				.getDefaultSharedPreferences(getBaseContext());
 		String ip = getIP.getString("ip", "");
-		if (ip.matches("")) {
-			AlertDialog.Builder alertDialog = new AlertDialog.Builder(
-					WriteQueryDatabase.this);
-			alertDialog.setTitle("IP Address is not set");
-			alertDialog.setNeutralButton("OK", null);
-			alertDialog.show();
-		} else {
-			rs_tick = (ImageView) findViewById(R.id.rs_tick);
-			rs_main = (Button) findViewById(R.id.rs_main);
-			result = (TextView) findViewById(R.id.rs_result);
 
-			rs_tick.setAlpha(0);
-			url_query = "http://";
-			url_query += ip;
-			url_query += "/arpith/dmucs/query.php";
+		rs_tick = (ImageView) findViewById(R.id.rs_tick);
+		rs_main = (Button) findViewById(R.id.rs_main);
+		result = (TextView) findViewById(R.id.rs_result);
 
-			Bundle e = getIntent().getExtras();
-			query = e.getString("query");
-			text = e.getString("text");
-			
-			Log.d("Query",query);
+		rs_tick.setAlpha(0);
+		url_query = "http://";
+		url_query += ip;
+		url_query += "/arpith/dmucs/query.php";
 
-			new AsyncWriteDatabase().execute();
-		}
+		Bundle e = getIntent().getExtras();
+		query = e.getString("query");
+		text = e.getString("text");
+
+		Log.d("Query", query);
+
+		new AsyncWriteDatabase().execute();
 
 	}
 
@@ -117,7 +110,7 @@ public class WriteQueryDatabase extends SwipeBackActivity {
 		protected void onPostExecute(String file_url) {
 			// dismiss the dialog once done
 			pDialog.dismiss();
-			
+
 			if (suc)
 				result.setText(text);
 			else {
@@ -129,7 +122,8 @@ public class WriteQueryDatabase extends SwipeBackActivity {
 
 				@Override
 				public void onClick(View arg0) {
-					Intent i = new Intent(WriteQueryDatabase.this,MainActivity.class);
+					Intent i = new Intent(WriteQueryDatabase.this,
+							MainActivity.class);
 					i.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
 					startActivity(i);
 				}

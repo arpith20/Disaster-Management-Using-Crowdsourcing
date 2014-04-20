@@ -19,6 +19,9 @@ public class Splash extends Activity {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_splash);
 		
+		PreferenceManager.setDefaultValues(this, R.xml.mypreference, false);
+		PreferenceManager.setDefaultValues(this, R.xml.advancepreference, false);
+		
 		SharedPreferences getPrefs = PreferenceManager
 				.getDefaultSharedPreferences(getBaseContext());
 		boolean startup = getPrefs.getBoolean("splash", false);

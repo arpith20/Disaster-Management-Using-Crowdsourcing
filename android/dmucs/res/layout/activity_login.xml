@@ -94,16 +94,16 @@
                 android:text="Login" />
             <!-- Link to Registration Screen -->
 
-            <TextView
-                android:id="@+id/link_to_register"
-                android:layout_width="fill_parent"
+            <Button
+                android:id="@+id/signup"
+                android:layout_width="338dp"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="40dip"
-                android:layout_marginTop="40dip"
-                android:gravity="center"
-                android:text="New to this service? \nPlease visit the web page"
+                android:text="New to this service?\nClick here to signup"
                 android:textColor="#0b84aa"
-                android:textSize="10dip" />
+                android:textSize="15dp"
+                android:background="@android:color/transparent" />
+
+           
         </LinearLayout>
         <!-- Login Form Ends -->
     </RelativeLayout>
