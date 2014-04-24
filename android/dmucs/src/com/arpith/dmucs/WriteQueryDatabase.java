@@ -11,15 +11,17 @@ import org.apache.http.message.BasicNameValuePair;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-import android.app.AlertDialog;
 import android.app.ProgressDialog;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
 import android.util.Log;
 import android.view.View;
+import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -27,10 +29,10 @@ import android.widget.TextView;
 public class WriteQueryDatabase extends SwipeBackActivity {
 
 	ImageView rs_tick;
-	Button rs_main;
+	Button rs_main, b_map;
 	TextView result;
 
-	String query, text;
+	String query, text, showmap;
 	Boolean suc;
 	// Progress Dialog
 	private ProgressDialog pDialog;
@@ -49,6 +51,7 @@ public class WriteQueryDatabase extends SwipeBackActivity {
 
 		rs_tick = (ImageView) findViewById(R.id.rs_tick);
 		rs_main = (Button) findViewById(R.id.rs_main);
+		b_map = (Button) findViewById(R.id.b_map);
 		result = (TextView) findViewById(R.id.rs_result);
 
 		rs_tick.setAlpha(0);
@@ -59,6 +62,10 @@ public class WriteQueryDatabase extends SwipeBackActivity {
 		Bundle e = getIntent().getExtras();
 		query = e.getString("query");
 		text = e.getString("text");
+
+		b_map.setEnabled(false);
+		b_map.setText("");
+		b_map.setBackground(new ColorDrawable(Color.TRANSPARENT));
 
 		Log.d("Query", query);
 

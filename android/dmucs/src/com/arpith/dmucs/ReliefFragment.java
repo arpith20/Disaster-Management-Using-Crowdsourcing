@@ -42,7 +42,7 @@ public class ReliefFragment extends Fragment {
 
 	ListAdapter adapter;
 	ListView lv;
-	String pid, name, lat, lng, address;
+	String uid, pid, name, lat, lng, address, vote;
 
 	// Progress Dialog
 	private ProgressDialog pDialog;
@@ -88,6 +88,8 @@ public class ReliefFragment extends Fragment {
 			public void onItemClick(AdapterView<?> parent, View view,
 					int position, long id) {
 				// getting values from selected ListItem
+				String uid = ((TextView) view.findViewById(R.id.uid)).getText()
+						.toString();
 				String pid = ((TextView) view.findViewById(R.id.pid)).getText()
 						.toString();
 				String name = ((TextView) view.findViewById(R.id.person_name))
@@ -98,14 +100,18 @@ public class ReliefFragment extends Fragment {
 						.toString();
 				String address = ((TextView) view.findViewById(R.id.address))
 						.getText().toString();
+				String vote = ((TextView) view.findViewById(R.id.vote))
+						.getText().toString();
 				// Starting new intent
 				Intent in = new Intent(getActivity(), ReliefInfo.class);
 				// sending pid to next activity
+				in.putExtra("uid", uid);
 				in.putExtra("pid", pid);
 				in.putExtra("name", name);
 				in.putExtra("lat", lat);
 				in.putExtra("lng", lng);
 				in.putExtra("address", address);
+				in.putExtra("vote", vote);
 				startActivity(in);
 			}
 		});
@@ -198,11 +204,13 @@ public class ReliefFragment extends Fragment {
 						JSONObject c = locations.getJSONObject(i);
 
 						// Storing each json item in variable
+						uid = c.getString("uid");
 						pid = c.getString("pid");
 						name = c.getString("name");
 						lat = c.getString("lat");
 						lng = c.getString("lng");
 						address = c.getString("address");
+						vote = c.getString("vote");
 
 						LocationManager locationManager = (LocationManager) getActivity()
 								.getSystemService(Context.LOCATION_SERVICE);
@@ -225,12 +233,14 @@ public class ReliefFragment extends Fragment {
 							HashMap<String, String> map = new HashMap<String, String>();
 
 							// adding each child node to HashMap key => value
+							map.put("uid", uid);
 							map.put("pid", pid);
 							map.put("name", name);
 							map.put("lat", lat);
 							map.put("lng", lng);
 							map.put("loc", loc);
 							map.put("address", address);
+							map.put("vote", vote);
 
 							// adding HashList to ArrayList
 							locationList.add(map);
@@ -258,10 +268,11 @@ public class ReliefFragment extends Fragment {
 					 * Updating parsed JSON data into ListView
 					 * */
 					adapter = new SimpleAdapter(getActivity(), locationList,
-							R.layout.relief_view, new String[] { "pid", "name",
-									"lat", "lng", "loc", "address" },
-							new int[] { R.id.pid, R.id.person_name, R.id.lat,
-									R.id.lng, R.id.location, R.id.address });
+							R.layout.relief_view, new String[] { "uid", "pid",
+									"name", "lat", "lng", "loc", "address", "vote" },
+							new int[] { R.id.uid, R.id.pid, R.id.person_name,
+									R.id.lat, R.id.lng, R.id.location,
+									R.id.address, R.id.vote });
 					lv.setAdapter(adapter);
 				}
 			});

@@ -21,38 +21,43 @@ public class DMUCSNotification extends Activity {
 		setContentView(R.layout.activity_dmucs_notification);
 
 		getActionBar().setBackgroundDrawable(new ColorDrawable(Color.BLACK));
-		TextView message = (TextView) findViewById(R.id.tv);
-		message.setText("No new notifications");
-		Button no = (Button) findViewById(R.id.button1);
-		Button yes = (Button) findViewById(R.id.button2);
-		if (!answer) {
-			no.setText("");
-			no.setBackground(new ColorDrawable(Color.TRANSPARENT));
-			yes.setText("");
-			yes.setBackground(new ColorDrawable(Color.TRANSPARENT));
-		} else{
-			yes.setOnClickListener(new OnClickListener() {
-				
-				@Override
-				public void onClick(View arg0) {
-					Intent i = new Intent (DMUCSNotification.this,WriteQueryDatabase.class);
-					i.putExtra("query", "update survey set yes = yes+1 where uid='"+uid+"';");
-					i.putExtra("text", "Survey Updated");
-					startActivity(i);
-				}
-			});
-			
-			no.setOnClickListener(new OnClickListener() {
-				
-				@Override
-				public void onClick(View arg0) {
-					Intent i = new Intent (DMUCSNotification.this,WriteQueryDatabase.class);
-					i.putExtra("query", "update survey set no = no+1 where uid='"+uid+"';");
-					i.putExtra("text", "Survey Updated");
-					startActivity(i);
-					
-				}
-			});
-		}
+		
+		Intent intent  = new Intent(DMUCSNotification.this,ReportList.class);
+		intent.putExtra("within", "20");
+		startActivity(intent);
+		finish();
+//		TextView message = (TextView) findViewById(R.id.tv);
+//		message.setText("No new notifications");
+//		Button no = (Button) findViewById(R.id.button1);
+//		Button yes = (Button) findViewById(R.id.button2);
+//		if (!answer) {
+//			no.setText("");
+//			no.setBackground(new ColorDrawable(Color.TRANSPARENT));
+//			yes.setText("");
+//			yes.setBackground(new ColorDrawable(Color.TRANSPARENT));
+//		} else{
+//			yes.setOnClickListener(new OnClickListener() {
+//				
+//				@Override
+//				public void onClick(View arg0) {
+//					Intent i = new Intent (DMUCSNotification.this,WriteQueryDatabase.class);
+//					i.putExtra("query", "update survey set yes = yes+1 where uid='"+uid+"';");
+//					i.putExtra("text", "Survey Updated");
+//					startActivity(i);
+//				}
+//			});
+//			
+//			no.setOnClickListener(new OnClickListener() {
+//				
+//				@Override
+//				public void onClick(View arg0) {
+//					Intent i = new Intent (DMUCSNotification.this,WriteQueryDatabase.class);
+//					i.putExtra("query", "update survey set no = no+1 where uid='"+uid+"';");
+//					i.putExtra("text", "Survey Updated");
+//					startActivity(i);
+//					
+//				}
+//			});
+//		}
 	}
 }

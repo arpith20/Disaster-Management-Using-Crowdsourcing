@@ -60,7 +60,7 @@ public class ReportIncident extends Activity implements OnMapClickListener,
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_quick_report);
-		
+
 		getActionBar().setBackgroundDrawable(new ColorDrawable(Color.BLACK));
 
 		segmentText_cas = (SegmentedRadioGroup) findViewById(R.id.id_casuality);
@@ -86,10 +86,11 @@ public class ReportIncident extends Activity implements OnMapClickListener,
 
 			@Override
 			public void onClick(View arg0) {
-				SubmitScore.submitscore(getBaseContext(), SwarmConsts.Scores.QUICK_REPORT);
+				SubmitScore.submitscore(getBaseContext(),
+						SwarmConsts.Scores.QUICK_REPORT);
 				inc = incident.getText().toString();
 				comment = et_comment.getText().toString();
-				
+
 				SharedPreferences debug = PreferenceManager
 						.getDefaultSharedPreferences(getBaseContext());
 				Boolean dummy_notification = debug.getBoolean(
@@ -113,7 +114,6 @@ public class ReportIncident extends Activity implements OnMapClickListener,
 						e.printStackTrace();
 					}
 				}
-				
 
 				Intent i = new Intent(ReportIncident.this,
 						WriteWithoutDuplicateDatabase.class);
@@ -148,9 +148,10 @@ public class ReportIncident extends Activity implements OnMapClickListener,
 								+ lng
 								+ "','" + comment + "');");
 				i.putExtra("text", "Incident reported successfully");
-				i.putExtra("lat", lat+"");
-				i.putExtra("lng", lng+"");
+				i.putExtra("lat", lat + "");
+				i.putExtra("lng", lng + "");
 				i.putExtra("incident", inc);
+				i.putExtra("showmap", "true");
 				startActivity(i);
 			}
 		});
@@ -164,14 +165,17 @@ public class ReportIncident extends Activity implements OnMapClickListener,
 		PendingIntent pIntent = PendingIntent.getActivity(getBaseContext(), 0,
 				intent, 0);
 
-		 Notification n = new Notification.Builder(getBaseContext())
-		 .setContentTitle(inc+" has been reported")
-		 .setContentText("Please be cautious")
-		 .setSmallIcon(R.drawable.ic_launcher).setContentIntent(pIntent)
-		 .setStyle(new Notification.BigTextStyle().bigText("Description:\n"+comment))
-		 .setAutoCancel(true).addAction(R.drawable.eye, "View", pIntent)
-		 .build();
-		
+		Notification n = new Notification.Builder(getBaseContext())
+				.setContentTitle(inc + " has been reported")
+				.setContentText("Please be cautious")
+				.setSmallIcon(R.drawable.ic_launcher)
+				.setContentIntent(pIntent)
+				.setStyle(
+						new Notification.BigTextStyle()
+								.bigText("Description:\n" + comment))
+				.setAutoCancel(true).addAction(R.drawable.eye, "View", pIntent)
+				.build();
+
 		NotificationManager notificationManager = (NotificationManager) getSystemService(NOTIFICATION_SERVICE);
 
 		notificationManager.notify(0, n);
@@ -187,7 +191,7 @@ public class ReportIncident extends Activity implements OnMapClickListener,
 				.getLastKnownLocation(provider);
 		currentLocation = new LatLng(lastKnownLocation.getLatitude(),
 				lastKnownLocation.getLongitude());
-		
+
 		lng = String.valueOf(currentLocation.longitude);
 		lat = String.valueOf(currentLocation.latitude);
 

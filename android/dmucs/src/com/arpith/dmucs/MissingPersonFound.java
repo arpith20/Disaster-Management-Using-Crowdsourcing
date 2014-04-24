@@ -27,7 +27,7 @@ import com.google.android.gms.maps.model.MarkerOptions;
 @SuppressWarnings("deprecation")
 public class MissingPersonFound extends Activity implements OnMapClickListener {
 
-	String phone, found_by, f_lat, f_lng, more_info;
+	String phone, found_by, f_lat, f_lng, more_info,phone_by ;
 	EditText et_description;
 
 	private GoogleMap map;
@@ -39,6 +39,7 @@ public class MissingPersonFound extends Activity implements OnMapClickListener {
 
 		Bundle b = getIntent().getExtras();
 		phone = b.getString("phone");
+		phone_by = b.getString("phone_by");
 
 		SharedPreferences uname = getSharedPreferences("user", 0);
 		found_by = uname.getString("name", "");
@@ -54,7 +55,7 @@ public class MissingPersonFound extends Activity implements OnMapClickListener {
 			@Override
 			public void onClick(View arg0) {
 				Log.d("INformation", "Pressed");
-				sendSMS(phone);
+				sendSMS(phone_by);
 
 				SubmitScore.submitscore(getBaseContext(),
 						SwarmConsts.Scores.MISSING_FOUND);

@@ -12,7 +12,7 @@
         android:layout_alignParentLeft="true"
         android:layout_alignParentTop="true"
         android:gravity="center"
-        android:text="Choose a location nearest to you or\nadd an new location"
+        android:text="Choose a dropbox nearest to you or\nadd an new dropbox"
         android:textSize="20dp" />
     
     <LinearLayout
@@ -80,7 +80,7 @@
         android:layout_alignParentBottom="true"
         android:layout_alignParentLeft="true"
         android:layout_alignParentRight="true"
-        android:text="Add new collect points"
+        android:text="New Dropbox"
         android:background="@drawable/button_border_nopad"
         android:textColor="@android:color/white" />
  

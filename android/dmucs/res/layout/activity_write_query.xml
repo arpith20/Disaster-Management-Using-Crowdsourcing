@@ -43,4 +43,16 @@
         android:scaleType="fitCenter"
         android:src="@drawable/tick" />
 
+    <Button
+        android:id="@+id/b_map"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/rs_main"
+        android:layout_alignLeft="@+id/rs_main"
+        android:layout_alignRight="@+id/rs_main"
+        android:text="Click to view nearby POIs"
+        android:background="@drawable/button_border_nopad"
+        android:textColor="@android:color/white"
+        android:layout_marginBottom="5sp" />
+
 </RelativeLayout>

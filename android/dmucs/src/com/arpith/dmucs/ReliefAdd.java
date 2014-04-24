@@ -23,50 +23,55 @@ import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.MarkerOptions;
 
-public class ReliefAdd extends Activity implements OnMapClickListener{
+public class ReliefAdd extends Activity implements OnMapClickListener {
 	EditText et_name;
 	EditText et_address;
-	
+
 	TextView tv_phone;
-	
+
 	private GoogleMap map;
 	LatLng currentLocation;
-	
+
 	String name, address, phone, lat, lng;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_relief_add);
-		
-		et_name = (EditText)findViewById(R.id.ra_name);
-		et_address = (EditText)findViewById(R.id.ra_address);
-		tv_phone = (TextView)findViewById(R.id.ra_phone);
-		
+
+		et_name = (EditText) findViewById(R.id.ra_name);
+		et_address = (EditText) findViewById(R.id.ra_address);
+		tv_phone = (TextView) findViewById(R.id.ra_phone);
+
 		SharedPreferences uname = getSharedPreferences("user", 0);
 		phone = uname.getString("name", "0");
 		tv_phone.setText(phone);
-		
+
 		location();
-		
-		Button b_submit = (Button)findViewById(R.id.ra_submit);
+
+		Button b_submit = (Button) findViewById(R.id.ra_submit);
 		b_submit.setOnClickListener(new OnClickListener() {
-			
+
 			@Override
 			public void onClick(View arg0) {
-				SubmitScore.submitscore(getBaseContext(), SwarmConsts.Scores.NEW_DONATE_LOC);
+				SubmitScore.submitscore(getBaseContext(),
+						SwarmConsts.Scores.NEW_DONATE_LOC);
 
-				name=et_name.getText().toString();
-				address=et_address.getText().toString();
+				name = et_name.getText().toString();
+				address = et_address.getText().toString();
 				Intent i = new Intent(ReliefAdd.this, WriteQueryDatabase.class);
-				i.putExtra("query", "insert into donate_location values ('"+phone+"','"+name+"','"+address+"','"+lat+"','"+lng+"')");
-				i.putExtra("text", "Your location has been successfully recorded");
+				i.putExtra("query",
+						"insert into donate_location (phone, name, address,lat,lng)values ('"
+								+ phone + "','" + name + "','" + address
+								+ "','" + lat + "','" + lng + "')");
+				i.putExtra("text",
+						"Your location has been successfully recorded");
 				startActivity(i);
 			}
 		});
-		
+
 	}
-	
+
 	private void location() {
 		LocationManager locationManager = (LocationManager) getSystemService(Context.LOCATION_SERVICE);
 
@@ -76,29 +81,29 @@ public class ReliefAdd extends Activity implements OnMapClickListener{
 				.getLastKnownLocation(provider);
 		currentLocation = new LatLng(lastKnownLocation.getLatitude(),
 				lastKnownLocation.getLongitude());
-		
-		lng=String.valueOf(currentLocation.longitude);
-		lat=String.valueOf(currentLocation.latitude);
+
+		lng = String.valueOf(currentLocation.longitude);
+		lat = String.valueOf(currentLocation.latitude);
 
 		map = ((MapFragment) getFragmentManager().findFragmentById(R.id.map))
 				.getMap();
 		map.setOnMapClickListener(this);
-		
-		map.animateCamera(CameraUpdateFactory.newLatLngZoom(currentLocation, 13), 2000,
+
+		map.animateCamera(
+				CameraUpdateFactory.newLatLngZoom(currentLocation, 13), 2000,
 				null);
 	}
 
 	@Override
 	public void onMapClick(LatLng POINT) {
 		map.clear();
-		lng=String.valueOf(POINT.longitude);
-		lat=String.valueOf(POINT.latitude);
+		lng = String.valueOf(POINT.longitude);
+		lat = String.valueOf(POINT.latitude);
 
-		Marker incident = map.addMarker(new MarkerOptions()
-				.position(POINT)
+		Marker incident = map.addMarker(new MarkerOptions().position(POINT)
 				.icon(BitmapDescriptorFactory
 						.fromResource(R.drawable.incidentmarker)));
-		
+
 		// moves camera to specified location
 		map.animateCamera(CameraUpdateFactory.newLatLngZoom(POINT, 15), 2000,
 				null);

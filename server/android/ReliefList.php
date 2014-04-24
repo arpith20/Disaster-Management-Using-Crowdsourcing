@@ -25,11 +25,13 @@
 		while ($row = mysql_fetch_array($result)) {
 			// temp user array
 			$rep            = array();
+			$rep["uid"]     = $row["uid"];
 			$rep["pid"]     = $row["phone"]; //phoneID
 			$rep["name"]    = $row["name"];
 			$rep["address"] = $row["address"];
 			$rep["lat"]     = $row["lat"];
 			$rep["lng"]     = $row["lng"];
+			$rep["vote"]     = $row["vote"];
 
 			array_push($response["locations"], $rep);
 		}

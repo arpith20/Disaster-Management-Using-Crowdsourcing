@@ -15,38 +15,95 @@
             android:layout_height="match_parent"
             android:orientation="vertical" >
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:paddingTop="10dp"
-                android:text="Name"
-                android:textAppearance="?android:attr/textAppearanceLarge"
-                android:textColor="@android:color/white" />
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" >
 
-            <TextView
-                android:id="@+id/r_name"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Small Text"
-                android:textAppearance="?android:attr/textAppearanceSmall"
-                android:textColor="@android:color/white" />
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical" >
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:paddingTop="10dp"
-                android:text="Phone"
-                android:textAppearance="?android:attr/textAppearanceLarge"
-                android:textColor="@android:color/white" />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:paddingTop="10dp"
+                        android:text="Name"
+                        android:textAppearance="?android:attr/textAppearanceLarge"
+                        android:textColor="@android:color/white" />
 
-            <TextView
-                android:id="@+id/r_phone"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:paddingBottom="20dp"
-                android:text="Small Text"
-                android:textAppearance="?android:attr/textAppearanceSmall"
-                android:textColor="@android:color/white" />
+                    <TextView
+                        android:id="@+id/r_name"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Small Text"
+                        android:textAppearance="?android:attr/textAppearanceSmall"
+                        android:textColor="@android:color/white" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:paddingTop="10dp"
+                        android:text="Phone"
+                        android:textAppearance="?android:attr/textAppearanceLarge"
+                        android:textColor="@android:color/white" />
+
+                    <TextView
+                        android:id="@+id/r_phone"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:paddingBottom="20dp"
+                        android:text="Small Text"
+                        android:textAppearance="?android:attr/textAppearanceSmall"
+                        android:textColor="@android:color/white" />
+                </LinearLayout>
+
+                <ImageView
+                    android:id="@+id/account_photo"
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_margin="10dp"
+                    android:adjustViewBounds="true"
+                    android:background="#ffffff"
+                    android:maxHeight="100dp"
+                    android:maxWidth="100dp"
+                    android:padding="4dp"
+                    android:scaleType="fitXY"
+                    android:visibility="invisible" />
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignBottom="@+id/account_photo"
+                    android:layout_alignLeft="@+id/account_photo"
+                    android:layout_alignRight="@+id/account_photo"
+                    android:layout_alignTop="@+id/account_photo"
+                    android:orientation="vertical" >
+
+                    <Button
+                        android:id="@+id/plus"
+                        android:layout_width="fill_parent"
+                        android:layout_height="40dp"
+                        android:background="@drawable/plus" />
+
+                    <TextView
+                        android:id="@+id/tv_vote"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:text="12"
+                        android:textAppearance="?android:attr/textAppearanceSmall"
+                        android:textColor="@android:color/white" />
+
+                    <Button
+                        android:id="@+id/minus"
+                        android:layout_width="fill_parent"
+                        android:layout_height="40dp"
+                        android:background="@drawable/minus" />
+                </LinearLayout>
+            </RelativeLayout>
 
             <TextView
                 android:layout_width="wrap_content"

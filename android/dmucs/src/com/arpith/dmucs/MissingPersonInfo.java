@@ -56,7 +56,7 @@ public class MissingPersonInfo extends Activity {
 		setContentView(R.layout.activity_missing_person_info);
 
 		getActionBar().setBackgroundDrawable(new ColorDrawable(Color.BLACK));
-		
+
 		Bundle b = getIntent().getExtras();
 		p = b.getString("pid");
 
@@ -79,17 +79,15 @@ public class MissingPersonInfo extends Activity {
 
 			ImageView imageView = (ImageView) findViewById(R.id.account_photo);
 			Ion.with(this)
-					.load("http://" + ip
-							+ "/arpith/dmucs/profile/"+p+".jpg")
-					.withBitmap().resize(512, 512).centerInside()
-					.intoImageView(imageView);
+					.load("http://" + ip + "/arpith/dmucs/profile/" + p
+							+ ".jpg").withBitmap().resize(512, 512)
+					.centerInside().intoImageView(imageView);
 
 			ImageView imageView2 = (ImageView) findViewById(R.id.account_photo_big);
 			Ion.with(this)
-					.load("http://" + ip
-							+ "/arpith/dmucs/profile/"+p+".jpg")
-					.withBitmap().resize(1024, 1024).centerInside()
-					.intoImageView(imageView2);
+					.load("http://" + ip + "/arpith/dmucs/profile/" + p
+							+ ".jpg").withBitmap().resize(1024, 1024)
+					.centerInside().intoImageView(imageView2);
 
 			new Async_FindPerson().execute();
 			while (!d)
@@ -137,18 +135,22 @@ public class MissingPersonInfo extends Activity {
 						Double.parseDouble(f_lng));
 				Marker FoundLocation = map.addMarker(new MarkerOptions()
 						.position(foundlocation)
-						.title("This person has been found here")
+						.title(n + " has been found here")
 						.icon(BitmapDescriptorFactory
 								.fromResource(R.drawable.currentmarker)));
-				//FoundLocation.showInfoWindow();
-				map.animateCamera(CameraUpdateFactory.newLatLngZoom(foundlocation, 17),4000,null);
+				FoundLocation.showInfoWindow();
+				map.animateCamera(
+						CameraUpdateFactory.newLatLngZoom(foundlocation, 17),
+						4000, null);
 			}
 			f.setOnClickListener(new OnClickListener() {
 
 				@Override
 				public void onClick(View v) {
-					Intent i = new Intent(MissingPersonInfo.this,MissingPersonFound.class);
+					Intent i = new Intent(MissingPersonInfo.this,
+							MissingPersonFound.class);
 					i.putExtra("phone", p);
+					i.putExtra("phone_by", phone_by);
 					startActivity(i);
 				}
 			});

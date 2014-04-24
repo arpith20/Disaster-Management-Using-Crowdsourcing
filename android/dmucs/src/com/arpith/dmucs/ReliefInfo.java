@@ -5,6 +5,8 @@ import java.util.Locale;
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
 import android.location.Criteria;
 import android.location.Location;
 import android.location.LocationManager;
@@ -27,26 +29,37 @@ public class ReliefInfo extends Activity {
 
 	TextView tv_pid;
 	TextView tv_name;
-	TextView tv_address;
+	TextView tv_address, tv_vote;
 
-	String lat, lng;
+	String lat, lng, uid;
+	String vote;
 	String c_lat, c_lng;
 
 	private GoogleMap map;
+	
+	Button b_plus, b_minus;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_reliefinfo);
+		
+		getActionBar().setBackgroundDrawable(new ColorDrawable(Color.BLACK));
 
 		tv_pid = (TextView) findViewById(R.id.r_phone);
 		tv_name = (TextView) findViewById(R.id.r_name);
 		tv_address = (TextView) findViewById(R.id.r_address);
+		tv_vote = (TextView) findViewById(R.id.tv_vote);
 
 		Bundle b = getIntent().getExtras();
+		uid = b.getString("uid");
+		
 		tv_pid.setText(b.getString("pid"));
 		tv_name.setText(b.getString("name"));
 		tv_address.setText(b.getString("address"));
+		
+		vote = b.getString("vote");
+		tv_vote.setText(vote);
 
 		lat = b.getString("lat");
 		lng = b.getString("lng");
@@ -78,6 +91,41 @@ public class ReliefInfo extends Activity {
 				String uri = String.format(Locale.ENGLISH, "http://maps.google.com/maps?saddr="+c_lat+","+c_lng+"&daddr="+lat+","+lng+"");
 				Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(uri));
 				startActivity(intent);
+			}
+		});
+		
+		b_plus = (Button) findViewById(R.id.plus);
+		b_plus.setOnClickListener(new OnClickListener() {
+
+			@Override
+			public void onClick(View arg0) {
+				vote  = (Integer.parseInt(vote)+1)+"";
+				tv_vote.setText(vote);
+				
+				String query = "update donate_location set vote=vote+1 where uid='"
+						+ uid + "'";
+				Intent i = new Intent(ReliefInfo.this,
+						WriteQueryDatabase.class);
+				i.putExtra("query", query);
+				i.putExtra("text", "Plus voted");
+				startActivity(i);
+			}
+		});
+		b_minus = (Button) findViewById(R.id.minus);
+		b_minus.setOnClickListener(new OnClickListener() {
+
+			@Override
+			public void onClick(View arg0) {
+				vote  = (Integer.parseInt(vote)-1)+"";
+				tv_vote.setText(vote);
+				
+				String query = "update donate_location set vote=vote-1 where uid='"
+						+ uid + "'";
+				Intent i = new Intent(ReliefInfo.this,
+						WriteQueryDatabase.class);
+				i.putExtra("query", query);
+				i.putExtra("text", "You have voted down this report");
+				startActivity(i);
 			}
 		});
 	}
