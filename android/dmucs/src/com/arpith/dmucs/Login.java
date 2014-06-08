@@ -26,6 +26,8 @@ import android.view.View.OnClickListener;
 import android.view.View.OnLongClickListener;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageButton;
+import android.widget.Toast;
 
 public class Login extends SwipeBackActivity {
 	String User;
@@ -35,6 +37,8 @@ public class Login extends SwipeBackActivity {
 	EditText pass;
 	
 	String ip, EnteredPassword;
+	
+	ImageButton ib_menu;
 
 	private ProgressDialog pDialog;
 	JSONParser jsonParser = new JSONParser();
@@ -59,6 +63,15 @@ public class Login extends SwipeBackActivity {
 		uid = (EditText) findViewById(R.id.uid);
 		pass = (EditText) findViewById(R.id.pass);
 		Button b = (Button) findViewById(R.id.btnLogin);
+		ib_menu = (ImageButton)findViewById(R.id.ib_logo_menu);
+		
+		ib_menu.setOnClickListener(new OnClickListener() {
+			
+			@Override
+			public void onClick(View arg0) {
+				openOptionsMenu();
+			}
+		});
 
 		b.setOnLongClickListener(new OnLongClickListener() {
 

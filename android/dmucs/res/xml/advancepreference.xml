@@ -9,7 +9,7 @@
         android:positiveButtonText="Ok"
         android:summary="IP address of the server"
         android:title="IP Address"
-        android:defaultValue="192.168.42.56" />
+        android:defaultValue="dmucs.arpith.me" />
 
     <PreferenceCategory android:title="Debug" >
     </PreferenceCategory>

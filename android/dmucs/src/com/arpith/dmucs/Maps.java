@@ -5,6 +5,7 @@ import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.io.UnsupportedEncodingException;
 import java.net.URLEncoder;
+import java.text.DecimalFormat;
 import java.util.Locale;
 
 import org.apache.http.HttpEntity;
@@ -24,8 +25,12 @@ import android.location.Location;
 import android.location.LocationManager;
 import android.net.Uri;
 import android.os.AsyncTask;
+import android.os.Build;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.Window;
+import android.view.WindowManager;
+import android.widget.TextView;
 
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
@@ -55,10 +60,22 @@ public class Maps extends Activity {
 
 	double lat, lng;
 
+	TextView tv_location;
+
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_maps);
+
+		if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT) {
+			Window w = getWindow(); // in Activity's onCreate() for instance
+			w.setFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_NAVIGATION,
+					WindowManager.LayoutParams.FLAG_TRANSLUCENT_NAVIGATION);
+			w.setFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS,
+					WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);
+		}
+
+		tv_location = (TextView) findViewById(R.id.location);
 
 		// get drawable IDs
 		userIcon = R.drawable.yellow_point;
@@ -93,6 +110,9 @@ public class Maps extends Activity {
 				.getLastKnownLocation(LocationManager.NETWORK_PROVIDER);
 		lat = lastLoc.getLatitude();
 		lng = lastLoc.getLongitude();
+
+		tv_location.setText("(" + new DecimalFormat("#0.00").format(lat) + ", "
+				+ new DecimalFormat("#0.00").format(lng) + ")");
 		// create LatLng
 		LatLng lastLatLng = new LatLng(lat, lng);
 

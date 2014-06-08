@@ -21,12 +21,14 @@
 
             <!-- Logo Start -->
 
-            <ImageView
+            <ImageButton
+                android:id="@+id/ib_logo_menu"
                 android:layout_width="fill_parent"
-                android:layout_gravity="center"
                 android:layout_height="wrap_content"
+                android:layout_gravity="center"
                 android:layout_marginLeft="10dip"
-                android:src="@drawable/ic_launcher" />
+                android:src="@drawable/ic_launcher"
+                android:background="@android:color/transparent" />
 
             <!-- Logo Ends -->
         </LinearLayout>
@@ -38,6 +40,7 @@
             android:layout_width="fill_parent"
             android:layout_height="90dip"
             android:layout_alignParentBottom="true"
+            android:layout_alignParentRight="true"
             android:background="@layout/footer_repeat"
             android:orientation="vertical" >
         </LinearLayout>
@@ -56,10 +59,9 @@
             <!-- Email Label -->
 
             <TextView
-                
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
-                android:text="UserID"
+                android:text="Phone Number"
                 android:textColor="#372c24" />
 
             <EditText
@@ -96,14 +98,12 @@
 
             <Button
                 android:id="@+id/signup"
-                android:layout_width="338dp"
+                android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
+                android:background="@android:color/transparent"
                 android:text="New to this service?\nClick here to signup"
                 android:textColor="#0b84aa"
-                android:textSize="15dp"
-                android:background="@android:color/transparent" />
-
-           
+                android:textSize="15dp" />
         </LinearLayout>
         <!-- Login Form Ends -->
     </RelativeLayout>
